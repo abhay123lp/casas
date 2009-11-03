@@ -1,0 +1,6 @@
+mysql -r root -p
+create database stock
+grant all on stock.* to damon@localhost identified by '1024Leo!';
+quit;
+
+mysql -r damon -p stock
