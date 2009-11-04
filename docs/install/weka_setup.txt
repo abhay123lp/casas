@@ -1,0 +1,54 @@
+============================
+WEKA Config Files
+============================
+
+Update the config file RunWeka.ini
+    fileEncoding=GBK  # Change Char-Set to GBK
+    cp=%CLASSPATH%;[some_path]/mysql-connector-java-5.0.4-bin.jar # add JDBC connector library
+
+Update the config file DatabaseUtils.props
+    get the file DatabaseUtils.props.mysql from the sub-folder weka/experiment of weka.jar. 
+    Copy to the the directory $WEKA_HOME and rename to DatabaseUtils.props.
+    Set the variable: 
+       jdbcURL=jdbc:mysql://127.0.0.1:3306/stock?user=damon&password=1024Leo!
+
+Check Result:
+    start up the SimpleCLI and issue the following command:
+        java weka.core.SystemInfo
+    Look for the property 'java.class.path'
+
+============================
+Get source codes of WEKA
+============================
+Download source code with SVN:
+    https://svn.scms.waikato.ac.nz/svn/weka/trunk/weka
+    https://svn.scms.waikato.ac.nz/svn/weka/trunk/wekaexamples
+
+============================
+Integrate weka into groovy
+============================
+Add Weka jar file to Groovy's lib
+    cope package files: weka.jar,remoteExperimentServer.jar to the directory 
+        %GROOVY_HOME%/lib/additional/
+
+============================
+Integrate groovy into weka
+============================
+Add Weka jar file to Groovy's lib
+    cope package files: weka.jar,remoteExperimentServer.jar to the directory 
+        %GROOVY_HOME%/lib/additional/
+
+
+============================
+Run Weka in Eclipse
+============================
+Add mysql-connector-java-5.0.4-bin.jar into the Weka project
+Add Java Application as 
+    javaw -Dfile.encoding=utf-8 -Xmx128 -classpath weka.gui.Main
+    javaw -Dfile.encoding=utf-8 -Xmx128 -classpath weka.gui.GUIChooser
+    javaw -Dfile.encoding=utf-8 -Xmx128 -classpath weka.gui.SimpleCLI
+    javaw -Dfile.encoding=utf-8 -Xmx128 -classpath weka.gui.explorer.Explorer
+    javaw -Dfile.encoding=utf-8 -Xmx128 -classpath weka.gui.experiment.Experimenter
+    javaw -Dfile.encoding=utf-8 -Xmx128 -classpath weka.gui.arffviewer.ArffViewer
+    javaw -Dfile.encoding=utf-8 -Xmx128 -classpath weka.gui.treevisualizer.TreeVisualizer
+    javaw -Dfile.encoding=utf-8 -Xmx128 -classpath weka.gui.graphvisualizer.GraphVisualizer

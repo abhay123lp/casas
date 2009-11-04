@@ -1,0 +1,104 @@
+% SDE(Standard Development Environment) Setup Guide
+%
+%
+%
+
+============================
+JDK
+============================
+Download JSEDK Version=1.6 from java.sun.com
+set env JAVA_HOME and PATH
+
+============================
+Groovy & Grails
+============================
+Groovy Installation:
+  Download stable version of Groovy from http://groovy.codehaus.org/Download
+  set the GROOVY_HOME environment variable and add%GROOVY_HOME%/bin to the PATH.
+  After version1.6.3, Gant, SwingXBuilder&JideBuilder are default modules in Groovy.
+
+Groovy Configuration:
+  User specific libraries are defined in these 2 conf files
+  GROOVY_HOME/conf/groovy-starter.conf
+  GROOVY_HOME/conf/gant-starter.conf
+  Open the file %GROOVY_HOME%/config/groovy_starter.conf
+  add a line:
+    load !{groovy.home}/lib/additional/*.jar
+
+Grails Installation:
+  Download stable version of Groovy from http://www.grails.org/Download
+  Extract the archive into an appropriate location.
+  Create a GRAILS_HOME environment variable and append %GRAILS_HOME%/bin to your PATH variable
+
+============================
+Eclipse
+============================
+Eclipse Installation:
+  Download stable version of Eclipse JEE from http://www.eclipse.org/downloads
+
+============================
+Groovy Plugin
+============================
+Plugin Installation:
+  The URL for the plugin update manager is:
+  http://dist.codehaus.org/groovy/distributions/update/ for stable release
+  http://dist.codehaus.org/groovy/distributions/updateDev/  for development release.
+
+Groovy Project Configuration:
+  Create or import a new Java project. add the groovy feature.
+
+
+============================
+MySQL
+============================
+set default char-set as 'utf8'
+
+set root password=1024Leo!
+>mysqladmin -u root password '1024Leo!';
+
+create stock databse
+>create database stock;
+
+add user 'damon' and granting privileges on the database stock:
+>grant all on stock.* to damon@localhost identified by '1024Leo!';
+
+user=damon
+pass=1024Leo!
+
+Add JDBC driver to GROOVY's class path
+Open the JDBC driver package mysql-connector-java-5.0.4-bin.jar
+to the directory %GROOVY_HOME%/lib/additional/
+
+
+============================
+Oracle
+============================
+全局数据库:orcl
+pass: 1024Leo!
+account: SYS,SYSTEM,SYSMAN,DBSNMP
+
+
+============================
+SVN
+============================
+gforge.osdn.net.cn
+user=damanhu
+pass=1024Leo!
+
+============================
+MatLab
+============================
+Register MySQL JDBC Drivers to MatLab:
+    copy MySql JDBC driver mysql-connector-java-5.0.4-bin.jar to the directory: 
+        $matlabroot/java/jarext/
+    and update the config file $matlabroot/toolbox/local/classpath.txt, add a 
+    line:
+        $matlabroot/java/jarext/mysql-connector-java-5.0.4-bin.jar
+
+Setup Data Sources for Use:
+    Run the querybuilder command in the MATLAB Command Window to start Visual Query Builder.
+    Specify new JDBC data source MAT-file.
+    Enter Name, Driver, and URL fields for your JDBC data source.
+    Test the connection.
+    click Add/Update.
+    
