@@ -1,0 +1,53 @@
+===============================================
+= Core
+===============================================
+----------------------------------------------
+- package org.aiotrade.platform.core
+----------------------------------------------
+Core Service Here
+
+---------------------------------------------------
+- package org.aiotrade.platform.core.analysis.chart
+---------------------------------------------------
+定义股票K线图，蜡烛图
+
+---------------------------------------------------
+- package org.aiotrade.platform.core.analysis.chartview
+---------------------------------------------------
+定义股票走势视图
+
+*************************************************
+*         1..n           1..n
+* series --------> chart ------> ChartView
+*************************************************
+
+---------------------------------------------------
+- package org.aiotrade.platform.core.analysis.function
+---------------------------------------------------
+基于时间序列的函数
+
+
+
+===============================================
+Series Requirement
+===============================================
+Description:
+% time sorted data container. each element is of a specific type.
+% provide position <--> time translation 
+% provide cursor which is used to identify the selected item.
+% support time management: frequency, next time(++), previous time(--), go to time(+n)
+% should be clonable.
+% can fire event for anhy element change.
+% support multiple objects for one time position.
+% support addition operation of two time series.
+
+========================================================
+Properties:
+%. a list of elements
+%. a list of time position
+%. a cursor which is used to identify the current position
+%. a list of event listeners
+
+Functions:
+%. support OLAP type operation: scroll up. from daily series to weekly series, etc.
+%. 
