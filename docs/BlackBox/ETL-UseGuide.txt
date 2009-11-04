@@ -1,0 +1,53 @@
+1 environment variable
+-Ddata.dir # this is the directory where data is stored
+
+
+Facade class of ETL: BaiduDataExtractFacade
+
+============================================
+UseCase1: download today' record of ShangHai
+Market Index, and save to database
+============================================
+BaiduDataExtractFacade.downloadMarketIndex()
+
+
+===========================================
+UseCase2: varify stock IDs and save valid
+stock ID to a file/database
+===========================================
+com.renaissance.etl.VerifyStockIndex.groovy
+save to file
+
+BaiduDataExtractFacade.verifyStockIndex()
+save to database
+
+===========================================
+UseCase3: download daily transaction record 
+===========================================
+BaiduDataExtractFacade.downloadTransactionRecord()
+
+
+
+===========================================
+
+===========================================
+
+
+
+===========================================
+
+===========================================
+
+
+
+===========================================
+
+===========================================
+
+
+
+===========================================
+
+===========================================
+
+
