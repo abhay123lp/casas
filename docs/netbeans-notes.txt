@@ -1,0 +1,34 @@
+
+// how to render DataObject from FileObject
+// "Services/MIMEResolver/"
+// "Loaders/mime/type/factory/"
+// "Loaders/mime/type/actions/"
+
+
+DataObject find(FileObject){
+    DataLoaderPool.findDataObject (FileObject){
+    
+        // resolve MIME type and get DataObject.Factory
+        factories = allLoaders(FileObject){
+            FileObject.getMIMEType()// resolve MIME type
+            get MIMEFactory from "Loaders/mime/type/factory/"
+        }
+        
+        // call the factory or DataLoader to create DataObject
+        DataObjectPool.handleFindDataObject( MIMEFactory, FileObject){
+            MimeFactory.handleFindDataObject(){
+            
+                // instantiate the DataObject with FileLoader
+                new MultiDataObject(FileObject, MultiFileLoader){
+                    // regiter this new DataObject instance to DataObjectPool
+                    DataObjectPool.register(this);
+                    createPrimaryEntry()
+                }
+                // bind Cookies and load Action Maps from System File
+            }
+        }
+    }
+}
+
+
+what is File Loader?
