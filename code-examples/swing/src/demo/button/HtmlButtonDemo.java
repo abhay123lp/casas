@@ -5,8 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class HtmlButtons extends JFrame {
-	public HtmlButtons() {
+public class HtmlButtonDemo extends JFrame {
+	public HtmlButtonDemo() {
 		super("HTML Buttons and Labels");
 		setSize(400, 300);
 		getContentPane().setLayout(new FlowLayout());
@@ -27,6 +27,6 @@ public class HtmlButtons extends JFrame {
 	}
 
 	public static void main(String args[]) {
-		new HtmlButtons();
+		new HtmlButtonDemo();
 	}
 }

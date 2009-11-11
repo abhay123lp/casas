@@ -7,7 +7,7 @@ import java.net.URL;
 import javax.swing.JButton;
 import javax.swing.border.*;
 
-class NavigateButton extends JButton implements ActionListener {
+class TransparentButton extends JButton implements ActionListener {
 	
 	protected Border m_activeBorder;
 	protected Border m_inactiveBorder;
@@ -16,7 +16,7 @@ class NavigateButton extends JButton implements ActionListener {
 	protected String m_sUrl;
 	protected URL m_url;
 
-	public NavigateButton(Applet parent, String text, String sUrl) {
+	public TransparentButton(Applet parent, String text, String sUrl) {
 		m_parent = parent;
 		setText(text);
 		m_sUrl = sUrl;

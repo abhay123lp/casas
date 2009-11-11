@@ -1,7 +1,12 @@
 package demo.button;
 
 //see \Chapter5\4
-
+/**
+ * Example 5.4 in this section shows how to construct invisible buttons
+ * which only appear when the user moves the mouse cursor over them. 
+ * Specifically, a border will be painted, and tooltip text will be 
+ * activated in the default manner.
+ */
 import java.awt.Dimension;
 import java.net.*;
 import java.util.*;
@@ -46,7 +51,7 @@ public class ButtonApplet extends JApplet {
 			} catch (Exception ex) {
 				break;
 			}
-			NavigateButton btn = new NavigateButton(this, paramName, paramUrl);
+			TransparentButton btn = new TransparentButton(this, paramName, paramUrl);
 			bigLabel.add(btn);
 			btn.setBounds(q[0], q[1], q[2], q[3]);
 			index++;
