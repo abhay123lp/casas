@@ -21,8 +21,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.*;
-
-import demo.layout.CustomedLayout1;
+import demo.layout.*;
 
 public class TabDemo extends JFrame {
     public static final int LIST_TAB = 0;
