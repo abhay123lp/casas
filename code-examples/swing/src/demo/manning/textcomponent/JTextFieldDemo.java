@@ -5,8 +5,8 @@ package demo.manning.textcomponent;
 import javax.swing.*;
 import java.awt.*;
 
-public class JTextFieldTest extends JFrame {
-    public JTextFieldTest() {
+public class JTextFieldDemo extends JFrame {
+    public JTextFieldDemo() {
         super("JTextField Test");
         getContentPane().setLayout(new FlowLayout());
         int column = 2;
@@ -46,6 +46,6 @@ public class JTextFieldTest extends JFrame {
     }
 
     public static void main(String argv[]) {
-        new JTextFieldTest();
+        new JTextFieldDemo();
     }
 }
