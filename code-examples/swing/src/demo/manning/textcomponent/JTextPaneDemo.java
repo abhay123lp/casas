@@ -2,6 +2,9 @@ package demo.manning.textcomponent;
 
 // see \Chapter11\2
 
+/**
+ * Example 11.2 demonstrates embedded icons, components, and stylized text.
+ */
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -32,22 +35,25 @@ public class JTextPaneDemo extends JFrame {
         super("JTextPane Demo");
         JScrollPane scrollPane = new JScrollPane(m_editor);
         getContentPane().add(scrollPane, BorderLayout.CENTER);
+        
         setEndSelection();
         m_editor.insertIcon(new ImageIcon("manning.gif"));
         insertText("\nHistory: Distant\n\n", BOLD_BLACK);
+        
         setEndSelection();
         m_editor.insertIcon(new ImageIcon("Lee_fade.jpg"));
         insertText(" ", BLACK);
+        
         setEndSelection();
         m_editor.insertIcon(new ImageIcon("Bace_fade.jpg"));
         insertText("\n Lee Fitzpatrick " + " " + "Marjan Bace\n\n", ITALIC_GRAY);
-
         insertText("When we started doing business under "
                 + "the Manning name, about 10 years ago, we were a very "
                 + "different company. What we are now is the end result of "
                 + "an evolutionary process in which accidental "
                 + "events played as big a role, or bigger, as planning and "
                 + "foresight.\n", BLACK);
+        
         setEndSelection();
         JButton manningButton = new JButton("Visit Manning");
         manningButton.addActionListener(new ActionListener() {
@@ -61,6 +67,7 @@ public class JTextPaneDemo extends JFrame {
             }
         });
         m_editor.insertComponent(manningButton);
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 450);
         setVisible(true);
