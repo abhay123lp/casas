@@ -1,4 +1,4 @@
-package demo.border;
+package demo.manning.border;
 
 import java.awt.*;
 import javax.swing.*;
