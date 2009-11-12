@@ -1,4 +1,4 @@
-package demo.tabbedpane;
+package demo.manning.tabbedpane;
 
 class Person {
     public String m_firstName;

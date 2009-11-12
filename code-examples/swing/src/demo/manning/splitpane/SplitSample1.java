@@ -1,4 +1,4 @@
-package demo.splitpane;
+package demo.manning.splitpane;
 
 //see \Chapter8\1
 

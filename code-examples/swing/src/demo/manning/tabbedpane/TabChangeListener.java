@@ -1,4 +1,4 @@
-package demo.tabbedpane;
+package demo.manning.tabbedpane;
 
 import java.awt.*;
 import java.awt.event.*;

@@ -1,4 +1,4 @@
-package demo.combobox;
+package demo.manning.combobox;
 
 import javax.swing.Icon;
 

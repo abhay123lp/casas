@@ -1,4 +1,4 @@
-package demo.jlist;
+package demo.manning.jlist;
 
 import javax.swing.*;
 import java.awt.*;

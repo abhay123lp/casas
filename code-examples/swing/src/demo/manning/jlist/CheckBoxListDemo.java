@@ -1,4 +1,4 @@
-package demo.jlist;
+package demo.manning.jlist;
 
 //see \Chapter 10\4
 

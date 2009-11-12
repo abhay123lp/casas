@@ -1,4 +1,4 @@
-package demo.scrollpane;
+package demo.manning.scrollpane;
 
 //see \Chapter7\4
 import javax.swing.*;

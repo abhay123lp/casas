@@ -1,4 +1,4 @@
-package demo.combobox;
+package demo.manning.combobox;
 
 class Trim {
     protected Car m_parent;

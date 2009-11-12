@@ -1,4 +1,4 @@
-package demo.graphics;
+package demo.manning.graphics;
 
 import javax.swing.*;
 

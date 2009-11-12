@@ -1,4 +1,4 @@
-package demo.jlist;
+package demo.manning.jlist;
 
 class InstallData {
 	protected String m_name;

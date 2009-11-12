@@ -1,4 +1,4 @@
-package demo.jlist;
+package demo.manning.jlist;
 
 import java.awt.Component;
 

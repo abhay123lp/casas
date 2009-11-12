@@ -1,4 +1,4 @@
-package demo.debuggraphics;
+package demo.manning.debuggraphics;
 
 import javax.swing.JComponent;
 import javax.swing.plaf.ComponentUI;

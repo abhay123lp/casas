@@ -1,4 +1,4 @@
-package demo.jlist;
+package demo.manning.jlist;
 
 //see \Chapter10\2
 import java.awt.BorderLayout;

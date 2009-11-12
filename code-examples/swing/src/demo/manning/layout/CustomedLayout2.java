@@ -1,4 +1,4 @@
-package demo.layout;
+package demo.manning.layout;
 
 import java.awt.*;
 import java.util.*;

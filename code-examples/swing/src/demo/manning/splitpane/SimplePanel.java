@@ -1,4 +1,4 @@
-package demo.splitpane;
+package demo.manning.splitpane;
 
 import java.awt.Color;
 import java.awt.Dimension;

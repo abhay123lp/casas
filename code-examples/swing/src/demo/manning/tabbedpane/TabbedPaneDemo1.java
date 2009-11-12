@@ -1,4 +1,4 @@
-package demo.tabbedpane;
+package demo.manning.tabbedpane;
 
 //see \Chapter6\1
 

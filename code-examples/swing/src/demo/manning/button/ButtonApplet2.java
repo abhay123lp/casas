@@ -1,4 +1,4 @@
-package demo.button;
+package demo.manning.button;
 
 //see \Chapter5\5
 /**

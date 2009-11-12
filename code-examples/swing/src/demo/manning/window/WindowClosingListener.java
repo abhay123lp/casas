@@ -1,4 +1,4 @@
-package demo.window;
+package demo.manning.window;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

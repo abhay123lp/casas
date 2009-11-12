@@ -1,4 +1,4 @@
-package demo.debuggraphics;
+package demo.manning.debuggraphics;
 
 import java.awt.*;
 import javax.swing.*;

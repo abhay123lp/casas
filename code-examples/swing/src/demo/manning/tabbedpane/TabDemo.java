@@ -1,4 +1,4 @@
-package demo.tabbedpane;
+package demo.manning.tabbedpane;
 
 //see \Chapter6\2
 
@@ -21,7 +21,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.*;
-import demo.layout.*;
+import demo.manning.layout.*;
 
 public class TabDemo extends JFrame {
     public static final int LIST_TAB = 0;

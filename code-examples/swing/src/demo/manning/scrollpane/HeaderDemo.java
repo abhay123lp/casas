@@ -1,4 +1,4 @@
-package demo.scrollpane;
+package demo.manning.scrollpane;
 
 //see \Chapter7\2
 import java.awt.*;

@@ -1,4 +1,4 @@
-package demo.combobox;
+package demo.manning.combobox;
 
 //see \Chapter9\1
 

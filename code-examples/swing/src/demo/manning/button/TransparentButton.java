@@ -1,4 +1,4 @@
-package demo.button;
+package demo.manning.button;
 
 import java.applet.*;
 import java.awt.*;
