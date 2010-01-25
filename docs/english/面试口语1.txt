@@ -1,6 +1,6 @@
-=============================================================================
+================================================================
 1 开场白
-=============================================================================
+================================================================
 Dialogue 1
 A:  May I come in?
 I:  Yes, please.
@@ -30,26 +30,12 @@ A:  Not really, I am familiar with this area.
 I was referred to your company by Mr.White, your manager.
 
 
-=============================================================================
+================================================================
 2 个人信息
-=============================================================================
-Dialogue 1
-I:  What is your name, please?
-A:  My name is Sun lin.
-I:  How old are you?
-A:  I am twenty-five years old.
-I:  May I ask your birth date?
-A:  Yes, my birth date is September 22, 1977.
-I:  Where do you live now?
-A:  I live at 606 Zhongguancun Road, Apt 802,Beijing.
-I:  Then tell me your birthplace.
-A:  My birthplace is Nanjing.
-I:  Ok,I know you are not a resident of Beijing. Where is your domicile place then?
-A:  My domicile place is Nanjing,too.
-
+================================================================
 Dialogue 2
 I:  Mr.Sun,would you mind if I ask you some questions, which may sound impolite?
-A:  Ah,never mind, please.
+A:  Ah,never mind, fire away.
 I:  Can you tell me how old you are?
 A:  I am 25 years old.
 I:  Are you married?
@@ -63,9 +49,9 @@ A:  My name is Sunlin and I live in Beijing. I was born in 1980. I will graduate
 I:  Would you tell me something about your family?
 A:  There are three in my family, my parents and myself. My father is a teacher and my mother is a worker.
 
-=============================================================================
+================================================================
 3 性格和爱好
-=============================================================================
+================================================================
 Dialogue 1
 I:  What kind of character do you think you have?
 A:  Generally speaking，l am an open-minded person.
@@ -76,7 +62,7 @@ A:  They say Mr. Sun is a friendly, sensitive, caring and determined person.
 I:  What personality do you admire？
 A:  I admire a person who is honest, flexible and easy-going.
 I:  How do you get along with others?
-A: I get on well with others.
+A:  I get on well with others.
 
 Dialogue 2
 I:  What kind of person do you think you are?
@@ -87,15 +73,15 @@ I:  What qualities would you expect of persons working as a team?
 A:  To work in a team, in my opinion, two characteristics are necessary for a person. That is, the person must be cooperative and aggressive.
 I:  How do you spend your leisure time?
 A:  I like playing games and having sports. They are my favourite hobbies.
-I: So,what kind of sport do you like most?
+I:  So,what kind of sport do you like most?
 A:  Oh, it's hard to narrow it down to just one. I mean, I like all kinds of sports, basketball, swimming, bike riding and so on. Maybe it is just the reason why I am so energetic and vigorous.
 
 open-minded 开明的，开放的  easy-going  容易相处的
 personality  个性，人格  enthusiastic  充满热情的
 
-=============================================================================
+================================================================
 4 教育背景
-=============================================================================
+================================================================
 Dialogue 1
 I:  Which school are you attending?
 A:  I am attending Hebei University of Technology.
@@ -135,9 +121,9 @@ I:  Did you get any honors and awards at college?
 A:  Yes. I was awarded a scholarship from the university every year. In 1995 I participated in the National Contest of Maths Models and I won the prize
 
 
-=============================================================================
+================================================================
 5 个人技能
-=============================================================================
+================================================================
 Dialogue 1
 I:  Our advertisement says English competence is a key requirement of this position. Then how do you think of your proficiency in written and spoken English?
 A:  I have learned English for 10 years, and I have passed College English Test Band 4 and 6.My spoken English is fairly good enough to express myself fluently.
@@ -157,9 +143,9 @@ I:  Have you gotten any special training in programming?
 A:  No, but I have database programming experience and network knowledge.
 
 
-=============================================================================
+================================================================
 6 离职和工作原因
-=============================================================================
+================================================================
 Dialogue 1
 I: I know in your resume that you have worked in your present company for 3 years, can you tell me why you want to leave your present job and join us?
 A:  Because the job I am doing in my present company is of no challenge, but I like challenge.Your firm is a young organisation with many innovative ideas. It has been very successful in an expanding market since its establishment 10 years ago. Working for you would be exactly the sort of challenge I am looking for.
@@ -184,9 +170,9 @@ A:  My graduate school training combined with my experience as an intern should 
 I:  How do you know about this company?
 A:  Your company is very reputed in this city; I heard much praise to your company.
 
-=============================================================================
+================================================================
 7 工作经验
-=============================================================================
+================================================================
 Dialogue 1
 
 I:  Do you have any work experience in this field?
@@ -227,9 +213,9 @@ outstanding 突出的，显著的  introduce 引进，传入，介绍
 prize   奖励    evaluate 评价
 perfect  完美的   capable 能干的，有能力的
 
-=============================================================================
+================================================================
 8 工作目标
-=============================================================================
+================================================================
 Dialogue 1
 I:  Are you a goal-oriented person?
 A: Yes, I am. I always make a plan before I do anything.
@@ -269,9 +255,9 @@ I:  What then?
 A:  Then I start work on my list.
 
 
-=============================================================================
+================================================================
 9 薪水期望
-=============================================================================
+================================================================
 Dialogue 1
 I:  What is your salary at present?
 A:  My present pay is 100,000 Yuan per year.
@@ -298,9 +284,9 @@ I:  If you are hired, you are in charge of the design of toys that can meet the 
 A:  I know it is a crucial position, but I can do it well. So I'm asking for 200,000Yuan a year as a starting salary.
 
 
-=============================================================================
+================================================================
 10 面试结束
-=============================================================================
+================================================================
 Dialogue 1
 I:  Do you have any questions you want to ask?
 A:  Yes, I'd like to know if there would be any future opportunities for specific training.
@@ -330,9 +316,9 @@ I look forward to hearing from you.
 Thank you for your time.
 I hope to hear from you as soon as possible.
 
-=============================================================================
+================================================================
 11 表示谢意
-=============================================================================
+================================================================
 Dialogue 1
 I:  Hello, BCD Company, can I help you?
 A:  Hello, may I speak to Mrs Smith?
@@ -375,9 +361,9 @@ I:  Thank you for the calling. Bye-bye.
 thoughtful 考虑周到的，体贴人的
 
 
-=============================================================================
+================================================================
 12 询问结果
-=============================================================================
+================================================================
 Dialogue 1
 A:  Hi, may I speak to Mrs Smith, please?
 I:  This is Mrs Smith.
@@ -408,9 +394,9 @@ concerning 关于，有关
 I am just calling to follow up on the status of the position.
 I am just calling to see if you have made any decision concerning the position.
 
-=============================================================================
+================================================================
 13 谢绝职务
-=============================================================================
+================================================================
 Dialogue 1
 I:  Hello, is that Mr. Sun? This is Mrs Smith with ABC Corp.
 A:  Yes, this is Sunlin.
