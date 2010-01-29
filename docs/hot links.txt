@@ -42,3 +42,6 @@ http://v.ku6.com/playlist/index_2537857.html
 
 Java Pet Store Architectural Overview
 http://java.sun.com/blueprints/code/jps11/archoverview.html
+
+Documents of SUN
+http://docs.sun.com/
