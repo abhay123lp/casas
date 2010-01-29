@@ -45,3 +45,6 @@ http://java.sun.com/blueprints/code/jps11/archoverview.html
 
 Documents of SUN
 http://docs.sun.com/
+
+Java Web Start Document
+http://java.sun.com/javase/6/docs/technotes/guides/javaws/developersguide/contents.html
