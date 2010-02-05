@@ -48,3 +48,6 @@ http://docs.sun.com/
 
 Java Web Start Document
 http://java.sun.com/javase/6/docs/technotes/guides/javaws/developersguide/contents.html
+
+敏捷 RUP：来自实战中的经验
+http://www.ibm.com/developerworks/cn/rational/edge/08/feb08/lines_barnes_holmes_ambler/
