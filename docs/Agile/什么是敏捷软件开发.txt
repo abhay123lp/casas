@@ -1,0 +1,77 @@
+什么是敏捷软件开发？
+
+  敏捷软件开发是一个概念意义上的框架，用来取代软件工程项目的概念；它强调在项目的整个生命周期中，拥抱并促进由于软件进化式的发展所带来的变化。
+Agile software development is a conceptual framework for undertaking software engineering projects that embraces and promotes
+evolutionary change throughout the entire life-cycle of the project.
+  这段定义来自wikipedia，我认为是我接触ASD以来，对ASD最精辟的论述。
+  请注意其中的三个关键词：
+  在项目的整个生命周期中：这就涉及到了【敏捷项目管理】、【敏捷需求获取】、狭义的【敏捷软件开发】三个主要的领域和过程。要注意的是，上述三个过程并不是互相分开的，而是你中有我，我中有你。
+  拥抱并促进变化：世界上唯一不变的是变化。不论在任何领域，漠视、甚至否认、抗拒变化，都不是一个理性，严肃的人所应有的态度。学会如何识别变化的大势，并在可能的时候，促使变化向好的方向发展。这才是面对变化的正确应对之法。
+  软件进化式的发展：虽然上面提到促进变化的发展，但是软件的演化过程，我相信是有其自身内在逻辑的，存在一些根本规律和指导方针；并不是完全以人的主观意识为主导。
+  老子讲“顺势而为，无为无不为”，我认为是对上述后两点的精确概括与指导。
+
+  了解了这三个方面，下面就要引入大名鼎鼎、如雷贯耳、耳朵都要磨出糨子来的敏捷宣言（Manifesto for Agile Software Development）了，让我们看看2001年提出的第一版的敏捷软件开发宣言怎么说：
+We are uncovering better ways of developing software by doing it and helping others do it.
+Through this work we have come to value:
+☆ Individuals and interactions over processes and tools
+☆ Working software over comprehensive documentation
+☆ Customer collaboration over contract negotiation
+☆ Responding to change over following a plan
+That is, while there is value in the items on the right, we value the items on the left more.
+
+我们正在通过实践和帮助其他人实践，揭示更好的开发软件的方法。我们从实践中得出的价值观是：
+
+☆ 人和交互重于过程和工具。
+☆ 可以工作的软件重于求全责备的文档。
+☆ 客户合作重于合同谈判。
+☆ 随时应对变化重于循规蹈矩。
+
+虽然右项也具有价值，但我们认为左项具有更大的价值。
+
+经过六年的演变，敏捷大师们又提出了敏捷宣言的重构版本，由于尚未形成共识，暂不在此提出。
+
+在敏捷宣言的背后，有其遵循的12条原则：
+Principles behind the Agile Manifesto
+
+We follow these principles:
+☆ Our highest priority is to satisfy the customer through early and continuous delivery of vaphp?name=lua" onclick="tagshow(event)" class="t_tag">luable software.
+
+☆ Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
+
+☆ Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+
+☆ Business people and developers must work together daily throughout the project.
+
+☆ Build projects around motivated individuals. Give them the environment and support they need,
+and trust them to get the job done.
+
+☆ The most efficient and effective method of conveying information to and within a development
+team is face-to-face conversation.
+
+☆ Working software is the primary measure of progress.
+
+☆ Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+
+☆ Continuous attention to technical excellence and good design enhances agility.
+
+☆ Simplicity--the art of maximizing the amount of work not done--is essential.
+
+☆ The best architectures, requirements, and designs emerge from self-organizing teams.
+
+☆ At regular intervals, the team reflects on how to become more effective, then tunes and adjusts
+its behavior accordingly.
+
+
+★ 我们最优先要做的是通过尽早的、持续的交付有价值的软件来使客户满意。
+★ 即使到了开发的后期，也欢迎改变需求，敏捷过程利用变化来为客户创造竞争优势。
+★ 经常性地交付可以工作的软件，交付的间隔可以从几个星期到几个月，交付的时间间隔越短越好。
+★ 在整个项目开发期间，业务人员和开发人员必须天天都在一起工作。
+★ 围绕被激励起来的个体来构建项目。给他们提供所需的环境和支持，并且信任他们能够完成工作。
+★ 在团队内部，最具有效果并且富有效率的传递信息的方法，就是面对面的交流。
+★ 工作的软件是首要的进度度量标准。
+★ 敏捷过程提倡可持续的开发速度。责任人、开发者和用户应该能够保持一个长期的、恒定的开发速度。
+★ 不断地关注优秀的技能和好的设计会增强敏捷能力。
+★ 简单--使未完成的工作最大化的艺术---是根本的。
+★ 最好的构架、需求和设计出自于自组织的团队。
+★ 每隔一定时间，团队会在如何才能更有效地工作方面进行反省，然后相应地对自己的行为进行调整。 
+

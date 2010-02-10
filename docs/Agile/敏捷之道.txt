@@ -1,0 +1,89 @@
+敏捷的路上
+
+敏捷最近几年风生水起，大行其道，愈演愈烈，越来越多的公司加入敏捷的队列。到底敏捷怎么样呢？我想实践是学习一样东西最好的方式。
+
+我从最初的ERP瀑布式开发，到后来使用一些过程，大部分都是半途而废，，如CMMI, RUP等，每一种都是很好的过程，但原来我并不这么认为，我认为这些不适合项目，尤其是小型项目，但当我刚刚开始看敏捷的时候（也就是现在），我才发现我对CMMI, RUP有错误的理解，尤其是RUP有错误的理解，因为我刚刚使用了RUP方式开发一个项目，我现在才明白，RUP也可以是敏捷的，请看IBM的这篇文章 敏捷 RUP：来自实战中的经验.
+
+是的，一切过程都可以是敏捷的。
+
+我想有些人可能对敏捷有错误的理解
+
+    * 比如非要使用一些敏捷的工具
+      实际上敏捷宣言的第一条“个体和交互胜过过程和工具”，我想也并不是说不使用工具，而是工具是为软件服务的，而不是为了敏捷过程而使用工具。
+    * 完全抛弃过去的方法
+      比如很多项目没有文档，需求无法查，代码也没有注释，“可用的软件胜于详尽的文档”并不是说不要文档。实际上我们在过去的方法上也积累了很多有用的知识，比如计划，文档，风险分析，只不过我们现在减少，优化过去的过程，而不是完全抛弃，如果这样也是舍本逐末。
+    * 为了敏捷而敏捷
+      有的人为了敏捷而敏捷，敏捷不是说拿来就可以用的，而是需要不断实践，不断学习，用不好可能会成“无政府也无自组织”状态，最终一片散沙。
+
+下面是就目前我的知识对敏捷理解：
+
+    * 敏捷是一种思想，是一种境界，他特别像李小龙的“截拳道”，只有神而没有形，一切好的东西都可以来用，不管是南拳还是北腿，也不管是少林还是武当，同样，软件难道不是一样的吗？我们的目标很简单“交付给客户满意的软件”。
+    * 敏捷像精益生产，目标是减少浪费，过去我们做了很多多余的东西，比如，我们在设计时过多的考虑了扩展，但是这些设计永远也用不上，而且还需要维护，增加的后期开发的复杂度，所以我们应该只做目前需要的东西，适当的架构。
+    * 敏捷强调创新，所以百花齐放，百家争鸣。我们可以用TDD增加程序的健壮性，我们可以用结对来提高效率，我们可以在代码里加上适当的注释来替代文档，让代码自解释，我们也可以用UML，用白板来沟通，我们可以用自动集成来发布，尽早发现作bug，也就是我们可以使用一切手段来减少重复的，不必要的工作，Don't repeat yourself. 我想敏捷的方式下，会有更好的东西出来，这肯定又是一个人才辈出的时代，我相信这些新的东西，好的东西，都只是一时的，后面还有更好的，每一种也不是最好的，等待你去更新，作为一个程序员，我希望最好的工具永远也不要到来。
+    * 敏捷也是回归人性，软件是创造性的，人是不能放在机床上的，把人放在机床上，流出来是血。
+
+附：
+敏捷的诞生
+在2001年召开的研讨软件过程未来发展趋势的一次会议上，17位业界专家就什么是“敏捷”达成一致意见。这次会议的一个成果是成立了“敏捷联盟”并发布了联盟敏捷宣言(参考http://www.agilealliance.org/principles.html)。这份联盟敏捷宣言是“敏捷软件开发”价值和目标的浓缩定义，并通过许多共同的原则进行了细化。
+敏捷宣言(Manifesto for Agile Software Development)
+
+Individuals and interactions over processes and tools    个体和交互胜过过程和工具
+
+Working software over comprehensive documentation   可用的软件胜于详尽的文档
+
+Customer collaboration over contract negotiation           客户协作胜于合同谈判
+
+Responding to change over following a plan                   响应变化胜于恪守计划
+
+----- Kent Beck,Mike Beedle,Arie van Bennekum, Alistair Cockburn, Ward Cunningham, Martin Fowler, James Grenning, Jim Highsmith, Andrew Hunt, Ron Jeffries, on Kern, Brian Marick, Robert C. Martin, Steve Mellor, Ken Schwaber, Jeff Sutherland, Dave Thomas
+
+把宣言人的名字列在这里，可以给大家买书做个参考，比如Dave Thomas 写的Agile web development  with Ruby on Rails.
+敏捷宣言12条原则
+
+1. Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+
+    最优先的目标是通过尽早地、持续地交付有价值的软件来满足客户
+
+2. Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
+
+    欢迎需求变化，甚至在开发后期。敏捷过程控制、利用变化帮助客户取得竞争优势
+
+3. Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+
+    频繁交付可用的软件，间隔从两周到两个月，偏爱更短的时间尺度
+
+4. Business people and developers must work together daily throughout the project.
+
+   在整个项目中业务人员和开发人员必须每天在一起工作
+
+5. Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
+
+   以积极主动的员工为核心建立项目，给予他们所需的环境和支持，信任他们能够完成工作
+
+6. The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
+
+   在开发团队内外传递信息最有效率和效果的方法是面对面的交流
+
+7. Working software is the primary measure of progress.
+
+   可用的软件是进展的主要度量指标
+
+8. Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+
+    敏捷过程提倡可持续发展。发起人、开发者和用户应始终保持稳定的步调
+
+9. Continuous attention to technical excellence and good design enhances agility.
+
+    持续关注技术上的精益求精和良好的设计以增强敏捷性
+
+10. Simplicity--the art of maximizing the amount of work not done--is essential.
+
+   简化——使必要的工作最小化的艺术——是关键
+
+11. The best architectures, requirements, and designs emerge from self-organizing teams.
+
+   最好的架构、需求和设计产生于自我组织的团队
+
+12. At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
+
+   团队定期地对运作如何更加有效进行反思，并相应地调整、校正自己的行为 
