@@ -51,3 +51,16 @@ http://java.sun.com/javase/6/docs/technotes/guides/javaws/developersguide/conten
 
 敏捷 RUP：来自实战中的经验
 http://www.ibm.com/developerworks/cn/rational/edge/08/feb08/lines_barnes_holmes_ambler/
+
+
+online computer books
+http://www.onlinecomputerbooks.com/
+
+Designing Interfaces: Patterns for Effective Interaction Design
+http://designinginterfaces.com/Introduction
+
+Free IT Books, Study Guides, Practice Exams, Tutorials and Software
+// Stuff about SCEA
+http://www.gayanb.com/
+
+
