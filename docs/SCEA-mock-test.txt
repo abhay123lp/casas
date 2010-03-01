@@ -1,0 +1,402 @@
+Question 1
+
+    Happy Joe Banking Corporation is building a Banking application to provide online access to their account holders. They have chosen 2 SUN 450s for their web server cluster and 1 SUN E10000 for their application server. The business requirements indicate that to become a customer, a person must have at least a primary checking account with the bank. Further since the customer will be using the Internet to view confidential information, security is considered paramount. What do you understand about the requirements of the system?
+    
+    a) The need for Security is a classic example of a functional service level requirement and the checking account rule, an example of non-functional QoS requirement. 	
+    b) The discussion about Security and the mandatory checking account both illustrate functional service level requirements.
+    c) Neither Security nor the mandatory Checking Account is examples of any kind of requirements, theoretically speaking. 	
+    d) Security is an Architectural non-functional requirement and the Mandatory Checking Account a functional design requirement.
+    e) They are both examples of Business Use Cases. 	 
+
+Question 2
+
+Which of the following are not true about N-Tier Systems?
+
+   1. N-Tier systems are distributed over many systems and hence always present a maintenance problem.
+   2. N-Tier systems are generally component based and are therefore quite easy to maintain.
+   3. Since N-Tier systems do not use database stored procedures or triggers for business logic processing, they are generally very slow.
+   4. Since N-Tier systems are container based, many N-Tier systems can be easily scaled (both vertically and horizontally).
+   5. N-Tier systems suffer only from one drawback over client/server systems - N-Tier systems do not take advantage of resource sharing techniques like connection pooling.
+   6. N-Tier systems can use various techniques for Identification, Authentication and Authorization and are therefore considered quite secure.
+
+a) 1 & 2 	b) 2,5, & 6
+c) 1, 2, & 5 	d) 3 & 6
+e) 1, 3, & 5 	f) 1 & 5
+
+
+Question 3
+
+    Nopester Inc., a CD manufacturer uses Metallic Corporation for making jewel cases. When the inventory of jewel cases falls under the reorder level, Nopester communicates with Metallic via faxes. Nopester now wants to build a solution for its supply chain management. Metallic uses a legacy system that supports CORBA interfaces for other companies to interface to them with. Metallic's servers are protected by firewalls and will only let HTTP or HTTPS requests through. What is Nopester's best option here?
+    a) Since Metallic will not let CORBA requests through, Nopester should continue sending faxes. 	
+    b) Nopester should take its business away to Metallic's competitors.
+    c) Nopester should use the popular SOAP protocol since SOAP requests communicate over HTTP. 	
+    d) Nopester should use a concept called HTTP tunneling to communicate with Metallic.
+
+
+
+Qestion 4:
+    When remote calls are made on the container provided implementations of the EJBHome and EJBObject, various transactional and security checks are applied before the call is actually passed on to the bean instance. The Container provided implementations of EJBHome and EJBObject are performing what Design Pattern's task?
+    a) Command 	b) Adapter
+    c) Bridge 	d) Decorator
+    e) Facade 	 
+    A:  b(Adapter)
+
+Question 5
+
+    Compact Computers is a small computer assembly company. Their online application allows customers to pick and choose accessories to build their own PCs.
+    
+    The accessories are:
+    i.Processor -800Mhz, 1Ghz, 1.2Ghz
+    ii. HDD - 40 GB, 60 GB, 80 GB
+    iii. Memory -128 MB, 256 MB, 512 MB
+    
+    If a computer can have exactly 1 processor, 1 HDD and 1 memory stick, what pattern would be best used here?
+    a) Factory Method 	b) Builder
+    c) Prototype 	d) Abstract Factory
+    e) Singleton 	 
+    A: b
+    
+
+Question 6
+
+    Ibid is an e-auction house that auctions refurbished products. Each product has a 
+    minimum bid price. Buyers can query the system for a list of products and then select 
+    a product to bid on. They can then place a higher bid on the selected product. 
+    Transactional Integrity is very important as dirty reads, non-repeatable reads and 
+    phantom reads can lead to data inconsistency. What technology combination might be 
+    most suitable for addressing Ibid's needs?
+    
+    a) Applets for presentation and JTA/JTS for transactional integrity. 	
+    b) HTML and JSP for presentation, and Servlets for data retrieval and transaction 
+       management.
+    c) Servlets and JSP for presentation, a stateful session bean with DAO for list 
+       retrieval and a stateless session bean for transaction management. 	
+    d) Servlets and JSP for presentation, a stateless session bean with DAO for list 
+       retrieval and CMT Entity bean for Transaction management.
+    e) Servlets and JSP for presentation, and a Java class to encapsulate database access 
+       and transaction management. 	
+    
+    A:c
+
+
+Question 7
+
+    Toysrfuss, a national toy store is creating a new e-front for Order processing. 
+    Customers have to create an account to transact with them, although an account is 
+    not required for browsing the catalog. Customers can browse items and add them to 
+    a shopping cart. They can then proceed to checkout. At this time, they can update 
+    quantities and submit the order. What technologies may be best suited for this 
+    application?
+    
+    a. JSP for presentation and Servlets as controllers.
+    b. Servlets for presentation and JSP as controller.
+    c. Stateless Session Bean for Shopping cart.
+    d. Stateless session bean for catalog retrieval.
+    e. Stateful Session bean for shopping cart.
+    f. Stateful session bean for Order update.
+    g. Entity bean for Catalog retrieval.
+    h. Entity bean for Order update. 
+    A: a,e,f,h
+
+
+Question 8
+
+    Which of the following statements about 'Not Supported' and 'Never' transactional 
+    attributes are true?
+    
+    a. 'Not Supported' suspends any transaction until the method is completed whereas 
+       'Never' throws a RemoteException when called with a transaction.
+    b. 'Never' suspends any transaction until the method is completed whereas 'Not Supported' 
+       throws a RemoteException.
+    c. If the method is called without any transactional scope, both attributes will work identically.
+    d. If the method is called with a transactional scope, both attributes will work identically.
+
+    a) A Only 	b) A & C
+    c) C Only 	d) None of the Above
+    
+    Answer: b
+
+Question 9
+
+    The findByXXX() method in the Home Interface of an entity bean returns ____.
+    
+    a. An Instance of java.lang.Object
+    b. An instance of the Remote Reference to the bean
+    c. An instance of java.util.Enumeration
+    d. An instance of the Bean class
+    
+    a) A 	b) B & C
+    c) B 	d) C & D    
+
+    Answer: c
+
+Question 10
+
+    EJB1.1 has support for undefined Primary Keys. This means that the Primary Key can 
+    be undefined until deployment time. When we use defined Primary Keys, the Bean class 
+    and the Interfaces use the BeanPK type to identify the key. What do the Bean class 
+    and the Interfaces refer to in the case of undefined Primary Keys?
+    
+    a) Though the Primary Key itself can be undefined, its name must be predetermined. 
+       The Bean class and the Interfaces use this name. 	
+    b) An instance of java.util.Enumeration.
+    c) An instance of java.lang.Class. 	
+    d) An instance of java.lang.Object. 
+
+    Answer: a
+
+Question 11
+
+    What are the benefits of Bean pooling?
+    
+    a. Bean instances are created during startup, thus avoiding the expense of 
+       creation, each time a client requests it.
+    b. Bean pooling allows load distribution over several machines.
+    c. Bean pooling is the container's way of balancing load - moving future requests 
+       from client to a different machine, if load increases are encountered.
+    d. Allows a container to use beans as flyweights.
+    
+    a) A & D 	b) A & B
+    c) C & D 	d) B & D 
+
+    Answer: a
+
+Question 12
+
+    Status Quo is an emerging B2C company that has a portal through which customers 
+    can purchase clay jewelry. Since the order process involves a shopping cart, 
+    session management and secure access are required. How would you manage this?
+    
+    a. Use HTTP since it is a stateful protocol.
+    b. Use HTTPS since it is a stateful protocol.
+    c. Use SOAP for state and security management.
+    d. Use CGI with cookies for state management.
+    
+    a) A & D 	b) B & C
+    c) D 	    d) B
+
+    Answer: d
+
+Question 13
+
+    Chocolat, an exotic chocolate maker in France is planning to provide an e-front 
+    for chocolate sales. FedEx would ship the packages to various national and 
+    international locations. In order to customize the customer's interaction with 
+    the system and to make his / her overall shopping experience more pleasant, 
+    Chocolat has decided to support Internationalization. What are some of the common 
+    things they would need to consider?
+    
+    a. Language for messages
+    b. Formats (numeric, date and so on)
+    c. DMZ requirements
+    d. Taxes and legal rules
+    e. RSA f. MD5
+
+    a) A, B & D 	b) B & C
+    c) A, B & E 	d) B, D & E
+
+    Answer: c
+
+Question 14
+
+    Fire Hall is building a corporate Intranet and wants its employees to access 
+    payroll information via the Internet. They are implementing the solution via 
+    applets for richer GUI capabilities. The view 401K applet requires a Java 1.4 
+    Plug in as well as read permission to read cached data from a temporary directory 
+    on the host where it's being executed. Is the applet technology viable for this 
+    application?
+    
+    a) The applet technology is not viable because the sandbox model prevents them 
+       from reading or writing to the host where they are executed. 
+    b) The applet technology is a viable solution because the security policy of 
+       the Java 2 Platform is totally flexible.
+
+    Answer: b
+
+
+Question 15
+
+    In the Publish subscribe messaging architecture, publishers send messages to:
+    
+    a) A specified node, which is then re-distributed to all subscribers. 	
+    b) Directly to all subscribers in the Topic subscription list.
+    c) A designated queue. 	
+    d) A component transaction monitor such as an EJB Server for further processing by a message driven bean.
+
+    Answer: a
+
+Question 16
+
+    You have just started a new job working for a top finance company and you have 
+    been asked to provide a user-friendly interface to an existing mainframe application. 
+    You don't have any access to the mainframes source code. What is the best technique 
+    for this?
+    
+    a) It can't be done. 	
+    b) Use a screen scraper.
+    c) Re-write the main frame using Java and high-end Unix servers. Although it may 
+       takesome time to do this in the long run this will benefit the company. 	
+    d) Write a Java front end then use CORBA to communicate with the mainframe.
+    e) Use the Java Native Interface (JNI) to communicate with the mainframe. 	
+    f) Use object mapping.
+    g) Use JMS.    
+
+Question 17
+
+    Your 3-tier application has been running smoothly in a production environment for over 3 months. Due to a recent television campaign, you have started to experience three times the volume of normal traffic. Your architect has suggested that a round robin load distribution mechanism be employed to cope with the issue. How is DNS round robin going to be helpful in this situation?
+    a) Splitting requests evenly amongst all back end servers. 	
+    b) The proxy sits behind the backend servers monitoring the performance of each one. When it notices one is being used too much it will automatically forward requests to a different server.
+    c) Time each server has available. 	
+    d) A technique used to target certain requests to certain backend servers, e.g. All Servlet requests from one server and all static HTML from another.
+
+Question 18
+
+    A Fortune 500 company wishes to add new functionality to their existing sales system and has contracted you as the lead architect for the project. The legacy system has been written in C++. They wish to keep this system running and may switch over to a full Java solution later, depending on the performance of the new functionality. So how will connect to this legacy system?
+    a) Wrap the application using JNI and make it accessible using RMI. 	
+    b) Rewrite the C++ code in Java. This shouldn't be too hard because it's converting from one object-orientated language to another.
+    c) Use a screen scraper. 	
+    d) Use CORBA to talk to the C program then get the CORBA to talk to the RMI server.
+
+
+Question 19
+
+    You are working for a company with a worldwide presence; its offices are spread across many countries and over many computer networks. The company has set up Virtual private networks to increase security. What are Virtual Private Networks (VPNs) and where are they created?
+    a) A network created between two other networks (these are not located in the same place, geographically). Encryption and Authentication are used in the VPN. Normally the VPN is a network on top of an untrusted network (like the Internet). 	
+    b) The area between two firewalls. You let traffic from the Internet into this area (through the first firewall) but not through the second firewall (to your secure network).
+    c) The secure (inner) network as described in choice B. 	
+    d) A network created between two other networks (these are not located in the same place, geographically.) Encryption and Authentication are NOT used in the VPN. Normally the VPN is a network on top of a trusted network (like the Internet).
+
+
+Question 20
+
+    You are the lead architect for a project that requires interfacing with existing CORBA systems. You are planning to use Java IDL to integrate with these other systems. Which of the following statements about Java IDL are true?
+    
+    a. Allows Java to use CORBA.
+    b. Should be used when most of your new Java applications will be entirely Java based.
+    c. Should be used if you have already been using CORBA for a while and wish to carry on with some CORBA systems.
+    d. Java IDL has nothing to do with CORBA. To communicate with CORBA you will need to use JNI (Java native interface) and J2C (Java 2 CORBA).
+    e. Same as D except you won't need to use JNI.
+    f. Should be used when servicing messaging requests from CORBA clients.
+    
+    a) A & E 	b) B, C, & E
+    c) A, E & F 	d) A & C
+
+
+Question 21
+
+    In a Catalog Enterprise Bean, used in an online sports shopping site, you have code that will be executed when ejbPassivate() and ejbActivate() methods are called. Since the code performs basic house keeping tasks, you need to know when these methods would get executed. Which of the following statements are therefore true?
+    
+    a. ejbPassivate() is called prior to passivation.
+    b. ejbPassivate() is called immediately after passivation.
+    c. ejbActivate() is called prior to activation.
+    d. ejbActivate() is called immediately after activation.
+    
+    a) A & B 	b) B & C
+    c) A & D 	d) C & D
+
+
+Question 22
+
+    You are creating a web application for an online product ordering system. You have decided to use connection pooling to reduce load on the databases. Since you have many databases, you want to create one pool instance of the ConnectionPool class for each database. Depending on what is requested, you may have to connect to a variable number of databases. What pattern should you use?
+    
+    a) Abstract factory 	
+    b) Factory Method
+    c) Builder 	
+    d) Prototype
+    e) Singleton 	 
+
+Question 23
+
+    When should you use Java IDL and when should you use RMI-IIOP?
+    
+    a. You should use Java IDL when using Enterprise Java Beans.
+    b. You should use RMI-IIOP when using Enterprise Java Beans.
+    c. You HAVE to use RMI-IIOP when using Enterprise Java Beans.
+    d. Java IDL can be used even if the remote interfaces were originally defined as RMI interfaces.
+    e. RMI-IIOP can be used with CORBA only if the remote interfaces were originally defined as RMI interfaces.
+    f. RMI-IIOP can be used with CORBA even if not all of the remote interfaces were originally defined as RMI interfaces.
+    g. It comes down to programmer preference as both can be used in all situations.
+    
+    a) B, E & G 	b) A, F & G
+    c) B & F 	d) B & E
+    e) D, E & F 	 
+
+
+Question 24
+
+    You've designed an application that allows customers to buy chapters of e-books. Due to the enormous success of the project, there are plans to launch this application worldwide. In the process of converting the application to be suitable for worldwide use which of the following would you find yourself using frequently?
+
+    a. Defines create (), find (), remove (Object) methods.
+    b. Defines signatures of EJB's business methods.
+    c. Defines the persistence of the bean, e.g. how to persist etc.
+    d. Defines all methods that the client can call on the EJB.
+    e. You don't need a Remote interface for an EJB. An EJB consists of a Home interface and an EJBObject interface.
+    
+    a) B, D 	b) A & C
+    c) B & E 	d) B & D
+    e) A, C & E
+
+
+Question 25
+
+    You've designed an application that allows customers to buy chapters of e-books. Due to the success of the project this will be launched as a worldwide application. In the process of converting this application to be suitable for worldwide use which of the following will you use?
+    
+    a) Java already runs with 16 bit characters as standard. So you don't need to use any particular classes to change text. All primitives can be used. 	
+    b) java.text package
+    c) java.lang.Integer Class 	
+    d) java.lang.Number Class
+    e) java.international package 	
+    f) java.Unicode package
+
+
+Question 26
+
+    You have a distributed system that is not made up entirely of Java objects (some of them are CORBA.) What J2EE technology should you use in this situation?
+    
+    a) RMI-JRMP 	
+    b) CORBA
+    c) Rewrite the objects so the system in entirely Java based 	
+    d) RMI-IIOP
+
+
+Question 27
+
+    As part of a new application you are building, you need to connect to a database. Note that this database is used to store third party product details and it does not belong to your company. You do not have any access to the server where the database is installed and only have read permissions for the database. Further, you cannot change the ODBC driver that is currently installed. How do you connect to this database?
+    
+    a) CORBA 	
+    b) JMS-JNI
+    c) JDBC-ODBC 	
+    d) Bridge
+    e) JDBC 	 
+
+
+Question 28
+
+    You have had enough of all the UML tools in the market, as they are all very cumbersome to use. Hence you have decided to design your own UML tool. However, during design, you realize that certain parts will be really complicated. For example, you have a Diagram object that is made up of lots of other objects. This diagram object can be used for creating a variety of other diagrams including class and sequence diagrams. When you create it you only want to specify its type and content. What design pattern should you use here?
+    
+    In the Tips section, the tiers under N-Tier architecture need to be indented. Currently they are at the same indentation as the parent.
+    
+    a) Publish/Subscribe 	
+    b) Point-to-Point
+    c) Topic Messaging 	
+    d) Instant Messaging
+    e) You wouldn't use messaging 	 
+
+
+Question 29
+
+    You have had enough with all the UML tools on the market as none do exactly what you want them to. So you've decided to design your own. However when designing it you realize that certain parts will be really complicated for example you have a Diagram object that is made up of lots of other objects. This diagram object can be used for a variety of different diagrams including class and sequence diagrams. When you create it you only want to specify its type and content. What pattern should you use?
+    
+    a) Abstract Factory 	
+    b) Factory Method
+    c) Builder 	
+    d) Decorator
+
+
+
+
+
+
+
+
+
