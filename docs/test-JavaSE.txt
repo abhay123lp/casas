@@ -1,0 +1,899 @@
+1. Given the two source files:
+
+    1.  package com.sun;
+    2.  public class PkgAccess {
+    3.    public static int tiger = 1414;
+    4.  }
+    
+    And:
+    1.  import static com.sun.PkgAccess.*;
+    2.
+    3.  public class PkgAccess2 {
+    4.
+    5.    int x1 = PkgAccess.tiger;
+    6.    int x2 = tiger;
+    7.    int x3 = com.sun.PkgAccess.tiger;
+    8.    int x4 = sun.PkgAccess.tiger;
+    9.  }
+    
+    Which two are true? (Choose two.)
+    
+    The PkgAccess2 class compiles.
+    Compilation fails due to an error on line 5.
+    Compilation fails due to an error on line 6.
+    Compilation fails due to an error on line 7.
+    Compilation fails due to an error on line 8.
+    The PkgAccess and PkgAccess2 classes both compile.
+
+2. Given:
+
+    1. interface Animal {
+    2.   void eat();
+    3. }
+    4.
+    5. // insert code here
+    6.
+    7. public class HouseCat implements Feline {
+    8.   public void eat() { }
+    9. }
+    
+    And the following three interface declarations:
+    
+    interface Feline extends Animal { }
+    interface Feline extends Animal { void eat(); }
+    interface Feline extends Animal { void eat() { } }
+    
+    How many, inserted independently at line 5, will compile?
+    
+    0
+    1
+    2
+    3
+
+3. Given:
+
+    12. class UseEnums2{
+    13.   enum Colors{RED, GREEN, BLUE, YELLOW};
+    14.   public static void main(String [] args) {
+    15.     for( Colors c : Colors.values()) {
+    16.       if (c == Colors.GREEN)
+    17.         System.out.print("green ");
+    18.       if (Colors.RED.equals(c))
+    19.         System.out.print("red ");
+    20.       if (c == "YELLOW")
+    21.         System.out.print("yellow ");
+    22.       if (c.equals("BLUE"))
+    23.         System.out.print("blue ");
+    24. } } }
+    
+    What is the result?
+    
+    red green
+    red green blue
+    red green yellow
+    Compilation fails.
+    red green blue yellow
+    An exception is thrown at runtime.
+
+4. Which two are standard prefixes for method names when using the JavaBeans naming standards? (Choose two.)
+
+    is
+    not
+    put
+    set
+    delete
+    destroy
+
+5. Given:
+
+    1. class Synapse {
+    2.   protected int gap() { return 7; }
+    3. }
+    4.
+    5. class Creb extends Synapse {
+    6.   // insert code here
+    7. }
+    
+    Which three, inserted independently at line 6, will compile? (Choose three.)
+    
+    int gap() { return 7; }
+    public int gap() { return 7; }
+    private int gap(int x) { return 7; }
+    protected Creb gap() { return this; }
+    public int gap() { return Integer.getInteger("42"); }
+
+6. Given:
+
+    1. class HorseRadish {
+    2.   // insert code here
+    3.   protected HorseRadish(int x) {
+    4.     System.out.println("bok choy");
+    5.   }
+    6. }
+    7. class Wasabi extends HorseRadish {
+    8.   public static void main(String [] args) {
+    9.     Wasabi w = new Wasabi();
+    10.   }
+    11. }
+    
+    Which two, inserted independently at line 2, will allow the code to compile and produce the output "bok choy"? (Choose two.)
+    
+    // just a comment
+    protected HorseRadish() { }
+    protected HorseRadish() { this(42);}
+    protected HorseRadish() { new HorseRadish(42);}
+
+7. Given:                                                    
+                                                              
+    1.  class Test3 {                                             
+    2.    public static void main(String [] args) {               
+    3.      boolean x = true;                                     
+    4.      boolean y = false;                                    
+    5.      short z = 42;                                         
+    6.                                                            
+    7.      if((x = false) || (y = true))  z++;                   
+    8.      if((z++ == 44) || (++z == 45)) z++;                   
+    9.                                                            
+    10.      System.out.println("z = " + z);                      
+    11.    }                                                      
+    12.  }                                                        
+                                                                  
+    What is the result?                                           
+                                                                  
+    z = 43                                                        
+    z = 44                                                        
+    z = 45                                                        
+    z = 46                                                        
+    Compilation fails.                                            
+    An exception is thrown at runtime.                            
+
+8. Given:                                                     
+
+    1. import java.util.*;                                        
+    2. class ForInTest {                                          
+    3.   static List list = new ArrayList();                      
+    4.                                                            
+    5.   static List getList() { return list; }                   
+    6.                                                            
+    7.   public static void main(String [] args) {                
+    8.     list.add("a"); list.add("b"); list.add("c");           
+    9.     // insert code here                                    
+    10.       System.out.print(o);                                
+    11.   }                                                       
+    12. }                                                         
+                                                                  
+    Which, inserted at line 9, will cause the output abc?         
+                                                                  
+    for(char o : list)                                            
+    for(Object o : getList())                                     
+    for(Object o : getList();)                                    
+    for(Object o : o.getList())                                   
+    for(Object o : o.getList();)                                  
+
+9. Which two are valid command line invocations? (Choose two.)
+                                                              
+    java -ea Test                                                 
+    java -assert Test                                             
+    java -assertionsOn Test                                       
+    java -disableassertions Test                                  
+
+10. Given:                                                    
+                                                              
+    3. class Parser extends Utils {                               
+    4.   public static void main(String [] args) {                
+    5.     System.out.print(new Parser().getInt("42"));           
+    6.   }                                                        
+    7.   int getInt(String arg) {                                 
+    8.     return Integer.parseInt(arg);                          
+    9.   }                                                        
+    10. }                                                         
+    11. class Utils {                                             
+    12.   int getInt(String arg) throws Exception { return 42; }  
+    13. }                                                         
+                                                                  
+    What is the result?                                           
+                                                                  
+    42                                                            
+    Compilation fails.                                            
+    No output is produced.                                        
+    An exception is thrown at runtime.                            
+                                                              
+11. Given:                                                    
+                                                              
+    1. class StringTest {                                         
+    2.   public static void main(String [] args) {                
+    3.     String s = null;                                       
+    4.     try {                                                  
+    5.       s.trim();                                            
+    6.     } catch (Exception e) {                                
+    7.       System.out.println("exc");                           
+    8.     }                                                      
+    9.     s.trim();                                              
+    10.   }                                                       
+    11. }                                                         
+                                                                  
+    What is the result?                                           
+                                                                  
+    Compilation fails.                                            
+    An exception is thrown.                                       
+    The code runs with no output.                                 
+    exc then an exception is thrown.                              
+    exc then the code completes without exception.                
+                                                              
+12. Given:                                                    
+
+    1. class Animal { }                                           
+    2. class Dog extends Animal{ }                                
+    3. class Cat extends Animal{ }                                
+    4. class Vet {                                                
+    5.   public static void main(String [] args) {                
+    6.     Animal [] aa = {new Dog(), new Dog(), new Dog()};      
+    7.     for(Object o : aa)                                     
+    8.       goWalk((Dog) o);                                     
+    9.   }                                                        
+    10.   static void goWalk(Dog d) { }                           
+    11. }                                                         
+
+    And the command-line invocation:                              
+
+    java Vet.java                                                 
+
+    What is the result?                                           
+
+    The code runs with no output.                                 
+    A Java.lang.NullPointerException is thrown.                   
+    A java.lang.NoClassDefFoundError is thrown.                   
+    A java.lang.IllegalArgumentException is thrown.               
+    A java.lang.ArrayIndexOutOfBoundsException is thrown.         
+
+
+
+
+
+
+13. Which method exists in java.lang.StringBuilder but NOT in java.lang.StringBuffer?
+
+    append
+    insert
+    reverse
+    replace
+    lastIndexOf
+    All of these methods exist in both classes.
+
+14. Given:
+
+    1. class Mutate {
+    2.   public static void main(String [] args) {
+    3.     StringBuilder s = new StringBuilder("012345678 ");
+    4.     if (s.length() == 10)
+    5.       s.insert(10, "abcdef");
+    6.     s.delete(3,8);
+    7.     System.out.println(s.indexOf("c"));
+    8.   }
+    9. }
+    
+    What is the result?
+    
+    -1
+    5
+    6
+    7
+    Compilation fails.
+    An exception is thrown at runtime.
+
+15. Given:
+
+    int x = reader.read();
+    
+    Which is true?
+    
+    reader can be of either type FileReader or BufferedReader
+    reader can be of NEITHER type FileReader or BufferedReader
+    reader can be of type FileReader but NOT of type BufferedReader
+    reader can be of type BufferedReader but NOT of type FileReader
+
+16. Given:
+
+    10. class Car implements Serializable { }
+    11.
+    12. class Ford extends Car { }
+    
+    If you attempt to serialize an instance of Ford, what is the result?
+    
+    Compilation fails.
+    One object is serialized.
+    Two objects are serialized.
+    An exception is thrown at runtime.
+
+17. Given:
+
+    1. import java.text.*;
+    2.
+    3. class LocaleTest {
+    4.   public static void main(String [] args) {
+    5.     Date d = new Date();
+    6.     DateFormat df = DateFormat.getDateInstance(
+    DateFormat.MEDIUM, Locale.US);
+    7.     System.out.print(df.format(d));
+    8.     df = DateFormat.getDateInstance(
+    DateFormat.MEDIUM, Locale.GERMANY);
+    9.     System.out.println(df.format(d));
+    10.   }
+    11. }
+    
+    For the date of June 24, 2004 the MEDIUM date formatting for the US is June 24, 2004, and the MEDIUM date formatting for GERMANY is 24.06.2004. If the code is run on May 4, 2005, what is the result?
+    
+    May 4, 2005
+    04.05.2005
+    May 4, 2005
+    May 4, 2005
+    Compilation fails.
+    An exception is thrown at runtime.
+
+18. Given:
+
+    1. import java.io.PrintWriter;
+    2. class DoFormat {
+    3.   public static void main(String [] args) {
+    4.     String s1 = null;
+    5.     String s2 = "TrUe";
+    6.     String s3 = "yes";
+    7.     String s4 = "no";
+    8.     Boolean b1 = new Boolean("tRuE");
+    9.     boolean b2 = false;
+    10.     System.out.printf("%b %b %b %b %b", s1, s2, s3, b1, b2, s4);
+    11.   }
+    12. }
+    
+    What is the result?
+    
+    Compilation fails.
+    true true true true false
+    false true true true false
+    false true false true false
+    false false false false false
+    false true true true false false
+    An exception is thrown at runtime.
+
+19. Given: t is a reference to a valid Thread object And the valid run() method for t:
+
+    9.  public void run() {
+    10.    System.out.print("go ");
+    11.  }
+    
+    And:
+    
+    
+    18.  t.run();
+    19.  t.run();
+    20.  t.start();
+    
+    What is the result?
+    
+    go
+    go go
+    go go go
+    Compilation fails.
+    An exception is thrown at runtime.
+
+20. Given:
+
+
+    1. class ThreadBoth extends Thread implements Runnable {
+    2.
+    3.   public void run(){ System.out.print("hi "); }
+    4.
+    5.   public static void main(String [] args){
+    6.     Thread t1 = new ThreadBoth();
+    7.     Thread t2 = new Thread(t1);
+    8.     t1.run();
+    9.     t2.run();
+    10.   }
+    11. }
+    
+    What is the result?
+    
+    hi
+    hi hi
+    Compilation fails.
+    The code runs with no output.
+    An exception is thrown at runtime.
+
+21. Given:
+
+    5. class Order implements Runnable {
+    6.   public void run() {
+    7.     try { Thread.sleep(2000); } catch (Exception e) { }
+    8.     System.out.print("in ");
+    9.   }
+    10.   public static void main(String [] args) {
+    11.     Thread t = new Thread(new Order());
+    12.     t.start();
+    13.     System.out.print("pre ");
+    14.     try { t.join(); } catch (Exception e) { }
+    15.     System.out.print("post ");
+    16. } }
+    
+    Which two can result? (Choose two.)
+    
+    in pre
+    pre in
+    in post pre
+    in pre post
+    pre in post
+    pre post in
+
+22. Given:
+
+    5. class NoGo implements Runnable {
+    6.   private int i;
+    7.   public synchronized void run() {
+    8.     if (i%10 != 0) { i++; }
+    9.     for(int x=0; x<10; x++, i++)
+    10.       { if (x == 4) Thread.yield(); }
+    11.     System.out.print(i + " ");
+    12.   }
+    13.   public static void main(String [] args) {
+    14.     NoGo n = new NoGo();
+    15.     for(int x=0; x<101; x++) { new Thread(n).start(); }
+    16.   }
+    17. }
+    
+    Which is true?
+    
+    The output can never contain the value 10.
+    The output can never contain the value 30.
+    The output can never contain the value 297.
+    The output can never contain the value 820.
+    The output can never contain the value 1010.
+
+23. Given:
+
+    1. class Synch {
+    2.   synchronized int i;
+    3.   synchronized void go() {
+    4.     Synch s = new Synch();
+    5.     synchronized(this) { }
+    6.     synchronized(s) { }
+    7.     synchronized() { }
+    8.   }
+    9. }
+    
+    How many lines will cause compilation errors?
+    
+    0
+    1
+    2
+    3
+    4
+    5
+
+24. Given:
+
+    3. class Waiting2 implements Runnable {
+    4.   int state;
+    5.   public synchronized void run() {
+    6.     if (state++ < 3) {
+    7.       System.out.print(" " + Thread.currentThread().getId());
+    8.       try { this.wait(); } catch (Exception e) { }
+    9.       System.out.print(" " + Thread.currentThread().getId());
+    10.     }
+    11.     else {
+    12.       try { Thread.sleep(2000); } catch (Exception e) { }
+    13.       notify();
+    14.       notifyAll();
+    15.     }
+    16.   }
+    17.   public static void main(String [] args) {
+    18.     Waiting2 w = new Waiting2();
+    19.     new Thread(w).start();
+    20.     new Thread(w).start();
+    21.     new Thread(w).start();
+    22.     new Thread(w).start();
+    23.   }
+    24. }
+    
+    Which two results are possible? (Choose two.)
+    
+    6 7 8 9
+    6 7 8 6
+    6 7 8 6 7 8
+    6 7 8 6 7 9
+    6 7 8 8 6 7
+    6 7 8 6 6 7 8
+    6 7 8 9 6 7 8 9
+
+
+25. Given:
+
+    11. class One {
+    12.   private int x;
+    13.   int getX() { return x; }
+    14. }
+    15.
+    16. class Two {
+    17.   private int y;
+    18.   public void setY(One o) {
+    19.     y = o.getX();
+    20.   }
+    21. }
+    
+    Which is true?
+    
+    These classes are NOT coupled.
+    These classes are loosely coupled.
+    These classes are tightly coupled.
+    These classes are abstractly coupled.
+
+26. Given:
+
+    1. class Guy { String greet() { return "hi "; } }
+    2. class Cowboy extends Guy { String greet() { return "howdy "; } }
+    3. class Surfer extends Guy { String greet() { return "dude! "; } }
+    4.
+    5. class Greetings {
+    6.   public static void main(String [] args) {
+    7.     Guy [] guys = { new Guy(), new Cowboy(), new Surfer() };
+    8.     for(Guy g : guys)
+    9.       System.out.print(g.greet());
+    10.   }
+    11. }
+    
+    What is the result?
+    
+    hi hi hi
+    hi howdy dude!
+    An exception is thrown at runtime.
+    Compilation fails due to an error on line 7.
+    Compilation fails due to an error on line 8.
+
+27. Given:
+
+    1. class Bird {
+    2.   static void talk() { System.out.print("chirp "); }
+    3. }
+    4. class Parrot extends Bird {
+    5.   static void talk() { System.out.print("hello "); }
+    6.   public static void main(String [] args) {
+    7.     Bird [] birds = {new Bird(), new Parrot()};
+    8.     for( Bird b : birds)
+    9.       b.talk();
+    10.   }
+    11. }
+    
+    What is the result?
+    
+    chirp chirp
+    chirp hello
+    hello hello
+    Compilation fails.
+    An exception is thrown at runtime.
+
+28. Given:
+
+    12. class Super {
+    13.   protected int a;
+    14.   protected Super(int a)  {
+    15.     System.out.print(this.a); this.a = a; }
+    16. }
+    17. class Sub extends Super {
+    18.   public Sub(int b) { super(b); a = super.a;}
+    19.   public static void main(String [] args) {
+    20.     new Sub(7.go();
+    21.   }
+    22.   void go() { System.out.print(this.a); }
+    23. }
+    
+    What is the result?
+    
+    00
+    07
+    70
+    77
+    Compilation fails.
+    An exception is thrown at runtime.
+
+29. Which is true?
+
+    Has-a relationships must be tightly coupled.
+    Is-a relationships must be well encapsulated.
+    Is-a relationships can be represented by using reference variables as local variables.
+    Has-a relationships can be represented by using reference variables as local variables.
+    Has-a relationships can be represented by using reference variables as instance variables.
+
+30. A programmer wants to develop an application in which Fizzlers are a kind of Whoosh, and Fizzlers also fulfill the contract of Oompahs. In addition, Whooshes are composed with several Wingits. Which code represents this design?
+
+	class Wingit { }
+	class Fizzler extends Oompah implements Whoosh { }
+	interface Whoosh {
+	Wingits [] w;
+	}
+	class Oompah { }
+
+
+	class Wingit { }
+	class Fizzler extends Whoosh implements Oompah { }
+	class Whoosh {
+	Wingits [] w;
+	}
+	interface Oompah { } 
+
+
+	class Fizzler { }
+	class Wingit extends Fizzler implements Oompah { }
+	class Whoosh {
+	Wingits [] w;
+	}
+	interface Oompah { }
+
+
+	interface Wingit { }
+	class Fizzler extends Whoosh implements Wingit { }
+	class Wingit {
+	Whoosh [] w;
+	}
+	class Whoosh { }
+	
+	
+31. A programmer creates a class that correctly implements the Comparable interface. Which three are true? (Choose three.)
+
+    The required method returns an int.
+    The required method returns a boolean.
+    The required method takes one argument.
+    The required method takes two arguments.
+    The class contains a method named compareTo.
+    The class contains a method named comparable.
+
+32. Given:
+
+    3. class TestEnum {
+    4.   enum E {N, E, S, W};
+    5.   public static void main(String [] args) {
+    6.     E e = E.E;
+    7.     if(e.equals(E.E)) System.out.print("equals ");
+    8.     if(e == E.E) System.out.print("== ");
+    9.   }
+    10. }
+    
+    What is the result?
+    
+    ==
+    equals
+    equals ==
+    Compilation fails.
+    No output is produced.
+    An exception is thrown at runtime.
+
+33. Given:
+
+    1. import java.util.*;
+    2. public class Gen3 {
+    3.   public static void go(Set<?> d) { }
+    4.   public static void main(String [] args) {
+    5.     // insert code here
+    6.     go(t);
+    7.   }
+    8. }
+    9. class Animal { }
+    10. class Dog extends Animal { }
+    
+    And these four:
+    
+    s1.    TreeSet t = new TreeSet();
+    s2.    TreeSet<Dog> t = new TreeSet<Dog>();
+    s3.    TreeSet<Animal> t = new TreeSet<Dog>();
+    s4.    TreeSet<Animal> t = new TreeSet<Animal>();
+    
+    Which, inserted independently at line 5, will compile?
+    
+    only s1
+    only s2
+    only s1 and s2
+    only s1 and s3
+    only s1, s2, and s3
+    only s1, s2, and s4
+    All of the codes will compile.
+
+34. Given:
+
+    1. import java.util.*;
+    2. class AddStuff {
+    3.   public static void main(String [] args) {
+    4.     TreeSet<String> s = new TreeSet<String>();
+    5.     s.add("one");
+    6.     s.add("two");
+    7.     // insert code here
+    8.     for(String s2 : sorted)
+    9.       System.out.print(s2 + " ");
+    10.   }
+    11. }
+    
+    And the four code fragments:
+    
+    
+    s1.     SortedSet sorted = s.tailSet(s.first());
+    s2.     SortedSet<String> sorted = s.tailSet(s.first());
+    s3.     SortedSet sorted = (SortedSet)s.tailSet(s.first());
+    s4.     SortedSet sorted = (SortedSet<String>)s.tailSet(s.first());
+    
+    Which, inserted independently at line 7, will compile?
+    
+    only s1
+    only s2
+    only s2 and s3
+    only s2 and s4
+    only s2, s3, and s4
+    only s1, s2, s3, and s4
+
+35. Given:
+
+    1. import java.util.*;
+    2. class MyList {
+    3.   public static void main(String [] args) {
+    4.     LinkedList<String> list = new LinkedList<String>();
+    5.     list.add("one "); list.add("two "); list.add("three ");
+    6.     String [] sa = new String[3];
+    7.     // insert code here
+    8.     for(String s : sa)
+    9.       System.out.print(s);
+    10.   }
+    11. }
+    
+    Which, inserted at line 7, allows the code to compile and run without exception?
+    
+    sa = list.toArray();
+    sa = list.toArray(sa);
+    sa = (String) list.toArray();
+    sa = (String []) list.toArray();
+
+36. Given:
+
+    1. import java.util.*;
+    2. class DumpArray {
+    3.   public static void main(String [] args) {
+    4.     int [] a = {7,9,8};
+    5.     int [][] aa = {{1,2,3}, {6,5,4}};
+    6.     int [][][] aaa = {{{1,2}, {3,4}}, {{5,6},{7,8}}};
+    7.
+    8.     System.out.println(Arrays.deepToString(a));
+    9.     System.out.println(Arrays.deepToString(aa));
+    10.     System.out.println(Arrays.deepToString(aaa));
+    11.   }
+    12. }
+    
+    Which invocation (or invocations) of deepToString will compile?
+    
+    Only line 8
+    Only lines 8 and 9
+    Only lines 9 and 10
+    Lines 8, 9, and 10
+
+37. Given two files:
+
+    1. package x;
+    2. public class StaticStuff {
+    3.   public static enum Color {BLUE, RED };
+    4.   public static StaticStuff ss;
+    5.   public static void go() { }
+    6. }
+    
+    And:
+    
+    
+    1. import static x.StaticStuff.*;
+    2. class FindStatic {
+    3.   public static void doStuff() {
+    4.     Color c = Color.BLUE;
+    5.     ss = new StaticStuff();
+    6.     go();
+    7. } }
+    
+    When class StaticStuff has been compiled, what is the result when you attempt to compile class FindStatic?
+    
+    The code compiles.
+    Compilation fails due to an error on line 1.
+    Compilation fails due to an error on line 4.
+    Compilation fails due to an error on line 5.
+    Compilation fails due to an error on line 6.
+    Compilation fails due to errors on multiple lines.
+
+38. Given:
+
+    class TestMain {
+    static int x = 2;
+    static { x = 4; }
+    static public void main(String[] args) {
+    int y = x + 1;
+    System.out.println(y);
+    }
+    }
+    
+    And the command line: java TestMain What is the result?
+    
+    3
+    5
+    Compilation fails.
+    An exception is thrown at runtime.
+
+39. Given:
+
+    1. class Flibitz {
+    2.   public static void main(String [] args) {
+    3.     int grop = 7;
+    4.     new Flibitz().go(grop);
+    5.     System.out.print(grop);
+    6.   }
+    7.   void go(int grop) {
+    8.     if(++grop > 7) grop++;
+    9.     System.out.print(grop);
+    10.   }
+    11. }
+    
+    What is the result?
+    
+    77
+    79
+    97
+    99
+    Compilation fails.
+    An exception is thrown at runtime.
+
+40. Given:
+
+    1. class X {
+    2.   static long story;
+    3.   public static void main(String [] args) {
+    4.     if(story==0) {
+    5.       Long tale = 343L;
+    6.       story = go(tale);
+    7.     }
+    8.     // do stuff
+    9.     System.out.print(story);
+    10.   }
+    11.   static long go(Long t) { return t++; }
+    12. }
+    
+    Which is true?
+    
+    The output is 344.
+    Compilation fails due to an error at line 5.
+    Compilation fails due to an error at line 11.
+    At line 8, an object is eligible for garbage collection.
+
+41. Given a JAR file named MyJar.jar containing: com/Gamma.class And that this class was compiled from the following file:
+
+    1. package com;
+    2. public class Gamma { }
+    
+    The directory you are in contains a subdirectory jarDir that contains MyJar.jar. Which command line will correctly invoke the compiler for a Java file named Test.java that uses the Gamma class?
+    
+    javac -path MyJar.jar Test.java
+    javac -classpath MyJar.jar Test.java
+    javac -path jarDir/MyJar.jar Test.java
+    javac -path jarDir/com/MyJar.jar Test.java
+    javac -classpath jarDir/MyJar.jar Test.java
+    javac -classpath jarDir/com/MyJar.jar Test.java
+
+42. Given:
+
+    1. class Rectangle {
+    2.   public static void main(String [] args) {
+    3.     int [] x = {1,2,3};
+    4.     x[1] = (x[1] > 1) ? x[2] : 0;
+    5.     System.out.println(x[1]);
+    6.   }
+    7. }
+    
+    What is the result?
+    
+    0
+    1
+    2
+    3
+    Compilation fails.
+    An exception is thrown at runtime.
+
+
+
+
+

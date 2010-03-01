@@ -1,0 +1,256 @@
+1. Given:
+
+    10. <?xml version="1.0" encoding="utf-8" ?>
+    11. <employee firstName="John" lastName="Doe">
+    12.   <id>12345</id>
+    13.   <office number="100"/>
+    14. </employee>
+    
+    Which is true?
+    
+    firstName is an XML element.
+    firstName is an XML attribute.
+    employee is an XML namespace.
+    John is an XML element.
+
+2. Which is a requirement of a well-formed XML document?
+
+   complies with a DTD
+   complies with an XML Schema
+   complies with XML syntax rules
+   complies with a DTD or XML Schema
+
+3. How does a Web service specify the parameter types it accepts?
+
+   The parameters are defined as JavaBeans.
+   The parameters are defined in an XML Schema.
+   The parameters are defined in Interface Definition Language.
+   The parameters are defined by an XML Document Type Definition.
+
+4. Which restrictions are applied to attachments by the WS-I Basic Profile 1.1?
+
+   The Basic Profile only supports XML attachments.
+   The Basic Profile does NOT support attachments.
+   The Basic Profile supports a fixed number of MIME types.
+   The Basic Profile allows attachments with any MIME type.
+
+5. Which two are part of a SOAP document? (Choose two)
+
+   Envelope
+   Namespace
+   XML Schema
+   HTTP Session
+   Document Type Definition
+
+6. Which is true of SOAP in Web services?
+
+   SOAP is a binary format transmitted over IIOP.
+   Server side errors are transmitted to clients using SOAP.
+   SOAP describes the operations and parameters used in a Web service.
+   SOAP defines mechanisms for using public key cryptography in Web services.
+
+
+7. Which is a valid WSDL <soap:binding> element according to the WS-I Basic Profile 1.1?
+
+   <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/jms"/>
+   <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/https"/>
+   <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+   <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/rmi"/>
+
+8. Given:
+
+   11. public class PurchaseOrder {
+   12.   public int poNumber;
+   13.   public double amt;
+   14.   public String customerName;
+   15.   public java.util.Calendar orderDate;
+   16. }
+   
+   The PurchaseOrder class is used as a parameter to a Web service. How is the PurchaseOrder class described in the service's WSDL document?
+   
+   The class is a complex type and should be described in WSDL using IDL.
+   The class uses only basic types and does NOT need to be described in WSDL.
+   The class is a complex type and should be described in WSDL using an XML schema.
+   The class is NOT a SOAP type and cannot be a parameter to a Web service operation.
+
+9. How does a client get the WSDL for a Web service from a UDDI registry?
+
+    The client downloads the WSDL from the UDDI registry.
+    The client retrieves the WSDL URI from the UDDI TModel.
+    The client extracts the WSDL from the UDDI Binding Template.
+    The client retrieves the WSDL URI from the UDDI BusinessEntity.
+
+10. The Java programming language does NOT support out or in-out parameters. The SOAP specification supports out and in-out. Which is true of out and in-out parameters?
+
+    JAX-RPC supports out or in-out parameters.
+    JAX-RPC does NOT support out or in-out parameters.
+    The WS-I Basic Profile does NOT support out or in-out parameters.
+    The WS-I Basic Profile supports out or in-out parameters only for the basic SOAP types.
+
+11. Which is required to build a stand-alone Java client to a Web service using JAX-RPC Dynamic Interface Invocation?
+
+    the JNDI name of the Web service endpoint
+    the qualified name of the Web service operation
+    a stub class generated from the Web service's WSDL
+    a Java interface generated from the Web service's WSDL
+
+12. A Web service takes requests from clients to render a series of JPEG images of a 3-dimensional object. The rendering may take hours or days. After the images are rendered, clients will connect again and retrieve them. Which invocation mode is appropriate for this service?
+
+    The service should use one-way RPC.
+    The service should use one-way/response.
+    The service should use non-blocking RPC.
+    The service should use synchronous/request-response.
+
+13. Which two are true of the DOM implementation in JAXP? (Choose two.)
+
+    DOM relies on XSLT.
+    DOM is event driven.
+    DOM uses more memory than SAX.
+    The XML document is maintained as a tree in memory.
+
+14. Which mapping is provided by JAXB?
+
+    an object mapping to an XML element
+    an XML element to an object
+    an object mapping to a DTD
+    There is no mapping.
+
+15. Which two are valid use cases for JAXB? (Choose two.)
+
+    Create a Schema for an XML Document.
+    Create an XML Document based on an XML Schema.
+    Update an element in an XML document with no Schema.
+    Load an XML Document into a document tree without validation.
+
+16. Given the SOAP Envelope and Java code fragment in the Exhibit, what is the output?
+
+    EXHIBIT:
+    
+    11. <SOAP-ENV:Envelope
+    12.     xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    13.   <SOAP-ENV:Body>
+    14.     <getAccountHolderName xmlns="http://account.sun.com/">
+    15.       <acctNum>3</acctNum>
+    16.     </getAccountHolderName>
+    17.   </SOAP-ENV:Body>
+    18. </SOAP-ENV:Envelope>
+    
+    11. SOAPMessage message = ...
+    12. SOAPBody body =  message.getSOAPPart().getEnvelope().getBody();
+    13. Iterator i = body.getChildElements();
+    14. SOAPElement element = (SOAPElement) i.next();
+    15. System.out.println( element.getElementName().getLocalName() );
+    
+    3
+    acctNum
+    getAccountHolderName
+    http://account.sun.com/
+
+17. Which two describe the use of JAXR in compliance with the WS-I Basic Profile 1.1? (Choose two.)
+
+    The provider must support UDDI registries.
+    The provider must support ebXML registries.
+    The provider must support the level 0 profile.
+    The provider must support the level 1 profile.
+
+18. Which three can be used by JAXR clients to query a registry? (Choose three.)
+
+    findWsdl
+    findServices
+    findInterface
+    findOrganizations
+    findServiceBindings
+
+19. Which method is NOT supported by the javax.transaction interface?
+
+    commit
+    rollback
+    getStatus
+    setRollbackOnly
+    setStatus
+
+20. Which is NOT included in the J2EE specification?
+
+    container-managed transactions
+    container-controlled threading
+    automatic EJB Bean life cycle
+    firewall-friendly EJB protocols
+
+21. Which three are true of the JAXP? (Choose three.)
+
+    JAXP includes SAX.
+    JAXP includes JAXR.
+    JAXP includes DOM.
+    JAXP includes XSLT.
+    JAXP includes JDOM.
+
+22. Which two correctly describe the Security Assertion Markup Language (SAML)? (Choose two.)
+
+    An assertion is a package of information that supplies zero or more statements made by a SAML authority.
+    SAML assertions are usually made about a subject.
+    SAML defines the exchange of public and private keys.
+    SAML employs XML encryption.
+
+23. The requirements for a particular Web service dictate that the security mechanism must support strong authentication of the client. The service will be implemented using HTTP, but may migrate to another form of transport. Which security mechanism will support these requirements?
+
+    Basic Authentication
+    Mutual Authentication
+    XML Digital Signature
+    Transport level security
+
+24. A J2EE compliant Web service is implemented with an EJB endpoint that uses declarative security. What two actions must a client do to access the Web service? (Choose two.)
+
+    The client must connect to the Web service as a security Principal defined in the endpoint'sejb-jar.xml file.
+    The client must connect to the Web service in a security Group defined in the EJB bean's ejb-jar.xml file.
+    The client must connect to the Web service as a security Principal mapped to a role defined in the endpoint's ejb-jar.xml file.
+    The client must connect to the Web service in a security Group defined in the endpoint's ejb-jar.xml file.
+
+
+25. Which two are used to deploy EJB technology-based endpoints? (Choose two.)
+
+    WAR files
+    EAR files
+    RAR files
+    EJB-JAR files
+
+26. Which messaging mode should a document-oriented Web service use according to the WS-I Basic profile?
+
+    RPC/Literal
+    RPC/Encoded
+    Document/Literal
+    Document/Encoded
+
+27. Which is NOT a characteristic of a Web services-based service oriented architecture?
+
+    Services are composable.
+    Services are conversational.
+    Services stress interoperability.
+    Services are self-contained and modular.
+    Services are discoverable and dynamically bound.
+
+28. Which is an example of the Business Delegate pattern?
+
+    A client calls a method that calculates sales tax.
+    A client calls a method that invokes a Web service operation that calculates sales tax.
+    A client looks up a Web service in a UDDI registry and invokes it to calculate sales tax.
+    A client calls a method that looks up a Web service in a UDDI registry and invokes it to calculate sales tax.
+
+29. Given: An existing set of services consisting of Enterprise JavaBeans that is exposed to clients by creating a stateless session bean (facade) as an EJB endpoint. Which two are true? (Choose two.)
+
+    The endpoint is the processing layer.
+    The existing Enterprise JavaBeans are the processing layer.
+    All the Enterprise JavaBeans form the processing layer.
+    The endpoint is the service interaction layer.
+    The existing Enterprise JavaBeans are the service interaction layer.
+    All the Enterprise JavaBeans form the service interaction layer.
+
+30. Which two correctly define how the endpoint container implementation handles a document received in javax.xml.transform.Source format? (Choose two.)
+
+    The container converts the document to a Java collection.
+    The container automatically handles the document as an attachment.
+    The container implementation handles the document-passing.
+    The container implementation provides no special handling.
+    The container implementation provides automatic document validation.
+
+
+

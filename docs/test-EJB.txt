@@ -1,0 +1,473 @@
+1. Which statement correctly identifies the architectural goals of the designers of the EJB architecture?
+
+    The EJB architecture supports the development, deployment, and use of web services.
+    The EJB architecture only supports interoperability with programs written in the Java language.
+    The EJB architecture addresses the development and deployment of EJB components, but the runtime aspect is left completely to the discretion of the container providers.
+    The EJB architecture requires that users be aware of the low-level connection pooling aspects and multi-threading characteristics of the Java EE platform.
+
+2. What programming restrictions are defined in the EJB specifications?
+
+    An enterprise bean must NOT attempt to listen on a socket.
+    A session bean class must NOT have any superclasses and/or superinterfaces.
+    An enterprise bean can directly read a file descriptor.
+    An entity bean class need NOT implement a public zero-argument constructor.
+
+3. An enterprise bean packaged in an ejb-jar returns instances of a Television class as a result for one of its business methods. The developer has been asked to create an associated ejb-client JAR file. What files must be placed in this ejb-client JAR for it to be valid?
+
+    The ejb-jar file (by inclusion or by reference)
+    The Television class (by inclusion or by reference)
+    Stubs of all enterprise classes referenced by the ejb-client
+    The DTDs and schemas of all XML messages used by the client
+
+4. A non-transient String field in an interceptor associated with a stateful session bean is set to "Hello" when the stateful session bean is passivated.
+
+    What will the state of the field be after the bean is again activated?
+    
+    The specification states that the value will be undefined.
+    It will be set to null.
+    It is set to "Hello".
+    The bean will be associated with an arbitrary interceptor instance after activation, and so can have whatever value the field is set to in that interceptor instance.
+
+5. The EJB Timer service can be used to ensure that the EJB container invokes a timeout method on a bean at a specified time or after a specified period. Which two types of beans support this Timer service? (Choose two.)
+
+    Stateless session beans
+    Stateful session beans
+    EJB 2.1 entity beans
+    EJB 3.0 entities
+
+6. Which statement about EJB 2.x and EJB 3.0 API interoperability is correct?
+
+    A stateless session bean written to the EJB 3.0 API can be adapted to an EJB 2.1 client interface.
+    The developer cannot mix APIs. For example, the developer cannot write an EJB 3.0 session bean while also implementing an EJB 2.1 EJBHome interface.
+    The EJB 2.1 API requires the use of a stateful session bean's home interface to obtain a reference to the bean's component interface. The developer cannot use dependency injection to obtain a reference to such a home interface in an EJB 3.0 client of such a bean.
+    An adapter class has to be used when accessing EJB 2.0 environment variables of a stateless session bean, when such a bean is deployed in an EJB 3.0 container.
+
+7. Which statement characterizes stateful session beans?
+
+    They allow the PostConstruct, PreDestroy, and PrePassivate life-cycle callbacks.
+    They require home interfaces.
+    When a client looks up a stateful session bean in the JNDI, the same bean is returned every time.
+    They are asynchronous message consumers.
+
+8. Given an interface:
+
+    5. public interface ValueInt {
+    6.    public int getVal();
+    7.    int getBarPackage();
+    8. }
+    
+    Here is an excerpt from a stateless session bean that implements this interface:
+    
+    
+    10. @Stateless
+    11. public class FloatBean implements ValueInt {
+    12.    public int getVal() { return 4; }
+    13.    public int getBarPackage() { return 2; }
+    50. }
+    
+    What methods are exposed to local clients of this stateless session bean?
+    
+    no methods are exposed
+    getVal
+    getBar
+    getVal and getBarPackage
+
+9. The deployment descriptor for the Foo session bean looks similar to this:
+
+    10. <enterprise-beans>
+    11. <session>
+    12.  ...
+    13.  <ejb-name>Foo</ejb-name>
+    14.  <ejb-class>ms.FooBean</ejb-class>
+    15.  ...
+    16.  <resource-ref>
+    17.    <res-ref-name>jdbc/BarDB</res-ref-name>
+    18.    <res-type>javax.sql.DataSource</res-type>
+    19.    <res-auth>Container</res-auth>
+    20.    <res-sharing-scope>Shareable</res-sharing-scope>
+    21.  </resource-ref>
+    22.   ...
+    23. </session>
+    24.</enterprise-beans>
+    
+    Assume that a deployer binds this to an actual resource. The implementation of Foo contains a reference to a Context object bound to the variable initCtx and a reference to a SessionContext object bound to the variable ctx. Which statement successfully retrieves the datasource?
+    
+    @Resource DataSource ds;
+    (DataSource) ctx.lookup("java:comp:env/jdbc/BarDB");
+    initCtx.lookup("java:comp/env/jdbc/BarDB");
+    @Resource(name=?jdbc/BarDB?, type=javax.sql.DataSource)
+
+10. Which statement is true about message-driven beans?
+
+    A message-driven bean can register with the EJB Timer Service for timeout callback notifications.
+    A message-driven bean must implement the javax.ejb.MessageDrivenBean interface.
+    Message-driven beans only support the PostConstruct life-cycle callback interceptor.
+    Message-driven beans do NOT support the AroundInvoke business method interceptors.
+
+11. A developer is given a JMS message-driven bean, which has no descriptors or metadata that describe acknowledge modes or subscription durability. In addition, the message-driven bean uses bean-managed transactions and is subscribed to a topic. What two message-driven bean behaviors can the developer expect to see? (Choose two.)
+
+    If a message is received, the container automatically acknowledges it.
+    If a message is received, the container does NOT automatically acknowledge it.
+    Messages will NOT be missed, even if the EJB server is NOT running.
+    Messages can be missed if the EJB server is NOT running.
+    Specifying subscription durability for a topic has no effect.
+
+12. Given a snippet of a JMS message-driven bean, configured to listen on a queue.
+
+    @MessageDriven
+    public class LetterBean implements MessageListener {
+    @Resource MessageDrivenContext ctx;
+    public void onMessage(Message msg) {
+    ctx.setRollbackOnly();
+    }
+    }
+    
+    A JMS server receives a message and delivers it to this queue. After executing the onMessage method, no exceptions are thrown.
+    
+    Which statement is correct about this message-driven bean?
+    
+    The message-bean is using bean-managed transactions.
+    The server receives an acknowledgment sent by the LetterBean instance.
+    The JMS server sends the same message more than once.
+    The LetterBean instance that receives the message immediately moves into the "does NOT exist" state.
+
+13. Given an excerpt of a Book entity (it is just missing the import statements):
+
+    10. @Entity
+    11. public class Book implements Serializable {
+    12.	  @Id
+    13.	  @GeneratedValue(strategy = GenerationType.AUTO)
+    14.	  private Integer id;
+    15.	  String bookName;
+    16.	  protected int price;
+    17.	  enum Status {IN, OUT};
+    18.	  @Enumerated( EnumType.ORDINAL )
+    19.	  Status status;
+    20.	  transient int bar;
+    21.	  java.util.Map<Integer, String> comments;
+    22.   protected Book() {};
+    23. }
+    
+    No descriptors are used.
+    
+    Which statement is correct about this entity?
+    
+    There is an error on line 11. It must NOT implement Serializable.
+    Adding a single @Transient annotation makes this entity valid.
+    The visibility declarations on some of the variables causes an exception.
+    The enumeration or its field definition on lines 17, 18, or 19 is NOT valid.
+    There is an error in the identity definition on lines 12, 13, or 14.
+
+14. All of the entities in a persistence unit have the following two lines defining their primary keys:
+
+    10. @GeneratedValue(generator="MyGenerator", strategy = GenerationType.TABLE)
+    11. private int id;
+    
+    The deployment descriptor has only the following few lines pertaining to primary keys:
+    
+    
+    20.  <table-generator>
+    21.    <name>MyGenerator</name>
+    22.    <table>MyTable</table>
+    23.    <pk-column-name>NAME</pk-column-name>
+    24.  </table-generator>
+    
+    Which statement is correct?
+    
+    Only AUTO, TABLE, and IDENTITY generation types are made available by a persistence provider.
+    The different entities within the persistence unit can share the same generator.
+    The provider must generate a suite of tables when it processes the table-generator tag.
+    The MyTable table is accessed each time a new entity is persisted to the database to ensure that a unique identifier is assigned for the entity.
+
+15. There are two tables in a database, Celery and Carrot. Celery contains a foreign key to Carrot. Each table has a primary key, and there are no other constraints on the tables. No descriptors are used, and in the following options each scenario depicts all the mapping information pertaining to the relationship. Which entities accurately model this database scenario?
+
+	@Entity Celery {
+	/* ... */
+	}
+	@Entity Carrot {
+	@ManyToOne
+	Celery celery;
+	/* ... */
+	}
+
+
+	@Entity Celery {
+	@ManyToOne
+	Carrot carrot;
+	/* ... */
+	}
+	@Entity Carrot {
+	/* ... */
+	}
+
+
+	@Entity Celery {
+	@OneToOne
+	Carrot carrot;
+	/* ... */
+	}
+	@Entity Carrot {
+	/* ... */
+	}
+
+
+	@Entity Celery {
+	/* ... */
+	}
+	@Entity Carrot {
+	@OneToOne
+	Carrot carrot;
+	/* ... */
+	}
+
+
+16. A domain model comprises two entities: Dog and Flea. The developer is required to construct these entities so that the Dog and Flea entities are in a unidirectional one-to-many relationship.
+
+    Which statement about implementing this model is NOT correct?
+    
+    The @OneToMany annotation must be placed in the Dog entity.
+    The @ManyToOne annotation must NOT be used on the Flea entity.
+    A join table can be used to implement this relationship.
+    The Flea entity will be the owning side of the relationship.
+
+17. Given the definition for an entity, Book:
+
+    10. @Entity
+    11. public class Book {
+    12.   @Id Integer id;
+    13.   @Column(name="NAMEBOOK")
+    14.   String bookName;
+    15.   public java.util.Date loanDate;
+    16. }
+    
+    The associated descriptor file has the following snippet pertaining to this entity:
+    
+    20.  <entity class="Book" metadata-complete="true">
+    21.     <table name="BOOKTB"/>
+    22.     <attributes>
+    23.         <basic name="bookName">
+    24.             <column name="TOMENAME"/>
+    25.         </basic>
+    26.         <basic name="loanDate">
+    27.        	  <temporal>DATE</temporal>
+    28.          </basic>
+    29.     </attributes>
+    30.  </entity>
+    
+    No other parts of the deployment descriptor affect this configuration. Which statement about the persistent unit and descriptor is correct?
+    
+    The descriptor will ensure that the table BOOKTB is used to map the entity Book, and that bookName is mapped to column NAMEBOOK within this table.
+    The descriptor ensures that the table BOOKTB is used to map the entity Book, and that bookName is mapped to column TOMENAME within this table.
+    This persistent unit does NOT deploy because an annotation is missing on the Book entity class.
+    This persistent unit does NOT deploy because the descriptor information is NOT complete.
+
+18. Entities can be in a new, managed, detached, or removed state. Which statement is correct about these states?
+
+    Removing an entity in the removed state, causes an IllegalArgumentException to be thrown.
+    Detached entities are associated with a persistence context, but no longer have a persistent identity.
+    If an entity in the new state is removed, any cascaded removes to referenced objects from this new entity, are still carried out.
+    Immediately removing an entity after creating and persisting it, within the same transaction, causes an IllegalArgumentException to be thrown.
+
+
+19. Given:
+
+    10. import javax.persistence.*;
+    11. public class BookViews {
+    12.  public static void main (String[] args) {
+    13.    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Book");
+    14.    EntityManager em = emf.createEntityManager();
+    15.    em.getTransaction().begin();
+    16.    Book b = (Book) em.createQuery("SELECT b FROM Book b").getSingleResult();
+    17.    b.setAccessed(b.getAccessed() + 1);
+    18.    em.getTransaction().commit();
+    19.    em.close();
+    20.    emf.close();
+    21.  }
+    22. }
+    
+    Assume that the Book entity exists, that the appropriate configuration files are in place, and that there is a Book entity in the persistent store.
+    
+    Which statement about this code, and about resource-local/JTA entity managers in general, is correct?
+    
+    This code compiles and executes fine in a Java SE environment.
+    The calls on line 15 and 18 are illegal.
+    It is illegal to write this sort of resource-local entity manager code in a Java EE environment.
+    The default entity-manager transaction type should have been set on line 13.
+
+20. Which method of the EntityManager API is used to control the life-cycle of an application-managed persistence context?
+
+    EntityManager.remove
+    EntityManager.refresh
+    EntityManager.joinTransaction
+    EntityManager.getReference
+
+21. Which statement about persistence units and packaging is correct?
+
+    Every persistence unit must always have the persistence.xml and orm.xml configuration files.
+    The persistence.xml file can be used to define more than one persistence unit.
+    Mapping metadata for a class can be specified using annotations, or in the XML configuration files, but NOT in both.
+    When a persistence unit is packaged in a WAR, the persistence.xml file must be located in the /META-INF directory off the root of the WAR package.
+
+22. Given an excerpt from an entity:
+
+    10. @Entity
+    11. public class Koala {
+    12.   int children;
+    13.   @Id
+    14.   private Integer id;
+    15.   /* ... */
+    16. }
+    
+    The following code was written to find the sum and average number of children across all Koala entities (assume the variable em is bound to a valid EntityManager instance):
+    
+    
+    20. String query = "SELECT SUM(k.children), AVG(k.children) from Koala k";
+    21. Query q = em.createQuery(query);
+    22. Object[] res = (Object []) q.getSingleResult();
+    
+    Which two statements are correct? (Choose two.)
+    
+    If there are no Koala entities in the database, the variable res is set to null after the code exits on line 22.
+    If there are no Koala entities in the database, the variable res contains an array of two null values.
+    If there are no Koala entities in the database, the variable res contains an array holding the values null and 0 respectively.
+    If there are Koala entities, the variable res contains an array with values of type Long and Double, respectively.
+    This code throws a runtime exception.
+
+23. A domain model for a corporation includes a User entity that is in a one-to-many relationship with a Pen entity. A developer wants to select all User entities that have a single Pen. Which two queries will do this? (Choose two.)
+
+    SELECT u from User u WHERE 1 = ANY(SELECT COUNT(p) from u.pens p)
+    SELECT u from User u WHERE ANY(1 = SELECT COUNT(p) from u.pens p)
+    SELECT u from User u WHERE 1 = ALL(SELECT COUNT(p) from u.pens p)
+    SELECT u from User u WHERE SOME(1 = SELECT COUNT(p) from u.pens p)
+    SELECT u from User u WHERE 1 = ANY(SELECT COUNT(u.pens))
+
+24. Given the following entity bean:
+
+    10. @Entity
+    11. @NamedQuery(name="myname", query="select c from Crumble c where c.id=:val")
+    12. public class Crumble {
+    13.    @Id private Integer id;
+    14. }
+    
+    Each of the following Java technology statements create Query objects, where em refers to an entity manager. Which statement returns a Crumble instance with a primary key of 20?
+    
+    em.createNativeQuery("myname").setParameter(1, "val=20")
+    em.createNamedQuery("myname").setParameter("val", 20)
+    em.createNamedQuery("myname").setParameter(20, 1)
+    em.createNamedQuery("myname").setParameter(1, 20)
+
+25. Which statements about transaction attributes and propagation is correct?
+
+    A message-driven bean's listener methods can only have a REQUIRED, REQUIRES_NEW, or NOT_SUPPORTED transaction attribute.
+    An enterprise bean's timeout callback method can only have a REQUIRED, REQUIRES_NEW, or NOT_SUPPORTED transaction attribute.
+    An enterprise bean implementing the javax.ejb.SessionSynchronization interface can only have a REQUIRES or REQUIRES_NEW transaction attribute.
+    A session bean's business method cannot have a MANDATORY transaction attribute.
+
+26. Given an excerpt from a stateful session bean:
+
+    10. @Stateful
+    11. public class MyStatefulBean implements MyStateful, SessionSynchronization {
+    12.   @Resource SessionContext ctx;
+    13.   public void afterCompletion(boolean f) {}
+    14.   public void beforeCompletion() { ctx.setRollbackOnly(); }
+    15.   public void afterBegin() {}
+    16.   @Remove
+    17.   public void inc() {}
+    18. }
+    
+    The MyStateful interface is a local business interface that declares inc to be a business method. No deployment descriptor is used. A stateless session bean using container-managed transactions has a business method that acts as a client:
+    
+    
+    20. @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    21. public String doIt() {
+    22.   ms.inc();
+    23. }
+    
+    The method doIt is called without a transactional context. Which order properly reflects the order of method invocation?
+    
+    doIt, afterBegin, inc
+    doIt, inc, afterBegin, beforeCompletion
+    doIt, inc, beforeCompletion, afterBegin, afterCompletion
+    doIt, inc, afterBegin, beforeCompletion, afterCompletion
+    doIt, afterBegin, inc, beforeCompletion, afterCompletion
+
+27. Given some code from a stateful session bean:
+
+    10. @Stateful
+    11. @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    12. public class USBean implements US {
+    13.   @PreDestroy
+    14.  public void slashstar() {}
+    15.  public void oops() {
+    16.    throw new javax.persistence.PersistenceException();
+    17.  }
+    18. }
+    
+    It has no descriptor. A client makes a call to oops, which runs in the context of the client's transaction. What action would you expect the container to perform, if any, after this transaction is thrown?
+    
+    The exception is rethrown.
+    An EJBException is thrown by the container to the client.
+    It discards the instance of the session bean.
+    It performs some actions and eventually executes the slashstar method.
+    It is the responsibility of the bean provider to properly catch and handle such exceptions.
+
+28. Given an interface:
+
+    4. @Local
+    5. public interface MyI {
+    6.    public Set go(Set s);
+    7. }
+    
+    Given an excerpt from a stateful session bean that implements this business interface:
+    
+    
+    9.  @Stateful
+    10. @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    11. public class MyStatefulBean implements MyI {
+    12.    @Resource SessionContext ctx;
+    13.    public Set go(Set s) {
+    14.         ctx.getRollbackOnly();
+    15.         ctx.getEJBOjbect();
+    16.         ctx.getEJBHome();
+    17.         throw new Exception("Will I, won't I?");
+    18.    }
+    50. }
+    
+    No deployment descriptor is used. Which statement is correct?
+    
+    An exception is thrown on line 14.
+    An exception is thrown on line 15.
+    An exception is thrown on line 16.
+    An exception is thrown on line 17.
+
+29. Which two roles are responsible for creating or modifying security roles in a bean's annotations or deployment descriptor? (Choose two.)
+
+    Bean Provider
+    Application Assembler
+    Deployer
+    EJB Server Provider
+    EJB Container Provider
+    System Administrator
+
+30. Given an excerpt from a descriptor for a stateless session bean:
+
+    10. <session>
+    11.    <ejb-name>EN</ejb-name>
+    12.    <ejb-class>com.sun.ejb.EClassBean</ejb-class>
+    13.    <security-role-ref>
+    14.        <role-name>AGENTN</role-name>
+    15.        <role-link>AGENTL</role-link>
+    16.    </security-role-ref>
+    17. </session>
+    
+    If ctx is an injected SessionContext, which of the following calls would you expect to see in the bean implementation given this descriptor?
+    
+    ctx.getCallerPrincipal()=="AGENTL"
+    ctx.getCallerPrincipal()=="AGENTN"
+    ctx.isCallerInRole("AGENTN")
+    ctx.isCallerInRole("AGENTL")
+
+
+
+
+
