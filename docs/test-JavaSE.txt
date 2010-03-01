@@ -19,10 +19,10 @@
     Which two are true? (Choose two.)
     
     The PkgAccess2 class compiles.
-    Compilation fails due to an error on line 5.
+  X Compilation fails due to an error on line 5.
     Compilation fails due to an error on line 6.
     Compilation fails due to an error on line 7.
-    Compilation fails due to an error on line 8.
+  X Compilation fails due to an error on line 8.
     The PkgAccess and PkgAccess2 classes both compile.
 
 2. Given:
@@ -47,7 +47,7 @@
     
     0
     1
-    2
+  X 2
     3
 
 3. Given:
@@ -57,13 +57,13 @@
     14.   public static void main(String [] args) {
     15.     for( Colors c : Colors.values()) {
     16.       if (c == Colors.GREEN)
-    17.         System.out.print("green ");
+    17.  System.out.print("green ");
     18.       if (Colors.RED.equals(c))
-    19.         System.out.print("red ");
+    19.  System.out.print("red ");
     20.       if (c == "YELLOW")
-    21.         System.out.print("yellow ");
+    21.  System.out.print("yellow ");
     22.       if (c.equals("BLUE"))
-    23.         System.out.print("blue ");
+    23.  System.out.print("blue ");
     24. } } }
     
     What is the result?
@@ -71,16 +71,16 @@
     red green
     red green blue
     red green yellow
-    Compilation fails.
+  X Compilation fails.
     red green blue yellow
     An exception is thrown at runtime.
 
 4. Which two are standard prefixes for method names when using the JavaBeans naming standards? (Choose two.)
 
-    is
+  X is
     not
     put
-    set
+  X set
     delete
     destroy
 
@@ -96,11 +96,11 @@
     
     Which three, inserted independently at line 6, will compile? (Choose three.)
     
-    int gap() { return 7; }
-    public int gap() { return 7; }
+  X int gap() { return 7; }
+  X public int gap() { return 7; }
     private int gap(int x) { return 7; }
     protected Creb gap() { return this; }
-    public int gap() { return Integer.getInteger("42"); }
+  X public int gap() { return Integer.getInteger("42"); }
 
 6. Given:
 
@@ -115,148 +115,144 @@
     9.     Wasabi w = new Wasabi();
     10.   }
     11. }
-    
-    Which two, inserted independently at line 2, will allow the code to compile and produce the output "bok choy"? (Choose two.)
-    
+
+    Which two, inserted independently at line 2, will allow the code to compile and 
+    produce the output "bok choy"? (Choose two.)
+
     // just a comment
     protected HorseRadish() { }
-    protected HorseRadish() { this(42);}
-    protected HorseRadish() { new HorseRadish(42);}
+  X protected HorseRadish() { this(42);}
+  X protected HorseRadish() { new HorseRadish(42);}
 
-7. Given:                                                    
-                                                              
-    1.  class Test3 {                                             
-    2.    public static void main(String [] args) {               
-    3.      boolean x = true;                                     
-    4.      boolean y = false;                                    
-    5.      short z = 42;                                         
-    6.                                                            
-    7.      if((x = false) || (y = true))  z++;                   
-    8.      if((z++ == 44) || (++z == 45)) z++;                   
-    9.                                                            
-    10.      System.out.println("z = " + z);                      
-    11.    }                                                      
-    12.  }                                                        
-                                                                  
-    What is the result?                                           
-                                                                  
-    z = 43                                                        
-    z = 44                                                        
-    z = 45                                                        
-    z = 46                                                        
-    Compilation fails.                                            
-    An exception is thrown at runtime.                            
+7. Given:
 
-8. Given:                                                     
+    1.  class Test3 {
+    2.    public static void main(String [] args) {
+    3.      boolean x = true;
+    4.      boolean y = false;
+    5.      short z = 42;
+    6.
+    7.      if((x = false) || (y = true))  z++;
+    8.      if((z++ == 44) || (++z == 45)) z++;
+    9.
+    10.      System.out.println("z = " + z);
+    11.    }
+    12.  }
 
-    1. import java.util.*;                                        
-    2. class ForInTest {                                          
-    3.   static List list = new ArrayList();                      
-    4.                                                            
-    5.   static List getList() { return list; }                   
-    6.                                                            
-    7.   public static void main(String [] args) {                
-    8.     list.add("a"); list.add("b"); list.add("c");           
-    9.     // insert code here                                    
-    10.       System.out.print(o);                                
-    11.   }                                                       
-    12. }                                                         
-                                                                  
-    Which, inserted at line 9, will cause the output abc?         
-                                                                  
-    for(char o : list)                                            
-    for(Object o : getList())                                     
-    for(Object o : getList();)                                    
-    for(Object o : o.getList())                                   
-    for(Object o : o.getList();)                                  
+    What is the result?
+
+    z = 43
+    z = 44
+    z = 45
+  X z = 46
+    Compilation fails.
+    An exception is thrown at runtime.
+
+8. Given:
+
+    1. import java.util.*;
+    2. class ForInTest {
+    3.   static List list = new ArrayList();
+    4.    
+    5.   static List getList() { return list; }
+    6.    
+    7.   public static void main(String [] args) {
+    8.     list.add("a"); list.add("b"); list.add("c");
+    9.     // insert code here 
+    10.       System.out.print(o);
+    11.   }
+    12. }
+
+    Which, inserted at line 9, will cause the output abc?
+
+    for(char o : list)
+  X for(Object o : getList())
+    for(Object o : getList();)
+    for(Object o : o.getList())
+    for(Object o : o.getList();)
 
 9. Which two are valid command line invocations? (Choose two.)
-                                                              
-    java -ea Test                                                 
-    java -assert Test                                             
-    java -assertionsOn Test                                       
-    java -disableassertions Test                                  
 
-10. Given:                                                    
-                                                              
-    3. class Parser extends Utils {                               
-    4.   public static void main(String [] args) {                
-    5.     System.out.print(new Parser().getInt("42"));           
-    6.   }                                                        
-    7.   int getInt(String arg) {                                 
-    8.     return Integer.parseInt(arg);                          
-    9.   }                                                        
-    10. }                                                         
-    11. class Utils {                                             
+  X java -ea Test
+    java -assert Test
+    java -assertionsOn Test
+  X java -disableassertions Test
+
+10. Given:
+
+    3. class Parser extends Utils {
+    4.   public static void main(String [] args) {
+    5.     System.out.print(new Parser().getInt("42"));
+    6.   }
+    7.   int getInt(String arg) {
+    8.     return Integer.parseInt(arg);
+    9.   }
+    10. }
+    11. class Utils {
     12.   int getInt(String arg) throws Exception { return 42; }  
-    13. }                                                         
-                                                                  
-    What is the result?                                           
-                                                                  
-    42                                                            
-    Compilation fails.                                            
-    No output is produced.                                        
-    An exception is thrown at runtime.                            
-                                                              
-11. Given:                                                    
-                                                              
-    1. class StringTest {                                         
-    2.   public static void main(String [] args) {                
-    3.     String s = null;                                       
-    4.     try {                                                  
-    5.       s.trim();                                            
-    6.     } catch (Exception e) {                                
-    7.       System.out.println("exc");                           
-    8.     }                                                      
-    9.     s.trim();                                              
-    10.   }                                                       
-    11. }                                                         
-                                                                  
-    What is the result?                                           
-                                                                  
-    Compilation fails.                                            
-    An exception is thrown.                                       
-    The code runs with no output.                                 
-    exc then an exception is thrown.                              
-    exc then the code completes without exception.                
-                                                              
-12. Given:                                                    
+    13. }
 
-    1. class Animal { }                                           
-    2. class Dog extends Animal{ }                                
-    3. class Cat extends Animal{ }                                
-    4. class Vet {                                                
-    5.   public static void main(String [] args) {                
-    6.     Animal [] aa = {new Dog(), new Dog(), new Dog()};      
-    7.     for(Object o : aa)                                     
-    8.       goWalk((Dog) o);                                     
-    9.   }                                                        
-    10.   static void goWalk(Dog d) { }                           
-    11. }                                                         
+    What is the result?
 
-    And the command-line invocation:                              
+  X 42
+    Compilation fails.
+    No output is produced.
+    An exception is thrown at runtime.
 
-    java Vet.java                                                 
+11. Given:
 
-    What is the result?                                           
+    1. class StringTest {
+    2.   public static void main(String [] args) {
+    3.     String s = null;
+    4.     try {
+    5.       s.trim();
+    6.     } catch (Exception e) {
+    7.       System.out.println("exc");
+    8.     }
+    9.     s.trim();
+    10.   }
+    11. }
+          
+    What is the result?
 
-    The code runs with no output.                                 
-    A Java.lang.NullPointerException is thrown.                   
-    A java.lang.NoClassDefFoundError is thrown.                   
-    A java.lang.IllegalArgumentException is thrown.               
-    A java.lang.ArrayIndexOutOfBoundsException is thrown.         
+    Compilation fails.
+    An exception is thrown.
+    The code runs with no output.
+    exc then an exception is thrown.
+  X exc then the code completes without exception.
 
+12. Given:
 
+    1. class Animal { }
+    2. class Dog extends Animal{ }
+    3. class Cat extends Animal{ }
+    4. class Vet {
+    5.   public static void main(String [] args) {
+    6.     Animal [] aa = {new Dog(), new Dog(), new Dog()};
+    7.     for(Object o : aa)
+    8.       goWalk((Dog) o);
+    9.   }
+    10.   static void goWalk(Dog d) { }
+    11. }
 
+    And the command-line invocation:
 
+    java Vet.java
 
+    What is the result?
+
+  X The code runs with no output.
+    A Java.lang.NullPointerException is thrown.
+    A java.lang.NoClassDefFoundError is thrown.
+    A java.lang.IllegalArgumentException is thrown.
+    A java.lang.ArrayIndexOutOfBoundsException is thrown.
 
 13. Which method exists in java.lang.StringBuilder but NOT in java.lang.StringBuffer?
 
     append
     insert
     reverse
-    replace
+  X replace
     lastIndexOf
     All of these methods exist in both classes.
 
@@ -271,23 +267,23 @@
     7.     System.out.println(s.indexOf("c"));
     8.   }
     9. }
-    
+
     What is the result?
-    
+
     -1
     5
     6
-    7
+  X 7
     Compilation fails.
     An exception is thrown at runtime.
 
 15. Given:
 
     int x = reader.read();
-    
+
     Which is true?
-    
-    reader can be of either type FileReader or BufferedReader
+
+  X reader can be of either type FileReader or BufferedReader
     reader can be of NEITHER type FileReader or BufferedReader
     reader can be of type FileReader but NOT of type BufferedReader
     reader can be of type BufferedReader but NOT of type FileReader
@@ -297,11 +293,11 @@
     10. class Car implements Serializable { }
     11.
     12. class Ford extends Car { }
-    
+
     If you attempt to serialize an instance of Ford, what is the result?
-    
+
     Compilation fails.
-    One object is serialized.
+  X One object is serialized.
     Two objects are serialized.
     An exception is thrown at runtime.
 
@@ -312,16 +308,16 @@
     3. class LocaleTest {
     4.   public static void main(String [] args) {
     5.     Date d = new Date();
-    6.     DateFormat df = DateFormat.getDateInstance(
-    DateFormat.MEDIUM, Locale.US);
+    6.     DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.US);
     7.     System.out.print(df.format(d));
-    8.     df = DateFormat.getDateInstance(
-    DateFormat.MEDIUM, Locale.GERMANY);
+    8.     df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.GERMANY);
     9.     System.out.println(df.format(d));
     10.   }
     11. }
-    
-    For the date of June 24, 2004 the MEDIUM date formatting for the US is June 24, 2004, and the MEDIUM date formatting for GERMANY is 24.06.2004. If the code is run on May 4, 2005, what is the result?
+
+    For the date of June 24, 2004 the MEDIUM date formatting for the US is June 24, 2004, 
+    and the MEDIUM date formatting for GERMANY is 24.06.2004. If the code is run on May 4, 
+    2005, what is the result?
     
     May 4, 2005
     04.05.2005
@@ -892,8 +888,3 @@
     3
     Compilation fails.
     An exception is thrown at runtime.
-
-
-
-
-
