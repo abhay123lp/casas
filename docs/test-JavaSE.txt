@@ -319,8 +319,8 @@
     and the MEDIUM date formatting for GERMANY is 24.06.2004. If the code is run on May 4, 
     2005, what is the result?
     
-    May 4, 2005
-    04.05.2005
+  X May 4, 2005
+  X 04.05.2005
     May 4, 2005
     May 4, 2005
     Compilation fails.
@@ -346,7 +346,7 @@
     Compilation fails.
     true true true true false
     false true true true false
-    false true false true false
+  X false true false true false
     false false false false false
     false true true true false false
     An exception is thrown at runtime.
@@ -368,12 +368,11 @@
     
     go
     go go
-    go go go
+  X go go go
     Compilation fails.
     An exception is thrown at runtime.
 
 20. Given:
-
 
     1. class ThreadBoth extends Thread implements Runnable {
     2.
@@ -390,7 +389,7 @@
     What is the result?
     
     hi
-    hi hi
+  X hi hi
     Compilation fails.
     The code runs with no output.
     An exception is thrown at runtime.
@@ -415,8 +414,8 @@
     in pre
     pre in
     in post pre
-    in pre post
-    pre in post
+  X in pre post
+  X pre in post
     pre post in
 
 22. Given:
@@ -424,20 +423,24 @@
     5. class NoGo implements Runnable {
     6.   private int i;
     7.   public synchronized void run() {
-    8.     if (i%10 != 0) { i++; }
-    9.     for(int x=0; x<10; x++, i++)
-    10.       { if (x == 4) Thread.yield(); }
+    8.      if (i%10 != 0) { 
+               i++; 
+            }
+    9.      for(int x=0; x<10; x++, i++){ 
+               if (x == 4) Thread.yield(); 
+            }
     11.     System.out.print(i + " ");
     12.   }
+    
     13.   public static void main(String [] args) {
-    14.     NoGo n = new NoGo();
-    15.     for(int x=0; x<101; x++) { new Thread(n).start(); }
+    14.     NoGo g = new NoGo();
+    15.     for(int x=0; x<101; x++) { new Thread(g).start(); }
     16.   }
     17. }
     
     Which is true?
     
-    The output can never contain the value 10.
+  X The output can never contain the value 10.
     The output can never contain the value 30.
     The output can never contain the value 297.
     The output can never contain the value 820.
@@ -459,7 +462,7 @@
     
     0
     1
-    2
+  X 2
     3
     4
     5
@@ -493,12 +496,11 @@
     
     6 7 8 9
     6 7 8 6
-    6 7 8 6 7 8
+  X 6 7 8 6 7 8
     6 7 8 6 7 9
-    6 7 8 8 6 7
+  X 6 7 8 8 6 7
     6 7 8 6 6 7 8
     6 7 8 9 6 7 8 9
-
 
 25. Given:
 
@@ -518,7 +520,7 @@
     
     These classes are NOT coupled.
     These classes are loosely coupled.
-    These classes are tightly coupled.
+ X  These classes are tightly coupled.
     These classes are abstractly coupled.
 
 26. Given:
@@ -538,7 +540,7 @@
     What is the result?
     
     hi hi hi
-    hi howdy dude!
+  X hi howdy dude!
     An exception is thrown at runtime.
     Compilation fails due to an error on line 7.
     Compilation fails due to an error on line 8.
@@ -550,6 +552,7 @@
     3. }
     4. class Parrot extends Bird {
     5.   static void talk() { System.out.print("hello "); }
+    
     6.   public static void main(String [] args) {
     7.     Bird [] birds = {new Bird(), new Parrot()};
     8.     for( Bird b : birds)
@@ -560,7 +563,7 @@
     What is the result?
     
     chirp chirp
-    chirp hello
+  X chirp hello
     hello hello
     Compilation fails.
     An exception is thrown at runtime.
