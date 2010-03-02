@@ -573,20 +573,28 @@
     12. class Super {
     13.   protected int a;
     14.   protected Super(int a)  {
-    15.     System.out.print(this.a); this.a = a; }
+    15.     System.out.print(this.a); 
+            this.a = a; 
+          }
     16. }
+    
     17. class Sub extends Super {
-    18.   public Sub(int b) { super(b); a = super.a;}
+    18.   public Sub(int b) { 
+                super(b); 
+                a = super.a;
+          }
     19.   public static void main(String [] args) {
-    20.     new Sub(7.go();
+    20.       new Sub(7).go();
     21.   }
-    22.   void go() { System.out.print(this.a); }
+    22.   void go() { 
+              System.out.print(this.a); 
+          }
     23. }
     
     What is the result?
     
     00
-    07
+  X 07
     70
     77
     Compilation fails.
@@ -597,10 +605,12 @@
     Has-a relationships must be tightly coupled.
     Is-a relationships must be well encapsulated.
     Is-a relationships can be represented by using reference variables as local variables.
-    Has-a relationships can be represented by using reference variables as local variables.
+  X Has-a relationships can be represented by using reference variables as local variables.
     Has-a relationships can be represented by using reference variables as instance variables.
 
-30. A programmer wants to develop an application in which Fizzlers are a kind of Whoosh, and Fizzlers also fulfill the contract of Oompahs. In addition, Whooshes are composed with several Wingits. Which code represents this design?
+30. A programmer wants to develop an application in which Fizzlers are a kind of 
+    Whoosh, and Fizzlers also fulfill the contract of Oompahs. In addition, Whooshes 
+    are composed with several Wingits. Which code represents this design?
 
 	class Wingit { }
 	class Fizzler extends Oompah implements Whoosh { }
@@ -610,7 +620,7 @@
 	class Oompah { }
 
 
-	class Wingit { }
+  X class Wingit { }
 	class Fizzler extends Whoosh implements Oompah { }
 	class Whoosh {
 	Wingits [] w;
@@ -634,13 +644,14 @@
 	class Whoosh { }
 	
 	
-31. A programmer creates a class that correctly implements the Comparable interface. Which three are true? (Choose three.)
+31. A programmer creates a class that correctly implements the Comparable interface. 
+    Which three are true? (Choose three.)
 
-    The required method returns an int.
+  X The required method returns an int.
     The required method returns a boolean.
-    The required method takes one argument.
+  X The required method takes one argument.
     The required method takes two arguments.
-    The class contains a method named compareTo.
+  X The class contains a method named compareTo.
     The class contains a method named comparable.
 
 32. Given:
@@ -658,7 +669,7 @@
     
     ==
     equals
-    equals ==
+  X equals ==
     Compilation fails.
     No output is produced.
     An exception is thrown at runtime.
@@ -673,7 +684,7 @@
     6.     go(t);
     7.   }
     8. }
-    9. class Animal { }
+    9.  class Animal { }
     10. class Dog extends Animal { }
     
     And these four:
@@ -690,7 +701,7 @@
     only s1 and s2
     only s1 and s3
     only s1, s2, and s3
-    only s1, s2, and s4
+  X only s1, s2, and s4
     All of the codes will compile.
 
 34. Given:
@@ -701,14 +712,13 @@
     4.     TreeSet<String> s = new TreeSet<String>();
     5.     s.add("one");
     6.     s.add("two");
-    7.     // insert code here
+    7.     // insert code here ..................
     8.     for(String s2 : sorted)
     9.       System.out.print(s2 + " ");
     10.   }
     11. }
     
     And the four code fragments:
-    
     
     s1.     SortedSet sorted = s.tailSet(s.first());
     s2.     SortedSet<String> sorted = s.tailSet(s.first());
@@ -722,7 +732,7 @@
     only s2 and s3
     only s2 and s4
     only s2, s3, and s4
-    only s1, s2, s3, and s4
+  X only s1, s2, s3, and s4
 
 35. Given:
 
@@ -787,7 +797,8 @@
     6.     go();
     7. } }
     
-    When class StaticStuff has been compiled, what is the result when you attempt to compile class FindStatic?
+    When class StaticStuff has been compiled, what is the result when you attempt 
+    to compile class FindStatic?
     
     The code compiles.
     Compilation fails due to an error on line 1.
@@ -832,7 +843,7 @@
     
     77
     79
-    97
+  X 97
     99
     Compilation fails.
     An exception is thrown at runtime.
@@ -857,20 +868,23 @@
     The output is 344.
     Compilation fails due to an error at line 5.
     Compilation fails due to an error at line 11.
-    At line 8, an object is eligible for garbage collection.
+  X At line 8, an object is eligible for garbage collection.
 
-41. Given a JAR file named MyJar.jar containing: com/Gamma.class And that this class was compiled from the following file:
+41. Given a JAR file named MyJar.jar containing: com/Gamma.class And that this 
+    class was compiled from the following file:
 
     1. package com;
     2. public class Gamma { }
     
-    The directory you are in contains a subdirectory jarDir that contains MyJar.jar. Which command line will correctly invoke the compiler for a Java file named Test.java that uses the Gamma class?
+    The directory you are in contains a subdirectory jarDir that contains MyJar.jar. 
+    Which command line will correctly invoke the compiler for a Java file named 
+    Test.java that uses the Gamma class?
     
     javac -path MyJar.jar Test.java
     javac -classpath MyJar.jar Test.java
     javac -path jarDir/MyJar.jar Test.java
     javac -path jarDir/com/MyJar.jar Test.java
-    javac -classpath jarDir/MyJar.jar Test.java
+  X javac -classpath jarDir/MyJar.jar Test.java
     javac -classpath jarDir/com/MyJar.jar Test.java
 
 42. Given:
@@ -889,5 +903,5 @@
     1
     2
     3
-    Compilation fails.
+  X Compilation fails.
     An exception is thrown at runtime.
