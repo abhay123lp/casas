@@ -742,7 +742,7 @@
     4.     LinkedList<String> list = new LinkedList<String>();
     5.     list.add("one "); list.add("two "); list.add("three ");
     6.     String [] sa = new String[3];
-    7.     // insert code here
+    7.     // insert code here....................
     8.     for(String s : sa)
     9.       System.out.print(s);
     10.   }
@@ -751,7 +751,7 @@
     Which, inserted at line 7, allows the code to compile and run without exception?
     
     sa = list.toArray();
-    sa = list.toArray(sa);
+  X sa = list.toArray(sa);
     sa = (String) list.toArray();
     sa = (String []) list.toArray();
 
@@ -787,7 +787,6 @@
     6. }
     
     And:
-    
     
     1. import static x.StaticStuff.*;
     2. class FindStatic {
