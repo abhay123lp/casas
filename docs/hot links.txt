@@ -34,9 +34,6 @@ http://www.tingroom.com/lesson/yyhhsc/
 敏捷开发2009 - 程序员修炼之道，十年之后 - Dave Thomas
 http://www.infoq.com/cn/presentations/dt-pragmatic-programmer
 
-飞黄腾达
-http://so.youku.com/search_video/type_tag_q_%E9%A3%9E%E9%BB%84%E8%85%BE%E8%BE%BE
-
 英文演讲实践
 http://v.ku6.com/playlist/index_2537857.html
 
@@ -49,8 +46,12 @@ http://docs.sun.com/
 Java Web Start Document
 http://java.sun.com/javase/6/docs/technotes/guides/javaws/developersguide/contents.html
 
+Apache Shindig
+Apache Shindig is the reference implementation of  OpenSocial API specifications
+http://shindig.apache.org/
 
-
+Open Social Org
+http://www.opensocial.org/
 
 
 
