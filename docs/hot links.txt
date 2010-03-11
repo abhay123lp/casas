@@ -53,6 +53,11 @@ http://shindig.apache.org/
 Open Social Org
 http://www.opensocial.org/
 
+Cloud Players
+Joyent:
 
+Open Party in Beijing
+http://www.beijing-open-party.org/
 
-
+The Handbook of Applied Cryptography 
+http://www.cacr.math.uwaterloo.ca/hac/
