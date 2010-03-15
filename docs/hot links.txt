@@ -63,3 +63,7 @@ http://www.beijing-open-party.org/
 
 The Handbook of Applied Cryptography 
 http://www.cacr.math.uwaterloo.ca/hac/
+
+关于Kerberos的原理得对话
+http://tieba.baidu.com/f?kz=494445616
+
