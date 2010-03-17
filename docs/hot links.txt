@@ -67,3 +67,16 @@ http://www.cacr.math.uwaterloo.ca/hac/
 关于Kerberos的原理得对话
 http://tieba.baidu.com/f?kz=494445616
 
+Open-source software platform that implements IaaS-style cloud computing
+http://www.eucalyptus.com/
+
+
+Cloud Myths Dispelled
+  Cloud vs virtualization
+  Could vs Grid
+  Public Cloud provide infinite scale
+  Clouds only provide 'pay-as-you-go' access
+http://www.eucalyptus.com/resources/info/cloud-myths-dispelled
+
+BBS of China Cloud
+http://bbs.chinacloud.cn/forumindex.aspx
