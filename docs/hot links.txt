@@ -1,82 +1,8 @@
-??????
-http://www.56.com/w84/play_album-aid-3918654_vid-MjAyMTkxNzg_o-1.html
-
-????????????
-http://www.56.com/w66/album-aid-5248296.html
-
-????Software Engineering - IIT Bombay
-http://www.youku.com/playlist_show/id_3961004.html
-
-??: ????Agile Development 
-http://www.youku.com/playlist_show/id_3962206.html
-
-????:
-http://v.youku.com/v_playlist/f2482011o1p36.html
-
-??????
-http://www.tingroom.com/lesson/qzyyky/list_1.html
-
-????????
-http://www.tingroom.com/lesson/swyyky/list_7.html
-
-??????
-http://www.tingroom.com/lesson/swjjgs/list_2.html
-
-??????
-http://www.tingroom.com/lesson/dianhuatalk/list_1.html
-
-????
-http://www.tingroom.com/lesson/xlgtang/
-
-??????
-http://www.tingroom.com/lesson/yyhhsc/
-
-????2009 - ???????,???? - Dave Thomas
-http://www.infoq.com/cn/presentations/dt-pragmatic-programmer
-
-??????
-http://v.ku6.com/playlist/index_2537857.html
-
-Java Pet Store Architectural Overview
-http://java.sun.com/blueprints/code/jps11/archoverview.html
-
-Documents of SUN
-http://docs.sun.com/
-
 Java Web Start Document
 http://java.sun.com/javase/6/docs/technotes/guides/javaws/developersguide/contents.html
 
-Apache Shindig
-Apache Shindig is the reference implementation of  OpenSocial API specifications
-http://shindig.apache.org/
-
-Open Social Org
-http://www.opensocial.org/
-????
-http://www.chinadaily.com.cn/language_tips/suvival/practice_business.html
-
-Cloud Players
-Joyent:
 
 Open Party in Beijing
 http://www.beijing-open-party.org/
 
-The Handbook of Applied Cryptography 
-http://www.cacr.math.uwaterloo.ca/hac/
 
-关于Kerberos的原理得对话
-http://tieba.baidu.com/f?kz=494445616
-
-Open-source software platform that implements IaaS-style cloud computing
-http://www.eucalyptus.com/
-
-
-Cloud Myths Dispelled
-  Cloud vs virtualization
-  Could vs Grid
-  Public Cloud provide infinite scale
-  Clouds only provide 'pay-as-you-go' access
-http://www.eucalyptus.com/resources/info/cloud-myths-dispelled
-
-BBS of China Cloud
-http://bbs.chinacloud.cn/forumindex.aspx
