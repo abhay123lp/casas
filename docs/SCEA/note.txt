@@ -92,4 +92,44 @@ Principles of Architecture
   Layering (Page 37)
   ...
 
+Security
+  Single Sing On requires a rich infrastructure of network and system services.
+  The classes of threats includes 
+      accidental threats, 
+      intentional threats, 
+      passive threats (those that do not change the state of the system but may include loss of confidentiality), 
+      active threats (those that change the state of the system, including changes to data and to software).
+  A security policy is an enterprise¡¯s statement defining the rules that regulate how it will provide security, handle intrusions, and recover from damage caused by security breaches
+  A standard set of Security services includes the following:
+      Identification and authentication 
+      Access control and authorization 
+      Accountability and auditing 
+      Data confidentiality 
+      Data integrity and recovery
+      Data exchange 
+      Object reuse 
+      Non-repudiation of origin and delivery 
+      Reliability
+
+Creating an Architecture Using Distributed Services and JEE
+    Industry experience shows that integrating legacy resources can take up to 50 percent of application development time.
+    
+Enterprise JavaBeans
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
