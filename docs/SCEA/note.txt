@@ -1,0 +1,95 @@
+Charpter 1: Overview
+==================================================
+Portal Framework
+    Components
+
+EBusiness Services
+    Content Management
+    Content caching
+    Web Publishing
+    Workflow
+    Personalization
+    User Profiling
+    Rules Engine
+    XML Integration
+    Single Sign On
+    Search Engine
+
+JavaEE Server
+    Presentation
+    Business Logic
+    Transaction
+    Messaging
+    Scalability
+    Reliability
+    Security
+    Management
+
+Charpter 2: Architecture and Protocols
+==================================================
+Non-functional Requirements:
+  Time:
+      Performance
+      Reliability
+  Space:
+      Scalability
+      Extensibility
+      Portability
+  CostOfUse:
+      Maintainability
+      Availability
+      Manageability
+      Testability
+      Flexibility
+  Security
+      Security
+
+Architect's role:
+  Architects visualize the behavior of a system. 
+  Architects create the BluePrint for the system, 
+  Architects define the way in which the elements of the system work together. 
+  Architects distinguish between functional and nonfunctional system requirements, 
+  Architects are responsible for integrating nonfunctional requirements into the system.
+
+Types of Architecture:
+  Architecture refers to an abstract representation of a system¡¯s components and behaviors. Architecture satisfies the functional and nonfunctional requirements of the client and is flexible enough to evolve when the requirements change.
+
+  System Architecture:
+    System architecture must consider the functions of components, their interfaces, interactions, and constraints
+
+
+Steps in Software Development
+  requirement analysis 
+    The requirement analysis describes what the system should do. 
+    Analysts generate domain models:classes, objects, and interactions. 
+    The requirement analysis should theoretically be free from any technical or implementation details and should contain an ideal model
+
+  object-oriented analysis
+    This phase involves the analysis of the domain. The analysts would do the following:
+      Develop use case diagrams for all the business processes. Use case diagrams are high-level descriptions of the system actors and the system functionality.
+      Develop sequence diagrams. These diagrams show the sequence of operation as a function of time.
+      Develop class diagrams. Class diagrams show the system functionality as classes and their methods.
+      Develop collaboration diagrams. Collaboration diagrams depict how the classes interact.
+
+  architectural analysis, 
+    This phase tries to give a framework within which all the components will work to satisfy all the customer requirements.
+    Pragmatically, the architect would work out a solution that takes into account security, performance, and cost, as well as considers reusing existing technology and business logic in the legacy system.
+    From the object-oriented design perspective, the architect would do the following:
+     Develop package dependency diagrams.
+     Decide how the classes in different packages interact.
+     Develop deployment diagrams.
+     Decide where the software components will reside in deployment.
+
+  object-oriented design 
+    In this phase, the design for the implementation is complete, and the decision is made.
+    All the classes are defined with their intended directory hierarchies identified. 
+    Design patterns are used, and object reuse is considered. 
+    Any architectural considerations arising out of the implementation design are discussed.
+
+Architectural Terminology
+  
+Principles of Architecture
+  Layering (Page 37)
+  ...
+
+
