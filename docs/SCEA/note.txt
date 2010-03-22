@@ -92,6 +92,23 @@ Principles of Architecture
   Layering (Page 37)
   ...
 
+Capabilities and System Quality
+
+  System Quality	Definition
+  -----------------------------------------------------
+  Availability 	The degree to which a system is accessible. The term 24¡Á7 describes total availability. This aspect of a system is often coupled with performance.
+  Reliability 	The ability to ensure the integrity and consistency of an application and its transactions.
+  Manageability 	The ability to administer and thereby manage the system resources to ensure the availability and performance of a system with respect to the other capabilities.
+  Flexibility 	The ability to address architectural and hardware configuration changes without a great deal of impact to the underlying system.
+  Performance 	The ability to carry out functionality in a timeframe that meets specified goals.
+  Capacity 		The ability of a system to run multiple tasks per unit of time.
+  Scalability 	The ability to support the required availability and performance as transactional load increases.
+  Extensibility 	The ability to extend functionality.
+  Validity 		The ability to predict and confirm results based on a specified input or user gesture.
+  Reusability 	The ability to use a component in more than one context without changing its internals.
+  Security 		The ability to ensure that information is not accessed and modified unless done so in accordance with the enterprise policy.
+
+
 Security
   Single Sing On requires a rich infrastructure of network and system services.
   The classes of threats includes 
@@ -115,9 +132,12 @@ Creating an Architecture Using Distributed Services and JEE
     Industry experience shows that integrating legacy resources can take up to 50 percent of application development time.
     
 Enterprise JavaBeans
-
-
-
+Distributed Application Lifecycle
+Iterative Development/MVC
+Simplifi ed Architecture and Development
+Component-Based Application Models
+JEE APIs and Certification
+XML and JEE
 
 
 
