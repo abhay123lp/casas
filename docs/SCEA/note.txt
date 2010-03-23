@@ -138,18 +138,35 @@ Simplifi ed Architecture and Development
 Component-Based Application Models
 JEE APIs and Certification
 XML and JEE
+Distributed Programming Services
 
+Distributed Object Frameworks
+  The current distributed object frameworks are CORBA, RMI, DCOM, and EJB. 
+  The EJB specification is intended to support compliance with the range of CORBA standards, current and proposed. 
+  The two technologies can function in a complementary manner. 
+  CORBA provides a great standards-based infrastructure on which to build EJB containers. 
+  The EJB framework makes it easier to build an application on top of a CORBA infrastructure. 
+  Additionally, the recently released CORBA components specification refers to EJB as the architecture when building CORBA components in Java.
 
-
-
-
-
-
-
-
-
-
-
-
+  CORBA
+    CORBA is a language independent, distributed object model specified by the OMG. This architecture was created to support the development of object-oriented applications across heterogeneous computing environments that might contain different hardware platforms and operating systems.
+    CORBA relies on IIOP for communications between objects. 
+    The center of the CORBA architecture lies in the Object Request Broker (ORB). The ORB is a distributed programming service that enables CORBA objects to locate and communicate with one another. 
+    CORBA objects have interfaces that expose sets of methods to clients. 
+    To request access to an object¡¯s method, a CORBA client acquires an object reference to a CORBA server object. Then, the client makes method calls on the object reference as if the CORBA object were local to the client. 
+    The ORB finds the CORBA object and prepares it to receive requests, to communicate requests to it, and then to communicate replies back to the client. 
+    A CORBA object interacts with ORBs either through an ORB interface or through an Object Adapter.
+  
+  Java/RMI
+    Java/RMI relies on a protocol called the Java Remote Method Protocol (JRMP). Java relies heavily on Java Object Serialization
+    For a client to locate a server object for the first time, RMI depends on a naming mechanism called an RMIRegistry that runs on the server machine and holds information about available server objects.
+    Java/RMI server objects are named using URLs, and for a client to acquire a server object reference, it should specify the URL of the server object as you would specify the URL to a HTML page.
+    
+  Distributed Component Object Model (DCOM)
+    DCOM supports remote objects by running on a protocol called the Object Remote Procedure Call (ORPC). 
+    This ORPC layer is built on top of Distributed Computing Environment¡¯s (DCE) Remote Procedure Call (RPC) and interacts with Component Object Model¡¯s (COM) runtime services. 
+    A DCOM server is a body of code that is capable of serving up objects of a particular type at runtime. Each DCOM server object can support multiple interfaces, each representing a different behavior of the object. 
+    A DCOM client calls into the exposed methods of a DCOM server by acquiring a pointer to one of the server object¡¯s interfaces. The client object then starts calling the server object¡¯s exposed methods through the acquired interface pointer as if the server object resided in the client¡¯s address space. 
+    As specified by COM, a server object¡¯s memory layout conforms to the C++ vtable layout. Since the COM specification is at the binary level, it allows DCOM server components to be written in diverse programming languages such as C++, Java, Object Pascal (Delphi), Visual Basic, and even COBOL. 
 
 
