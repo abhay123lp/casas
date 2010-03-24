@@ -1,14 +1,37 @@
 Chapter 1 What is Architecture
 =================================================================
 
+Elements Used in UML
+Relationships Used in UML
+    Generalization
+    	A specialized version of another class 
+    	Solid line with a closed arrowhead pointing to the more general class
+    Association 
+    	Uses the services of another class
+    	Solid line connecting the associated classes,with an optional open arrowhead showing direction of navigation
+	Aggregation 
+		A class ¡°owns¡± another class 
+		A form of association with an unfilled diamond at the ¡°owner¡± end of the association
+	Composition 
+		A class is composed of another class;refers to an aggregation within which the component parts and the larger encompassing whole share a lifetime
+		A form of aggregation, shown with either a filled diamond at the ¡°composite¡± end, or with the composite graphically containing the ¡°component¡±
+	Refinement 
+		A refined version of another class;refinement within a given model can be shown as a dependency with the stereotype <<refines>> or one of its more specific forms, such as <<implements>>
+		Dashed line with a closed hollow arrowhead pointing to the more refined class
+	Dependency 
+		A class dependent on another class 
+		Dashed line with an open arrowhead pointing to the dependency
 
+Diagrams Used in UML
+   activity diagram vs state diagram
+   sequence diagram vs collaboration diagram
 
-
-
-
-
-
-
+Practical Use of UML Diagrams
+	Use Case Diagram
+	The use case lends itself to a problem-centric approach to analysis and design.
+	Use cases are the functions or services of the system¡ªthose that are visible to its actors.
+	Use case diagrams are closely connected to scenarios. A scenario is an example of what happens when someone interacts with the system. 
+	For example, here is a scenario for a security trade: a trader accesses an Internet-based system and chooses the type of security he or she wants to place a trade order to buy or sell
 
 
 
