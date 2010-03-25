@@ -1,5 +1,46 @@
-Chapter 1 What is Architecture
+Chapter 3 Object-Oriented Analysis and Design
 =================================================================
+Project Life Cycle
+    Analysis        
+        Requirements analysis: 
+          define detailed requirements and the externally visible characteristics of the system. Write a validation plan
+          Short form: Is it possible to resolve the requirements?
+        System-context analysis
+          Define the context of the system via use cases and scenarios. External messages, events, and actions are defined. The system is treated as a black box.
+          Short form: What would the big picture solution look like?
+        Model analysis:
+          Identify the classes, objects, and associations that solve the problem. 
+          Response behavior is modeled using state charts. 
+          Interaction among objects is shown with sequence or collaboration diagrams. 
+          Short form: A further refinement of the big picture solution arrived at by decomposing subsystems into high-level classes.
+    
+    Design
+        Architectural design
+          Physical architecture of the system is modeled using deployment diagrams, 
+          software component architecture is modeled using component diagrams, 
+          concurrency models are captured using class diagrams identifying the active objects. 
+          Design patterns are used here as well.
+        Mechanistic design
+          Define the collaborative behavior of classes and objects. 
+          Sequence and collaboration diagrams capture specific instances of collaborations and state charts are enhanced to define the full behavior
+        Detailed design
+          Define the detailed behavior and structure of individual classes using activity diagrams and notations
+
+    Development
+
+    Implementation
+        Unit testing
+        Integration testing
+        Validation testing
+        System delivered
+
+RUP
+    The RUP identifies four phases for projects.
+    1. Inception    The focus of this phase is the project scope.
+    2. Elaboration  The architecture as well as the requirements of the product being built must be defined by the end of this phase.
+    3. Construction The software must be developed or constructed in this phase.
+    4. Transition   The software must be rolled out to users during this phase.
+
 
 Elements Used in UML
 Relationships Used in UML
