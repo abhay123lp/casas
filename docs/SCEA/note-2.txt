@@ -64,17 +64,32 @@ Relationships Used in UML
 		Dashed line with an open arrowhead pointing to the dependency
 
 Diagrams Used in UML
-   activity diagram vs state diagram
-   sequence diagram vs collaboration diagram
+  activity diagram vs state diagram
+  sequence diagram vs collaboration diagram
 
 Practical Use of UML Diagrams
-	Use Case Diagram
+  Use Case Diagram
 	The use case lends itself to a problem-centric approach to analysis and design.
 	Use cases are the functions or services of the system¡ªthose that are visible to its actors.
 	Use case diagrams are closely connected to scenarios. A scenario is an example of what happens when someone interacts with the system. 
 	For example, here is a scenario for a security trade: a trader accesses an Internet-based system and chooses the type of security he or she wants to place a trade order to buy or sell
 
-
+  Class Diagram
+  
+  Package Diagram
+  
+  Sequence Diagrams
+  
+  Collaboration Diagrams
+  
+  State Diagrams
+  
+  Activity Diagrams
+  
+  Component Diagram
+    Component diagrams are physical versions of class diagrams.
+  
+  Deployment Diagram
 
 
 
