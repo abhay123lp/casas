@@ -92,8 +92,158 @@ Practical Use of UML Diagrams
   Deployment Diagram
 
 
+Chapter 4 Applicability of JEE Technology
+=================================================================
+CERTIFICATION OBJECTIVE 4.01 - Explain the JEE Architecture and System Requirements
+------------------------------------------------------------------
+CORBA
+  The main component of CORBA is the Object Request Broker (ORB). It encapsulates
+  the communication infrastructure necessary to locate objects, manage connections,
+  and deliver data. 
+  
+  The ORB core is responsible for the communication of requests. The basic functionality 
+  provided by the ORB consists of passing the requests from clients to the object 
+  implementations on which they are invoked. The ORB then transfers the request to 
+  the object implementation, which receives the request, processes it, and returns an 
+  object result.
+
+
+The Data Layer
+  The data layer is responsible for data management. A data layer may be as simple as a modern relational database; 
+  on the other hand, it may include data access procedures to other data sources such as nonrelational databases, legacy files, or message-oriented middleware.
+  
+  To avoid making an application less interoperable, the architect should strive to keep validation and business logic out of the data layer; that logic belongs in the business logic layer. Sometimes basic database design rules can overlap with business logic. There is usually some basic business logic in the data tier.
+
+JEE Application Components
+
+Development Methodology and Process
+  application frameworks provide components and services based on the best patterns, practices, and standards available. The ideal framework would implement extendable design patterns on the presentation, business, and data/services layers.
+
+JEE Application Assembly
+  The assemblers or deployers can edit the deployment properties directly. 
+
+  They map internal references along with server-specific properties to JNDI or other names of any references, which include the following:
+    Database connection pools
+    Mail sessions
+    URL connections
+    JMS queues and topics
+    EJB references
+
+  The application assemblers perform the following tasks to deliver an EAR file containing the JEE application:
+    Assemble EJB JAR and WAR files into a JEE application (EAR) file.
+    Specify the deployment descriptor for the JEE application.
+    Verify that the contents of the EAR file are well formed and comply with the JEE specification.
+
+JEE Application Deployment
+  Duties include setting security attributes, setting transaction controls, and specifying database connection pools.
+  During configuration, the deployer resolve external dependencies, specify security settings, and assign transaction attributes.
+  The deployer performs the following tasks to install and configure a JEE application:
+    Stage the initial JEE application (EAR) file created in the preceding phase to the JEE server.
+    Configure the JEE application for the operational environment by modifying the DD of the JEE application.
+    Verify that the contents of the EAR file are well formed and comply with the JEE specification.
+    Deploy (install) the JEE application EAR file into the JEE server
 
 
 
+CERTIFICATION OBJECTIVE 4.02 - Explain the Use of Patterns in the JEE Framework
+------------------------------------------------------------------
+  In the context of computer architecture, design patterns are proven solutions to recurring business problems. They consider the particular context of the problem and the consequences of the solution. 
+  A good designer will use a pattern because it is proven¡ªthat is, the designer has used it before successfully or has built and validated a proof of concept. 
+  When a problem is common, a good designer doesn¡¯t have to devise a new solution; instead, he or she follows the pattern and adapts it to the current environment.
+  Good architects use the experience, knowledge, and insights of developers who have used these patterns successfully in their own work. 
 
 
+  Pattern			JEE Implementation
+  --------------------------------------
+  Proxy				EJB remote interface
+  Decorator			EJBObject
+  Factory Method	EJBHome interface
+  Abstract Factory	EJBHome interface
+
+CERTIFICATION OBJECTIVE 4.03 - Describe the Concepts of ¡°Best Practices¡± and ¡°Guidelines¡±
+------------------------------------------------------------------
+A best practice is a technique used to drive design at the component level. 
+A best practice is an optimal process that is recognized by peers in similar situations.
+It is applicable to a cross-section of scenarios with varying resources and sizes.
+It takes design requirements into consideration. 
+For example, a best practice might be to use session beans as facades to entity beans.
+
+On the other hand, a guideline is a rule applied horizontally to the design.
+Guidelines reflect agreements on practices or operations by recognized professional associations. 
+This includes formal, approved standards, as contrasted to de facto standards and proprietary standards that are exceptions to this concept. 
+For example, to minimize network traffic, the architect attempts to maximize the content of a data request¡ªthat is, we try to get as much as we can out of each request.
+
+------------------------------------------------------------------
+
+CERTIFICATION OBJECTIVE 4.04 - Illustrate MVC Parttern
+
+MVC offers the following benefits:
+  Clarifies application design through separation of data modeling issues from data display and user interaction
+  Allows the same data to be viewed in many ways and by many users
+  Simplifies impact analysis, thereby improving extensibility
+  Facilitates maintenance by encapsulating application functions behind trusted APIs
+  Enhances reusability by separating application functionality from presentation
+  Facilitates distribution of the application, as MVC boundaries are natural distribution interface points
+  Can be used to divide deployment as well as make incremental updates possible 
+  Forces clear designation of responsibilities and functional consistency, thereby facilitating testability
+  Increases flexibility, because data model, user interaction, and data display can be made ¡°pluggable¡±
+
+
+MVC designs may encounter the following problems:
+  Components aren¡¯t able to take advantage of knowledge of other components¡¯ implementation details.
+  Communication volume and other latency issues must be carefully addressed; otherwise, MVC may not scale well in distributed systems.
+  Maintenance of an MVC application may be difficult if the Model API is unstable, because the Controller is written in terms of the Model API.
+
+CERTIFICATION OBJECTIVE 4.05 - Review Best Practices Applicable for All Tiers
+------------------------------------------------------------------
+
+CERTIFICATION OBJECTIVE 4.06 - Review Best Practices for the Client Tier
+------------------------------------------------------------------
+
+CERTIFICATION OBJECTIVE 4.07 - Enumerate the Components and Categories of the Web Tier
+------------------------------------------------------------------
+
+CERTIFICATION OBJECTIVE 4.09 - Review the Best Practices for the Presentation Layer
+------------------------------------------------------------------
+To avoid needlessly complex presentation components in the web tier, follow these practices:
+  Separate HTML from Java.
+  Try to place business logic in JavaBeans.
+  Factor general behavior out of custom tag handler classes.
+  Favor HTML in Java handler classes over Java in JSPs.
+  Use an appropriate inclusion mechanism.
+  Use a JSP template mechanism.
+  Use style sheets.
+  Use the MVC pattern.
+  Use available custom tag libraries.
+  Determine the appropriate level of XML compliance.
+  Use JSP comments in most cases.
+  Follow HTML best practices.
+  Utilize the JSP exception mechanism.
+
+
+The EJB Tier
+  JEE Best Practices: Data Access Objects
+    The data-access object (DAO) pattern separates the interface to a system resource from the code used to access that resource by encapsulating the access to the data. Each enterprise bean that accesses a back-end resource in the application may have an associated DAO class, which defines an abstract API of operations on the resource. This allows a clean separation of bean and database access code.
+  
+  JEE Best Practices: Value Objects
+    A Value Object represents a composite value from the server, not a reference to an object on the server. Value Objects are ad hoc groupings of data values to support a use case (or group of use cases).Value Objects can be used for fine-grained business objects that represent structure with get/set behavior only. Use a Value Object when the business entity being modeled has
+      Only methods that get values from the object¡¯s internal state (that is, immutable state)
+      A life cycle that is completely controlled by another object
+      A relatively small size
+
+  JEE Best Practices: Session Bean Facade
+
+  JEE Best Practices: Master Detail
+    A master-detail relationship is a one-to-many type relationship.
+
+  JEE Best Practices: EIS Integration Tier
+    JEE reduces the complexity of accessing an enterprise information system by relying on the web and EJB containers to handle transactions, security, and scalability. 
+    JDBC accesses relational data. 
+    JNDI accesses enterprise name and directory services. 
+    JMS sends and receives messages using enterprise messaging systems. 
+    JavaMail sends and receives mail. 
+    JavaIDL calls CORBA services. 
+    JNI calls services written in other languages¡ªJNI can interact with native languages.
+    
+  
+  
