@@ -256,5 +256,61 @@ CERTIFICATION OBJECTIVE 4.11 - Illustrate When to Use JEE Technology for Given S
 
 
 Performance-Related Best Practices: Data Caching
+Here are some tips:
+  If clients have slow back-end connections, consider compressing data for network communication.
+  Minimize the number of network round trips required by the application.
+  For applications to scale to many users, minimize the amount of shared memory that requires updating.
+  Cache data to minimize lookup time, although this can reduce scalability if locks are required to access the cache.
+  If there are more accesses than updates to a cache, share the access lock among all the accessors, but be aware that this reduces the window for updaters to lock the cache.
+  Eliminate memory leaks before tuning execution speed.
+  Ensure that the development environment approximates/simulates the production deployment environment.
+  Consider metrics: maximum response ratio and CPU utilization under various activity loads. How well does the application scale when additional users are added?
+  Spend your time wisely: For example, improving the performance of a method that is called 1000 times is better than improving the performance of a method that is called only 10 times.
+  Don’t cache data unless you know how and when to invalidate the cached entries.
 
+
+JEE Best Practices: For Services
+  If an EJB service for an object is overkill (for example, if the object will only be accessed locally), use a plain Java object and not an EJBObject.
+  You can use local interfaces if EJB calls another EJB (or a servlet calling an EJB) from the same container and the same virtual machine.
+  Wrap entity beans in a session bean to change multiple EJB remote calls into one session bean remote call and several local calls. (session bean facade.)
+  Change multiple remote method calls into one remote method call with all the data combined into a parameter object.
+  Control serialization by modifying unnecessary data variables with a transient keyword to avoid unnecessary data transfer over network.
+  Cache EJBHome references to avoid JNDI lookup overhead (ServiceLocator).
+  Declare nontransactional methods of session beans with NotSupported or Never transaction attributes. If the code calling a method in this bean has a transaction running, suspend that transaction until the method called in this bean completes. No transaction context is created for this bean.
+  Transactions should span the minimum time possible as transactions lock database rows. This depends on transaction isolation that is defined in terms of isolation levels called dirty reads, repeatable reads, and phantom reads.
+
+Transactions
+  In container-managed transaction demarcation, six different transaction attributes:
+
+     Never
+       Method calls require that no transaction context be present. The bean must never run with a transaction. If a transaction exists, the java.rmi.RemoteException exception is thrown.
+  	   不能有事务存在，否则抛出例外。
+  	   Never can be used when it is necessary to verify the transaction isn't associated with the client.
+
+     NotSupported
+       The bean runs outside the context of a transaction. Existing transactions are suspended during method calls. The bean cannot be invoked within a transaction. An existing transaction is suspended until the method called in this bean completes.
+  	   必须在例外中执行，必要时先将当前事务挂起。
+  	   The NotSupported attribute can be used when the resource manager is not supported by the JEE product.
+
+     Supports
+       Method calls use the current transaction context if one exists but don’t create one if none exists. The container will not start a new transaction. If a transaction already exists, the bean will be included in that transaction. Note that with this attribute, the bean can run without a transaction.
+  	   无所谓是否有事务。
+  	   The BluePrint recommends not using the attribute Supports.
+     
+     Required
+       Method calls require a transaction context. If one already exists, it will be used; if one does not exist, it will be created.
+  	   必须在事务中执行，但是无所谓事务由谁创建。
+  	   Use Required for the default transaction attribute.
+     
+     RequiresNew	
+       A new transaction is always started when the bean method is called. If a transaction already exists, that transaction is suspended until the new transaction completes.
+  	   必须在我自己的事务中执行，不要时先挂起别人的事务。
+  	   Use RequiresNew attribute when the bean methods need to commit unconditionally.
+     
+     Mandatory		Method calls require a transaction context. If one does not exist, the javax.ejb.TransactionRequired exception is thrown.
+  		必须在别人的事务中执行，否则抛出例外。
+  		Mandatory can be used when it is necessary to verify the transaction is associated with the client.
+     
+
+  
 
