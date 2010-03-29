@@ -245,5 +245,16 @@ The EJB Tier
     JavaIDL calls CORBA services. 
     JNI calls services written in other languages¡ªJNI can interact with native languages.
     
+JEE Connector Overview
+  The JEE Connector architecture defines the following set of system-level contracts between an application server and EIS:
+    A Connection Management contract. This leads to a scalable application environment that can support a large number of clients requiring access to EISs.
+    A Transaction Management contract between the transaction manager and an EIS. This contract lets an application server use a transaction manager to manage transactions across multiple resource managers. This contract also supports transactions that are managed internal to an EIS resource manager without the necessity of involving an external transaction manager.
+    A Security Contract that enables a secure access to an EIS.
   
-  
+CERTIFICATION OBJECTIVE 4.11 - Illustrate When to Use JEE Technology for Given Situations
+------------------------------------------------------------------------------------
+
+
+Performance-Related Best Practices: Data Caching
+
+
