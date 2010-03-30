@@ -14,8 +14,579 @@ Design patterns are helpful for the following reasons:
   They communicate the insight already gained previously.
   They describe the circumstances, the influences, and the resolution of a solution.
 
-CERTIFICATION OBJECTIVE 5.02 - 
+CERTIFICATION OBJECTIVE 5.02 - Identify the Most Appropriate Design Pattern for a Given Scenario
 ------------------------------------------------------------------------------
 
+GoF Design Patterns
+
+  Creational Design Patterns:
+    Abstract Factory Pattern
+    ------------------------
+      Description:
+        The Abstract Factory pattern is also known as Kit.
+        The Abstract Factory pattern¡¯s intent is to provide an interface to use for creating families of related  (or dependent) objects without actually specifying their concrete classes.
+  
+      Benefits:
+  	  It isolates client from concrete (implementation) classes.
+  	  It eases the exchanging of object families.
+  	  It promotes consistency among objects.
+  	  
+  	Applicable Scenarios
+        The system needs to be independent of how its objects are created, composed, and represented.
+        The system needs to be configured with one of a multiple family of objects.
+        The family of related objects is intended to be used together, and this constraint needs to be enforced.
+        You want to provide a library of objects that does not show implementations and only reveals interfaces.
+  
+      Java EE Technology Features and Java SE API Association
+        Data Access Object
+        Transfer Object Assembler
+        java.awt.Toolkit
+  
+    Builder Pattern
+    ------------------------
+      Description:
+        is to separate the construction of a complex object from its representation so that the same construction process can create different objects.
+  
+      Benefits:
+        It permits you to vary an object's internal representation.
+        It isolates the code for construction and representation.
+        It provides finer control over the construction process.
+  
+  	Applicable Scenarios
+  	  The algorithm for creating a complex object needs to be independent of the components that compose the object and how they are assembled.
+        The construction process is to allow different representations of the constructed object.
+  
+  
+    Factory Method Pattern
+    ------------------------
+      Description:
+      Is to define an interface for creating an object but letting the subclass decide which class to instantiate.
+      The Factory Method pattern is also known as Virtual Constructor
+  
+      Benefits:
+        It removes the need to bind application-specific classes into the code. The code interacts solely with the resultant interface, so it will work with any classes that implement that interface.
+        Because creating objects inside a class is more flexible than creating an object directly, it enables the subclass to provide an extended version of an object
+  
+  	Applicable Scenarios
+  	  A class is not able to anticipate the class of objects it needs to create.
+        A class wants its subclasses to specify the objects it instantiates.
+        Classes assign responsibility to one of several helper subclasses, and you want to localize the knowledge of which helper subclass is the delegate
+  
+      Java EE Technology Features and Java SE API Association
+        java.text.Collator
+        java.net.ContentHandlerFactory
+        javax.naming.spi.InitialContextFactory
+        javax.net.SocketFactory
+  
+        javax.ejb.EJBHome
+        javax.ejb.EJBLocalHome
+        javax.jms.QueueConnectionFactory
+        javax.jms.TopicConnectionFactory
+  
+    Prototype Pattern
+    ------------------------
+      Description:
+        Is to specify the kinds of objects that need to be created using a prototypical instance, and then be able to create new objects by copying this prototype.
+  
+      Benefits:
+        It lets you add or remove objects at runtime.
+        It lets you specify new objects by varying its values or structure.
+        It reduces the need for subclassing.
+        It lets you dynamically configure an application with classes.
+  
+  	Applicable Scenarios
+  	  The classes to instantiate are specified at runtime.
+        You need to avoid building a class hierarchy of factories that parallels the hierarchy of objects.
+        Instances of the class have one of only a few different combinations of state.
+  
+      Java EE Technology Features and Java SE API Association
+  
+    Singleton
+    ------------------------
+      Description:
+        is to ensure that a class has only one instance and provides a global point of access to it.
+        
+      Benefits:
+      
+  	Applicable Scenarios
+  	
+      Java EE Technology Features and Java SE API Association
+  
+  Structural Design Patterns
+    Adapter
+    ------------------------
+      Description:
+        The Adapter pattern converts the interface of a class into an interface that a client requires.
+        The Adapter pattern is also known as Wrapper.
+        
+      Benefits:
+        It allows two or more previously incompatible objects to interact.
+        It allows reusability of existing functionality.
+        
+  	Applicable Scenarios
+  	  An object needs to utilize an existing class with an incompatible interface.
+        You want to create a reusable class that cooperates with classes that don't necessarily have compatible interfaces.
+        You need to use several existing subclasses but do not want to adapt their interfaces by subclassing each one.
+  
+      Java EE Technology Features and Java SE API Association
+        Java Connector Architecture (JCA), from an architectural viewpoint.
+        java.awt.event.ComponentAdapter.
+        
+    Bridge
+    ------------------------
+      Description:
+        is to decouple the functional abstraction from the implementation so that the two can be changed and can vary independently.
+        The Bridge pattern is also known as Handle/Body.
+        
+      Benefits:
+        It enables the separation of implementation from the interface.
+        It improves extensibility.
+        It allows the hiding of implementation details from the client.
+        
+  	Applicable Scenarios
+  	  You want to avoid a permanent binding between the functional abstraction and its implementation.
+        Both the functional abstraction and its implementation need to be extended using subclasses.
+        Changes to the implementation should not impact the client (not even a recompile).
+        
+      Java EE Technology Features and Java SE API Association
+  
+    Composite
+    ------------------------
+      Description:
+        is to allow clients to operate in a generic manner on objects that may or may not represent a hierarchy of objects.
+        
+      Benefits:
+        It defines class hierarchies consisting of primitive and complex objects.
+        It makes it easier for you to add new kinds of components.
+        It provides flexibility of structure with a manageable interface.
+        
+  	Applicable Scenarios
+  	  You want to represent a full or partial hierarchy of objects.
+        You want clients to be able to ignore the differences between the varying objects in the hierarchy.
+        The structure is dynamic and can have any level of complexity: for example, using the Composite View from the J2EE Patterns Catalog, which is useful for portal applications.
+  
+      Java EE Technology Features and Java SE API Association
+  
+    Decorator
+    ------------------------
+      Description:
+        Is to attach flexible additional responsibilities to an object dynamically.
+        The Decorator pattern uses composition instead of inheritance to extend the functionality of an object at runtime.
+        The Decorator pattern is also known as Wrapper.
+        
+      Benefits:
+        It provides greater flexibility than static inheritance.
+        It avoids the need to place feature-laden classes higher up the hierarchy.
+        It simplifies coding by allowing you to develop a series of functionalitytargeted classes, instead of coding all of the behavior into the object.
+        It enhances the extensibility of the object, because changes are made by coding new classes.
+        
+  	Applicable Scenarios
+  	  You want to transparently and dynamically add responsibilities to objects without affecting other objects.
+        You want to add responsibilities to an object that you may want to change in the future.
+        Extending functionality by subclassing is no longer practical
+  
+      Java EE Technology Features and Java SE API Association
+        javax.ejb.EJBObject !!!
+        java.io.*
+  
+    Facade
+    ------------------------
+      Description:
+        is to provide a unified and simplified interface to a set of interfaces in a subsystem. 
+        The Facade pattern describes a higher-level interface that makes the subsystem(s) easier to use.
+  
+      Benefits:
+        It provides a simpler interface to a complex subsystem without reducing the options provided by the subsystem.
+        It shields clients from the complexity of the subsystem components.
+        It promotes looser coupling between the subsystem and its clients.
+        It reduces the coupling between subsystems.
+  
+  	Applicable Scenarios
+  	  You need to provide a simple interface to a complex subsystem.
+        Several dependencies exist between clients and the implementation classes of an abstraction.
+        Layering the subsystems is necessary or desired
+  
+      Java EE Technology Features and Java SE API Association
+        java.net.URL
+  
+    Flyweight
+    ------------------------
+      Description:
+        is to utilize sharing to support large numbers of finegrained objects in an efficient manner.
+  
+      Benefits:
+        It reduces the number of objects to deal with.
+        It reduces the amount of memory and storage devices required if the objects are persisted
+  
+  	Applicable Scenarios
+  	  An application uses a considerable number of objects.
+        The storage costs are high because of the quantity of objects.
+        The application does not depend on object identity
+        
+      Java EE Technology Features and Java SE API Association
+        java.lang.String
+  
+    Proxy
+    ------------------------
+      Description:
+        is to provide a surrogate or placeholder for another object to control access to it. 
+        The most common implementations are remote and virtual proxy.
+        The Proxy pattern is also known as Surrogate.
+        
+      Benefits:
+        The remote proxy can shield the fact that the implementation resides in another address space.
+        The virtual proxy can perform optimizations¡ªfor example, by creating objects on demand.
+      
+  	Applicable Scenarios
+  	  The Proxy pattern is appropriate when a more versatile or sophisticated reference to an object, rather than a simple pointer, is needed
+  	
+      Java EE Technology Features and Java SE API Association
+        javax.ejb.EJBObject (EJB remote reference)
+  
+  Behavioral Design Patterns
+    Chain of Responsibility
+    ------------------------
+      Description:
+        is to avoid coupling the sender of a request to its receiver by giving multiple objects a chance to handle the request
+        
+      Benefits:
+        It reduces coupling.
+        It adds flexibility when assigning responsibilities to objects.
+        It allows a set of classes to act as one; events produced in one class can be sent to other handler classes within the composition.
+  
+  	Applicable Scenarios
+  	  More than one object can handle a request, and the handler is unknown.
+        A request is to be issued to one of several objects, and the receiver is not specified explicitly.
+        The set of objects able to handle the request is to be specified dynamically
+  
+      Java EE Technology Features and Java SE API Association
+        RequestDispatcher in the servlet/JSP API.
+        Decorating Filter pattern
+  
+    Command
+    ------------------------
+      Description:
+        is to encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support rollback types of operations.
+        The Command pattern is also known as Action or Transaction.
+        
+      Benefits:
+        It separates the object that invokes the operation from the object that actually performs the operation.
+        It simplifies adding new commands, because existing classes remain unchanged.
+  
+  	Applicable Scenarios
+  	  You need to parameterize objects according to an action to perform.
+        You create, queue, and execute requests at different times.
+        You need to support rollback, logging, or transaction functionality.
+  
+      Java EE Technology Features and Java SE API Association
+        MessageBeans invoke business logic based on content of messages dispatched to them.
+        Servlets/JSPs are invoked corresponding to the type of HTTP request that is received by the web container.
+  
+    Interpreter
+    ------------------------
+      Description:
+        is to define a representation of the grammar of a given language, along with an interpreter that uses this representation to interpret sentences in the language.
+  
+      Benefits:
+        It is easier to change and extend the grammar.
+        Implementing the grammar is straightforward.
+  
+  	Applicable Scenarios
+  	  The grammar of the language is not complicated.
+        Efficiency is not a priority
+  
+      Java EE Technology Features and Java SE API Association
+        Reg Expression
+        
+    Iterator
+    ------------------------
+      Description:
+        to provide a way to access the elements of an aggregate object sequentially without exposing its underlying implementation 
+  
+      Benefits:
+        It supports variations in the traversal of a collection.
+        It simplifies the interface to the collection
+      
+  	Applicable Scenarios
+  	  Access to a collection object is required without having to expose its internal representation.
+        Multiple traversals of objects need to be supported in the collection.
+        A universal interface for traversing different structures needs to be provided in the collection.
+      
+      Java EE Technology Features and Java SE API Association
+        java.util.Enumeration and java.util.Iterator
+  
+    Mediator
+    ------------------------
+      Description:
+        is to define an object that encapsulates how a set of objects interacts. 
+        It helps to promote a looser coupling by keeping objects from referring to each other explicitly, therefore allowing any interaction to vary independently
+        
+      Benefits:
+        It decouples colleagues.
+        It simplifies object protocols.
+        It centralizes control.
+        The individual components become simpler and much easier to deal with because they do not need to pass messages to one another.
+        The components do not need to contain logic to deal with their intercommunication and are therefore more generic
+  	
+  	Applicable Scenarios
+  	  A set of objects communicates in complex but well-defined ways.
+        Custom behavior distributed between several objects is required without subclassing. It is commonly used structurally in message-based systems. The messages themselves are the means by which related objects are decoupled 
+  
+      Java EE Technology Features and Java SE API Association
+        Service Bus??
+  
+    Memento
+    ------------------------
+      Description:
+        is to capture and internalize an object¡¯s internal state so that objects can be restored to this state later. It must do this without violating encapsulation.
+        The Memento pattern is also known as Token
+        
+      Benefits:
+        It preserves encapsulation boundaries.
+        It simplifies the originator
+        
+  	Applicable Scenarios
+  	  A snapshot containing enough information regarding the state of an object can be saved so that it can be restored to the complete state using the snapshot information later.
+        Using a direct interface to obtain the state would impose implementation details that would break the rules of encapsulation for the object
+        
+      Java EE Technology Features and Java SE API Association
+        EntityBeans using Bean-Managed Persistence (BMP).
+  
+    Observer
+    ------------------------
+      Description:
+        is to define a one-to-many dependency so that when one object changes state, all its dependents are notified and updated automatically
+        The Observer pattern is also known as Dependents or Publish-Subscribe
+  
+      Benefits:
+        It abstracts the coupling between the subject and the observer.
+        It provides support for broadcast-type communication
+  
+  	Applicable Scenarios
+  	  A change to an object requires changing other objects, and the number of objects that need to be changed is unknown.
+        An object needs to notify other objects without making any assumptions about the identity of those objects
+  
+      Java EE Technology Features and Java SE API Association
+        java.util.Observer
+        java.util.Observable
+        JMS Publish/Subscribe
+  
+    State
+    ------------------------
+      Description:
+        is to allow an object to alter its behavior when its internal state changes, appearing as though the object itself has changed its class. 
+        Another view of the State pattern is to encapsulate the states of an object as discrete objects, with each object belonging to a separate subclass of an abstract state class
+        The State pattern is also known as Objects for States and acts in a similar way to the Receiver in the Command pattern
+  
+      Benefits:
+        It keeps state-specific behavior local and partitions behavior for different states.
+        It makes any state transitions explicit
+  
+  	Applicable Scenarios
+  	  The behavior of an object depends on its state and it must be able to change its behavior at runtime according on the new state.
+        Operations have large, multipart conditional statements that depend on the state of the object.
+  
+      Java EE Technology Features and Java SE API Association
+  
+    Strategy
+    ------------------------
+      Description:
+        is to define a family of functionality, encapsulate each one, and make them interchangeable. 
+        The Strategy pattern lets the functionality vary independently from the clients that use it.
+        The Strategy pattern is also known as Policy
+  
+      Benefits:
+        It provides a substitute to subclassing.
+        It defines each behavior within its own class, eliminating the need for conditional statements.
+        It makes it easier to extend and incorporate new behavior without changing the application.
+  
+  	Applicable Scenarios
+  	  Multiple classes differ only in their behaviors. The servlet API is a classic example of this.
+        You need different variations of an algorithm.
+        An algorithm uses data that is unknown to the client
+  
+      Java EE Technology Features and Java SE API Association
+        The servlet API
+  
+    Template Method
+    ------------------------
+      Description:
+        is to define the skeleton of a function in an operation, deferring some steps to its subclasses. 
+        The Template Method lets subclasses redefine certain steps of a function without changing the structure of the function
+  
+      Benefits:
+        The Template Method pattern is a very common technique for reusing code
+  
+  	Applicable Scenarios
+  	  You want to implement the nonvarying parts of an algorithm in a single class and the varying parts of the algorithm in subclasses.
+        Common behavior among subclasses should be moved to a single common class, avoiding duplication.
+  
+      Java EE Technology Features and Java SE API Association
+        HttpServlet
+  
+    Visitor
+    ------------------------
+      Description:
+        is to represent an operation to be performed on elements of an object structure. 
+        The Visitor pattern allows for the addition of a new operation without changing the classes of the elements on which it is to operate.
+  
+      Benefits:
+        It simplifies the addition of new operations.
+        It gathers related operations while separating unrelated ones
+  
+  	Applicable Scenarios
+  	  An object structure contains many objects with differing interfaces and there is a need to perform operations on these objects in a way that depends on their concrete classes.
+        Many distinct and unrelated operations need to be performed on objects in a structure and there is a need to avoid cluttering the classes with these operations.
+        The classes defining the object structure rarely change but you frequently need to define new operations that perform over the structure
+  
+      Java EE Technology Features and Java SE API Association
 
 
+
+Sun¡¯s J2EE Patterns
+
+  Presentation Tier J2EE Patterns
+  
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+  
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+  
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+  
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+  
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+  
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+  
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+  
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
+  
+    ------------------------
+      Description:
+  
+      Benefits:
+  
+  	Applicable Scenarios
+  
+      Java EE Technology Features and Java SE API Association
