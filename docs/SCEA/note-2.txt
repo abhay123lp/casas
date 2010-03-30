@@ -313,4 +313,5 @@ Transactions
      
 
   
-
+The Factory Method provides ability to define a contract for creating an object but defers instantiation to subclasses. 
+The Abstract Factory provides a contract for creating families of related or dependent objects without specifying concrete classes

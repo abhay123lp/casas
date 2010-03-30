@@ -1,0 +1,21 @@
+Chapter 5: Design Patterns
+===================================================================
+
+CERTIFICATION OBJECTIVE 5.01 - Identify the Benefits of Using Design Patterns
+------------------------------------------------------------------------------
+Design patterns are helpful for the following reasons:
+  They help designers quickly focus on solutions if the designers can recognize patterns that have been successful in the past.
+  The study of patterns can inspire designers to come up with new and unique ideas.
+  They provide a common language for design discussions.
+  They provide solutions to real-world problems.
+  Their format captures knowledge and documents best practices for a domain.
+  They document decisions and the rationale that lead to the solution.
+  They reuse the experience of predecessors.
+  They communicate the insight already gained previously.
+  They describe the circumstances, the influences, and the resolution of a solution.
+
+CERTIFICATION OBJECTIVE 5.02 - 
+------------------------------------------------------------------------------
+
+
+
