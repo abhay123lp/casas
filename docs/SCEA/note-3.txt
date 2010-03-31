@@ -709,7 +709,7 @@ Alternate names for the Design Patterns
 
 
 
-CERTIFICATION OBJECTIVE 5.04 - Identify Benef its of a Specified Design Pattern
+CERTIFICATION OBJECTIVE 5.04 - Identify Benefits of a Specified Design Pattern
 ----------------------------------------------------------------------------
 Design Pattern Benefits
   Abstract Factory 
