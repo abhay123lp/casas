@@ -1,0 +1,76 @@
+Chapter 6: Legacy Connectivity
+=============================================================================
+Distributed EIS Adapters
+  Legacy Connectivity Using JEE Connector Architecture
+
+Resource Adapter
+  Deployable JCA components are called resource adapters.
+
+System Contract
+  An application server and an EIS collaborate to keep all system-level mechanisms, such as transactions, security, and connection management, transparent to the application components  
+  
+  Connection management contracts
+    provide for pool connections to an underlying EIS and let application components connect to an EIS. This leads to a scalable application environment that can support a large number of clients.
+  
+  Transaction management contract
+  A transaction management contract lets an application server use a transaction manager to manage transactions across multiple resource managers. 
+  The contract also supports transactions that are managed internal to an EIS resource manager without the necessity of involving an external transaction manager.
+  The service enables the transaction manager of Application Server to manage transactions across multiple back-end systems.
+
+  Security contract
+    A security contract enables a secure access to an EIS and provides support for a secure application environment,  
+
+In JEE 1.4, JCA1.5 introduced additional contracts:
+
+  Life Cycle Management Contract 
+    The application server manages the startup and shutdown of the resource adapter.
+  
+  Work Management Contract 
+    Allows the resource adapter to do work by submitting it to an application server for execution. 
+    Since the application server does the work for the resource adapter, the resource adapter needn¡¯t worry about thread management. Instead, the application server manages this aspect efficiently and can use thread pooling if necessary.
+  
+  Transaction Inflow Contract 
+    This allows a resource adapter to propagate an imported transaction to an application server, as well as flow-in transaction completion and failure recovery initiated by an EIS.
+  
+  Message Inflow Contract 
+    This allows the resource adapter to synchronously or asynchronously deliver messages to end points in the application server, irrespective of message style, semantics, and infrastructure. 
+    In this way, different message providers, such as JMS and JAXM, can be plugged into J2EE application servers. 
+    This contract allows the EIS to be an active process, generating its own events and messages rather than a passive data source
+
+Java Connector Architecture
+  Basic EAI features:
+    Resource adapters
+      Typical EAI vendors include proprietary adapters which allow for synchronous and asynchronous communication to an EIS.
+
+    Data mapping
+      Data acquired in one format by the resource adapter may have to be transformed into the format required for the business object
+      
+    Messaging brokers
+      Enable both point-to-point (PTP) and publish/subscribe messaging
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
