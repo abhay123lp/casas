@@ -442,151 +442,390 @@ GoF Design Patterns
       Java EE Technology Features and Java SE API Association
 
 
+SCENARIO & SOLUTION
+--------------------  
+  Abstract Factory's Scenario
+    The system needs to be independent of how its objects are created, composed, and represented.
+    The system needs to be configured with one of a multiple family of objects.
+    The family of related objects is intended to be used together and this constraint needs to be enforced.
+    You want to provide a library of objects that does not show implementations but only reveals interfaces.
+  
+  Builder's Scenario
+    The algorithm for creating a complex object needs to be independent of the components that compose the object and how they are assembled.
+    The construction process is to allow different representations of the constructed object.
+  
+  
+  Factory Method's Scenario
+  
+    A class is not able to anticipate the class of objects it needs to create.
+    A class wants its subclasses to specify the objects it instantiates.
+    Classes delegate responsibility to one of several helper subclasses, and you want to localize the knowledge of which helper subclass is the delegate.
+  
+  Prototype's Scenario
+  
+    The classes to instantiate are specified at runtime.
+    You want to avoid building a class hierarchy of factories that parallels the hierarchy of objects.
+    Instances of the class have one of only a few different combinations of state.
+  
+  Singleton's Scenario
+    A single instance of a class is needed, and it must be accessible to clients from a well-known access point.
+  
+  Adapter's Scenario
+    You want to utilize an existing class with an incompatible interface.
+    You want to create a reusable class that cooperates with classes that don¡¯t necessarily have compatible interfaces.
+    You need to use several existing subclasses but do not want to adapt their interfaces by subclassing each one.
+  
+  Bridge's Scenario
+    You want to avoid a permanent binding between the functional abstraction and its implementation.
+    Both the functional abstraction and its implementation need to be extended using subclasses.
+    Changes to the implementation should not impact the client (not even a recompile).
+  
+  Composite's Scenario
+    You want to represent a full or partial hierarchy of objects.
+    You want clients to be able to ignore the differences between the varying objects in the hierarchy.
+    The structure is dynamic and can have any level of complexity.
+  
+  Decorator's Scenario
+    You want to transparently and dynamically add responsibilities to objects without affecting other objects.
+    You want to add responsibilities to an object that you may want to change in the future.
+    Extending functionality by subclassing is no longer practical.
+  
+  
+  Facade's Scenario
+    You want to provide a simpler interface to a more complex subsystem.
+    Several dependencies exist between clients and the implementation classes of an abstraction.
+    You want to layer the subsystems.
+  
+  Flyweight's Scenario
+    The application uses a considerable number of objects.
+    The storage costs are high because of the quantity of objects.
+    The application does not depend on object identity.
+  
+  
+  Proxy's Scenario
+    You need a more versatile or sophisticated reference to an object, rather than a simple pointer.
+  
+  
+  Chain of Responsibility's Scenario
+    More than one object can handle a request and the handler is unknown.
+    A request is to be issued to one of several objects and the receiver is not specified explicitly.
+    The set of objects able to handle the request is to be specified dynamically.
+  
+  
+  Command's Scenario
+    You need to parameterize objects by an action to perform.
+    You specify, queue, and execute requests at different times.
+    You need to support rollback, logging, or transaction functionality.
+  
+  Interpreter's Scenario
+    The grammar of the language is not complicated and efficiency is not a priority.
+  
+  Iterator's Scenario
+    Access to a collection object is required without having to expose its internal representation.
+    You need to support multiple traversals of objects in the collection.
+    You need to provide a universal interface for traversing different structures in the collection.
+  
+  
+  Mediator's Scenario
+    A set of objects communicates in complex but well-defined ways.
+    Custom behavior distributed between several objects is required without subclassing.
+  
+  Memento's Scenario
+    A snapshot containing enough information regarding the state of an object can be saved so that it can be restored to the complete state using the snapshot information later.
+    Using a direct interface to obtain the state would impose implementation details that would break the rules of encapsulation for the object.
+  
+  
+  Observer's Scenario
+    A change to an object requires changing other objects, and the number of objects that need to be changed is unknown.
+    An object needs to notify other objects without making any assumptions about the identity of those objects.
+  
+  State's Scenario
+    The behavior of an object depends on its state and it must be able to change its behavior at runtime according on the new state.
+    Operations have large multipart conditional statements that depend on the state of the object.
+  
+  Strategy's Scenario
+    Multiple classes differ only in their behavior.
+    You need different variations of an algorithm.
+    An algorithm uses data that is unknown to the client.
+  
+  Template Method's Scenario
+    You want to implement the nonvarying parts of an algorithm in a single class and the varying parts of the algorithm in subclasses.
+    Common behavior among subclasses should be moved to a single common class, avoiding duplication.
+  
+  Visitor's Scenario
+    An object structure contains many objects with differing interfaces and you need to perform operations on these objects in a way that depends on their concrete classes.
+    Many distinct and unrelated operations need to be performed on objects in a structure and you need to avoid cluttering the classes with these operations.
+    The classes defining the object structure rarely change but you frequently need to define new operations that perform over the structure.
+  
 
 Sun¡¯s J2EE Patterns
-
+-------------------
   Presentation Tier J2EE Patterns
-  
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
-  
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
+  -------------------------------
+    Intercepting Filter
+      You have an application that needs to preprocess and/or post-process a client request¡­
+    
+    Front Controller and Intercepting Filter
+      You have an application that requires centralized control for client request handling¡­
+      You need to add logging, debugging, or some other behavior to be carried out for each client request¡­
+    
+    Front Controller
+      You want to create a generic command interface for delegating processing from the controller to the helper components¡­
+      You want to delegate processing to a JSP or servlet and you want to implement your Model View Controller (MVC) Controller as a JSP or servlet¡­
+    
+    Composite View
+      You want to create an MVC View from multiple subviews¡­ 
+    
+    View Helper
+      You need to implement an MVC View as a JSP or servlet¡­ 
+      You would like to partition your MVC Model and MVC View¡­
+      Your application needs to encapsulate presentation-related data formatting logic¡­
+      You want to implement your Helper components as Custom tags or JavaBeans¡­
+    
+    Service To Worker and Dispatcher View
+      Your application needs to combine multiple presentation patterns¡­
+      You want to encapsulate MVC View management and navigation logic¡­
 
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
-  
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
 
-    ------------------------
-      Description:
+  Business Tier Patterns
+  ------------------------
+    Business Delegate
+      You need to minimize coupling between presentation and business layers¡­
+      You need to cache business services for clients¡­ 
+      Your application needs a simpler interface to clients¡­ 
+      Within the business tier you want to shield the client from implementation (lookup/creation/access) details of business services¡­
+    
+    Service Locator
+      Your application needs to separate the lookup for vendor or other technology dependencies for services¡­
+      You need to provide a uniform method for service lookup and creation¡­
+      You want to shield the complexity and dependencies for EJB and JMS component lookup¡­
+    
+    Transfer Object
+      You need to transfer data between application tiers¡­ 
+    
+    Session Facade
+      You have to reduce network traffic between clients and EJBs¡­ 
+      You want to minimize the number of remote method invocations by providing coarser-grained method access to business tier components¡­
+      You want to manage relationships between EJB components and hide the complexity of their interactions¡­
+      You need to shield components in the business tier from clients¡­
+      You want to provide uniform access to components in the business tier¡­
+    
+    Composite Entity
+      You need to design complex, coarser-grained EJB entity beans¡­
+      You have to identify coarse-grained objects and dependent objects for EJB entity bean design¡­
+      You want to minimize or eliminate the EJB entity bean clients¡¯ dependency on the actual database schema¡­
+      You have to improve manageability and minimize number of EJB entity beans¡­
+    
+    Composite Entity and Session Facade
+      You want to minimize (or eliminate) EJB entity bean to entity bean relationships¡­
+    
+    Transfer Object Assembler (This could also be a DataAccessObject as well)
+      You need to get the data model for the application from various business tier components¡­
+    
+    Transfer Object Assembler
+      You want on-the-fly data model construction¡­ 
+      You want to shield the data model construction complexity from clients¡­
+    
+    Value List Handler
+      Your application needs to provide query and list processing facilities¡­
+      You want to reduce the overhead of using EJB finder methods¡­
+      You need to facilitate server-side caching of query results, with forward and backward navigation, for clients ¡­
   
-      Benefits:
   
-  	Applicable Scenarios
+  Integration Tier J2EE Patterns
+  ------------------------------------
+    Data Access Object
+      You want to reduce the amount of coupling between business and resource tiers (layers)¡­
+      You need to centralize the access to resource tiers (layers) ¡­ 
+      You must reduce complexity for accessing resource from the business tier (layer) ¡­ 
+    
+    Service Activator
+      You want to provide asynchronous processing for EJB components¡­ 
+      You need to send a message to an EJB¡­ 
   
-      Java EE Technology Features and Java SE API Association
-  
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
 
-    ------------------------
-      Description:
+CERTIFICATION OBJECTIVE 5.03 - State the Name of a Design Pattern Given the UML Diagram and/or a Brief Description
+----------------------------------------------------------
+Brief description of each pattern¡¯s functionality:
+  Abstract Factory
+    Provides an interface for creating families of related or dependent objects without specifying the concrete classes.
   
-      Benefits:
+  Builder
+    Separates construction of a complex object from its representation so that the construction process can create different representations.
   
-  	Applicable Scenarios
+  Factory Method
+    Defines an interface for creating an object, letting subclasses decide which class to instantiate. Allows a class to defer the actual instantiation to subclasses.
   
-      Java EE Technology Features and Java SE API Association
+  Prototype
+    Specifies the kinds of objects to create using a prototypical instance, and creates new objects by copying this prototype.
   
-    ------------------------
-      Description:
+  Singleton
+    Ensures a class has only one instance, and provides a global point of access to it.  
   
-      Benefits:
+  Adapter
+    Converts the class¡¯s interface into another interface that the client expects. Lets classes work together that couldn¡¯t otherwise do so because of incompatible interfaces.
   
-  	Applicable Scenarios
+  Bridge
+    Decouples abstraction from its implementation so that the two can vary independently.
   
-      Java EE Technology Features and Java SE API Association
+  Iterator
+    Provides a way to access the elements of a collection (aggregate) object sequentially without having to expose the underlying representation.
+  
+  Mediator
+    Defines an object that encapsulates how a set of objects interacts. Promotes loose coupling by keeping objects from referring to each other directly and varying their interaction independently.
+  
+  Memento
+    Without violating encapsulation, captures and externalizes an object¡¯s internal state so that the object¡¯s essential state can be restored later.
+  
+  Observer
+    Defines a one-to-many dependency among objects so that when one object changes state, all its dependents (subscribers) are notified and updated automatically.
+  
+  State
+    Allows an object to alter its behavior when its internal state changes; the object will appear to change its class.
+  
+  Strategy
+    Defines a family of algorithms, encapsulating each one, and makes them interchangeable. Lets the algorithm vary independently from clients that use it.
+  
+  Template Method
+    Defines the skeleton of an algorithm (function) in an operation, deferring some steps to subclasses. Lets subclasses redefine certain steps of an algorithm without changing the algorithm¡¯s structure.
+  
+  Visitor
+    Represents an operation to be performed on the elements of an object structure. Lets you define a new operation without changing the classes of the elements on which it operates.
 
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
-  
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
 
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
-  
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
+Alternate names for the Design Patterns
+  Abstract Factory	Kit
+  Factory Method	Virtual Constructor
+  Adapter			Wrapper
+  Bridge			Handle/Body
+  Decorator			Wrapper
+  Proxy				Surrogate
+  Command			Action or Transaction
+  Iterator			Cursor
+  Memento			Token
+  Observer			Dependents or Publish-Subscribe
+  State				Objects for States
+  Strategy			Policy
 
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
-  
-    ------------------------
-      Description:
-  
-      Benefits:
-  
-  	Applicable Scenarios
-  
-      Java EE Technology Features and Java SE API Association
 
-    ------------------------
-      Description:
+
+CERTIFICATION OBJECTIVE 5.04 - Identify Benef its of a Specified Design Pattern
+----------------------------------------------------------------------------
+Design Pattern Benefits
+  Abstract Factory 
+    Isolates client from concrete (implementation) classes.
+    Makes the exchanging of object families easier.
+    Promotes consistency among objects.
   
-      Benefits:
+  Builder 
+    Permits you to vary an object¡¯s internal representation.
+    Isolates the code for construction and representation.
+    Provides finer control over the construction process.
   
-  	Applicable Scenarios
+  Factory Method 
+    Removes the need to bind application-specific classes into the code. The code interacts solely with the resultant interface and so will work with any classes that implement that interface.
+    Because creating objects inside a class is more flexible than creating an object directly, it enables the subclass to provide an extended version of an object.
   
-      Java EE Technology Features and Java SE API Association
+  Prototype 
+    Allows adding or removing objects at runtime.
+    Specifies new objects by varying its values or structure.
+    Reduces the need for subclassing.
+    Allows dynamic configuring of an application with classes.
   
-    ------------------------
-      Description:
+  Singleton 
+    Controls access to a single instance of the class.
+    Reduces name space usage.
+    Permits refinement of operations and representation.
+    Permits a variable number of instances.
+    Is more flexible than class methods (operations).
   
-      Benefits:
+  Adapter 
+    Allows two or more previously incompatible objects to interact.
+    Allows reusability of existing functionality.
   
-  	Applicable Scenarios
+  Bridge 
+    Enables the separation of implementation from the interface.
+    Improves extensibility.
+    Allows the hiding of implementation details from the client.
   
-      Java EE Technology Features and Java SE API Association
+  Composite 
+    Defines class hierarchies consisting of primitive and complex objects.
+    Makes it easier to add new kinds of components.
+    Provides the flexibility of structure with a manageable interface.
+  
+  Decorator 
+    Provides greater flexibility than static inheritance.
+    Avoids the need to place feature-laden classes higher-up the hierarchy.
+    Simplifies coding by allowing you to develop a series of functionalitytargeted classes, instead of coding all of the behavior into the object.
+    Enhances the extensibility of the object, because changes are made by coding new classes.
+  
+  Facade 
+    Provides a simpler interface to a complex subsystem without reducing the options provided by the subsystem.
+    Shields clients from the complexity of the subsystem components.
+    Promotes looser coupling between the subsystem and its clients.
+    Reduces the coupling between subsystems provided that every subsystem uses its own Facade pattern and other parts of the system use the Facade pattern to communicate with the subsystem.
+  
+  Flyweight 
+    Reduces the number of objects to deal with.
+    Reduces memory and storage devices if the objects are persisted.
+  
+  Proxy 
+    Remote proxy shields the fact that the implementation resides in another address space.
+    Virtual proxy performs optimizations¡ªe.g., by creating objects on demand.
+  
+  Chain of Responsibility 
+    Reduces coupling.
+    Adds flexibility when assigning responsibilities to objects.
+    Allows a set of classes to act as one; events produced in one class can be sent to other handler classes within the composition.
+  
+  Command 
+    Separates the object that invokes the operation from the object that performs the operation.
+    Simplifies adding new commands, because existing classes remain unchanged.
+  
+  Interpreter 
+    Makes it easier to change and extend the grammar.
+    Makes implementing the grammar straightforward.
+  
+  Iterator 
+    Supports variations in the traversal of a collection.
+    Simplifies the interface to the collection.
+  
+  Mediator 
+    Decouples colleagues.
+    Simplifies object protocols.
+    Centralizes control.
+    Individual components become simpler and much easier to deal with because they do not need to pass messages to one another.
+    Components do not need to contain logic to deal with their intercommunication and are therefore more generic.
+  
+  Memento 
+    Preserves encapsulation boundaries.
+    Simplifies the originator.
+  
+  Observer 
+    Abstracts the coupling between the subject and the observer.
+    Provides support for broadcast-type communication.
+  
+  State 
+    Keeps state-specific behavior local and partitions behavior for different states.
+    Makes any state transitions explicit.
+  
+  Strategy 
+    Provides a substitute to subclassing.
+    Defines each behavior within its own class, eliminating the need for conditional statements.
+    Makes it easier to extend and incorporate new behavior without changing the application.
+  
+  Template 
+    Method Lets code be reused.
+
+CERTIFICATION OBJECTIVE 5.05 - Identify the Design Pattern Associated with a Specified Java EE Technology Feature
+------------------------------------------------------------------------------------------------
+
+Factory Method
+  EJB Factory (javax.ejb.EJBHome, javax.ejb.EJBLocalHome)
+  JMS Connection Factory (javax.jms.QueueConnectionFactory, javax.jms.TopicConnectionFactory)
+
+Proxy
+  EJB remote reference (javax.ejb.EJBObject) 
+
+Observer
+  JMS Publish/Subscribe Model 
