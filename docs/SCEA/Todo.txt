@@ -1,0 +1,4 @@
+Review JDBC API for JCA architect
+Learn JCA1.5
+Review Distributed Object System
+Learn WebService

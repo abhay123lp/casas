@@ -10,24 +10,46 @@ System Contract
   An application server and an EIS collaborate to keep all system-level mechanisms, such as transactions, security, and connection management, transparent to the application components  
   
   Connection management contracts
-    provide for pool connections to an underlying EIS and let application components connect to an EIS. This leads to a scalable application environment that can support a large number of clients.
-  
+    Provide for pool connections to an underlying EIS and let application components connect to an EIS. This leads to a scalable application environment that can support a large number of clients.
+    Describes the agreement a JEE container has with the adapter regarding establishing, pooling, and tearing down connections. 
+    This contract allows listeners created on a connection to respond to events.
+      
   Transaction management contract
   A transaction management contract lets an application server use a transaction manager to manage transactions across multiple resource managers. 
   The contract also supports transactions that are managed internal to an EIS resource manager without the necessity of involving an external transaction manager.
   The service enables the transaction manager of Application Server to manage transactions across multiple back-end systems.
+  First, it allows distributed transactions that provide a mechanism to propagate transactions that originate from inside an application server to an EIS
+  In the second way, the transaction management contract can control transactions by creating local transactions. Local transactions are local in the sense that they exist only on a particular EIS resource.
 
   Security contract
-    A security contract enables a secure access to an EIS and provides support for a secure application environment,  
+    A security contract enables a secure access to an EIS and provides support for a secure application environment. 
+    With container-managed sign-on, the security credentials configure when the resource adapter is deployed on the application server. 
+    You can choose from several ways to configure security properties when using container-managed sign-on:
+      Configured identity 
+        All resource adapter connections use the same identity when connecting to the EIS.
+      Principal mapping 
+        The principal is based on a combination of the current principal in the application server and the mapping.
+      Caller impersonation
+        The principal exactly matches the principal in the application server.
+      Credentials mapping 
+        Similar to caller impersonation, except the type of credentials must be mapped from application server credentials to EIS credentials.
+    Alternatively, you can configure security properties by component-managed sign-on.
+
 
 In JEE 1.4, JCA1.5 introduced additional contracts:
 
   Life Cycle Management Contract 
     The application server manages the startup and shutdown of the resource adapter.
+    The javax.resource.spi.ResourceAdapter interface represents a resource adapter. 
+    There are two methods in the ResourceAdapter interface that allow for life cycle management: 
+      The start() method is called when an application server wants to start a resource adapter. 
+      The stop() method is called when the application server wants to release a resource adapter
   
   Work Management Contract 
-    Allows the resource adapter to do work by submitting it to an application server for execution. 
-    Since the application server does the work for the resource adapter, the resource adapter needn¡¯t worry about thread management. Instead, the application server manages this aspect efficiently and can use thread pooling if necessary.
+    Allows the resource adapter to submit work to the application server. 
+    It does this by creating an object that extends the javax.resource.spi.work.Work interface. 
+    The Work interface is an extension of the Runnable interface.
+    Since the application server does the work for the resource adapter, the resource adapter needn¡¯t worry about thread management.
   
   Transaction Inflow Contract 
     This allows a resource adapter to propagate an imported transaction to an application server, as well as flow-in transaction completion and failure recovery initiated by an EIS.
@@ -36,6 +58,10 @@ In JEE 1.4, JCA1.5 introduced additional contracts:
     This allows the resource adapter to synchronously or asynchronously deliver messages to end points in the application server, irrespective of message style, semantics, and infrastructure. 
     In this way, different message providers, such as JMS and JAXM, can be plugged into J2EE application servers. 
     This contract allows the EIS to be an active process, generating its own events and messages rather than a passive data source
+      The endpointActivation() method in the ResourceAdapter interface is called during endpoint activation. This causes the resource adapter to do the necessary setup for message delivery to the message endpoint. 
+      The endpointDeactivation() method of ResourceAdapter is called when a message endpoint is deactivated. This stops the resource adapter from delivering messages to the message endpoint.
+      A javax.resource.spi.endpoint.MessageEndpointFactory object is passed in to the endpointActivation() method. The object is used to create a number of message endpoints.
+      Finally, the getXAResources() method of ResourceAdapter can be used to retrieve transaction resources in the event of a system crash.
 
 Java Connector Architecture
   Basic EAI features:
@@ -49,20 +75,97 @@ Java Connector Architecture
       Enable both point-to-point (PTP) and publish/subscribe messaging
 
 
+General Integration Strategy
+  User interface (UI) integration, or ¡°screen scraping¡± 
+    A coarse type of integration. With UI-level integration, the data passed between systems will exist in the form of a UI representation. 
+    An outbound integration entails requesting the UI as perhaps a web page from a remote system, and then possibly manipulating it before displaying it as if it were part of your system¡¯s UI. 
+    An inbound integration  entails allowing an outside system to request UI pages from your system for inclusion on a remote system. 
+    Note: You should choose UI integration over other options when it is unimportant to distinguish the data type being retrieved. 
 
+  Message-level integration
+    Outbound message integration involves requesting data from a remote system in a message form for example, a SOAP message.
+    With an inbound integration, your system receives a request for data via a message and responds with a message
+    
+  Object or RPC integration
+    In an outbound object-level integration, your system invokes objects on remote systems.
+    In an inbound object-level integration, a remote system calls objects on your system to retrieve data.
+    One of the main advantages is that you can call detailed APIs with full type safety and easily propagate the error codes and exceptions between systems.
 
+  Data-level integration
+    In an outbound data-level integration, your system requests data in a record-oriented fashion from other systems. 
+    With an inbound data-level integration, a remote system requests data from your system in a recordoriented manner.
+    The advantage is that it lends itself to data mapping from one system onto the business objects in another system
 
+The Structure of the JCA
+  Resource Adapters and System Contracts
+    To use JCA in a JEE container, you must have a JCA resource adapter, which resembles a JDBC driver.
 
+  Common Client Interface
+    Just like the JDBC API, the CCI APIs can be divided into four sections:
+      APIs related to establishing a connection to an EIS, also referred to as the connection interfaces
+      CCI APIs, which cover command execution on an EIS, referred to as the interaction interfaces
+      Record/ResultSet interfaces, which encapsulate the query results to an EIS
+      Metadata interfaces, which make it possible to examine an EISs metadata
 
+Basic JCA 1.0 Adapter Implementation
+--------------------------------------
+  Typically, when using an adapter we need to
+    Determine the status of resources within the life cycle
+    Establish a connection to the resource(s)
+    Manage a transaction involving the resource
+    Submit work to the resource
+    Provide messaging capability to alert interested processes
+    Provide security to protect resources
 
+  The adapter includes two class categories:
+    Managed classes 
+      The application server calls managed classes to perform the connection management. 
+      They're needed only if the application server is managing the connection via a connection pool, which is probably the case.
+    Physical connection classes 
+      These required classes, which the aforementioned managed classes may call, establish the connection to the EIS.
 
+    Interface javax.resource.spi.ManagedConnectionFactory
+      A factory of both ManagedConnection and EIS-specific connection factory instances. 
+      This interface supports connection pooling.
+      Acts as the main entry point for the application server to call into the adapter.
+      
+    Interface javax.resource.spi.ManagedConnection 
+      represents a physical connection to the underlying EIS.
+      
+    Interface javax.resource.spi.ConnectionEventListener
+      Provides an event callback mechanism to enable an application server to receive notifications from a ManagedConnection instance.
+  
+    Interface javax.resource.spi.ManagedConnectionMetaData
+      Information about the underlying EIS instance associated with a ManagedConnection instance
+    
+    XXXConnection 
+      Represents the ¡°handle¡± to the underlying physical connection to the EIS.
+      Does not implement an interface in the JCA specification. 
+      The implementation might contain connectivity code using sockets, as well as other functionality
+  
+    Interface javax.resource.spi.ConnectionRequestInfo
+      contains the data (such as the username, password) necessary to establish a connection.
+    
+    
+    Interface javax.sql.DataSource
+      Serves as a connection factory for the underlying connections.
 
+JCA 1.5 Adapter Implementation
+--------------------------------------
 
+Life Cycle Management
+  The javax.resource.spi.ResourceAdapter interface represents a resource adapter. 
+  At startup, the application server creates an instance of the <resourceadpter-class> and sets the properties as specified in the deployment descriptor. 
+    The start() method is then called, passing in an object implementing the BootstrapContext interface. 
+    You can use this object to: create timers to be used to schedule work at a specified interval or datetime, schedule work on other threads, and control imported transactions.
+  The application server typically calls the stop() method on the resource adapter as part of the shutdown process. The resource adapter then performs an housekeeping (for example, release resources) and ultimate shutdown.
 
+Work Management Contracts
+  The WorkManager lets a resource adapter schedule work for synchronous or asynchronous execution on an application-server thread.
+  
+Message Inflow
 
-
-
-
+Transaction Inflow Contracts
 
 
 
