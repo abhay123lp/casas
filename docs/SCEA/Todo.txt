@@ -1,4 +1,22 @@
-Review JDBC API for JCA architect
-Learn JCA1.5
-Review Distributed Object System
-Learn WebService
+For SCEA Part I:
+  Review JDBC API for JCA architect
+  Review Distributed Object System
+  JNI
+  java.net
+  JavaBean
+  JTA
+  Learn JCA1.5
+  WebService
+  
+  Java Servlet 3.0
+  JavaServer Faces 2.0
+  JavaServer Pages 2.2/Expression Language 2.2
+  
+  Contexts and Dependency Injection for Java (Web Beans 1.0)
+  Dependency Injection for Java 1.0
+  Enterprise JavaBeans 3.1 
+  Java EE Connector Architecture 1.6
+  Java Persistence 2.0
+
+
+

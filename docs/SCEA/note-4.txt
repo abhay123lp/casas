@@ -168,8 +168,8 @@ Message Inflow
 Transaction Inflow Contracts
 
 
-
-
+CERTIFICATION OBJECTIVE 6.01 - Distinguish Appropriate from Inappropriate Techniques for Providing Access to a Legacy System from Java Technology Code Given an Outline Description of That Legacy System
+------------------------------------------------------------------------------------------
 
 
 
