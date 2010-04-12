@@ -1,0 +1,45 @@
+1 bridge
+2 Java API <---> native client API <--> database
+3 Java API <---> DB-independent protocol <--> DB-specific protocol <---> DB
+4 Java API <---> DB-specific protocol <---> DB
+
+
+jdbc.drivers  = org.postgresql.Driver
+jdbc.url      = jdbc:postgresql:COREJAVA
+jdbc.username = dbuser
+jdbc.password = secret
+
+DriverManager.getConnection(url, user, pass)
+
+Connection
+  getCatalog()
+  getMetaData()
+
+  createStatement()
+  prepareCall()
+  prepareStatement()
+  
+  setAutoCommit()
+  rollback()
+  commit()
+
+Statement
+  ResultSet 	executeQuery(String sql) 
+  int        	executeUpdate(String sql) 
+  
+PreparedStatement
+  void 	clearParameters() 
+  void  setTTT(int parameterIndex, TTT x) 
+  
+
+Every Connection object can create one or more Statement objects. 
+You can use the same Statement object for multiple, unrelated commands and queries. 
+However, a statement has at most one open result set. 
+  If you issue multiple queries whose results you analyze concurrently, then you need multiple Statement objects.
+
+When you are done using a ResultSet, Statement, or Connection, you should call the close method immediately. 
+These objects use large data structures, and you don't want to wait for the garbage collector to deal with them.
+
+
+
+
