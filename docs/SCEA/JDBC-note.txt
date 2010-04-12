@@ -19,6 +19,9 @@ Connection
   prepareCall()
   prepareStatement()
   
+  void addBatch(String command)
+  int[] executeBatch()
+  
   setAutoCommit()
   rollback()
   commit()
@@ -31,14 +34,192 @@ PreparedStatement
   void 	clearParameters() 
   void  setTTT(int parameterIndex, TTT x) 
   
-
-Every Connection object can create one or more Statement objects. 
-You can use the same Statement object for multiple, unrelated commands and queries. 
-However, a statement has at most one open result set. 
+--------------------------------------------------
+  Every Connection object can create one or more Statement objects. 
+  You can use the same Statement object for multiple, unrelated commands and queries. 
+  However, a statement has at most one open result set. 
   If you issue multiple queries whose results you analyze concurrently, then you need multiple Statement objects.
 
-When you are done using a ResultSet, Statement, or Connection, you should call the close method immediately. 
-These objects use large data structures, and you don't want to wait for the garbage collector to deal with them.
+  When you are done using a ResultSet, Statement, or Connection, you should call the close method immediately. 
+  These objects use large data structures, and you don't want to wait for the garbage collector to deal with them.
+
+About ResultSet
+---------------------------------------------------
+ResultSet
+  getMetaData() 
+  absolute(int row) 
+  afterLast() 
+  beforeFirst() 
+  first() 
+  last() 
+  next() 
+  previous() 
+  relative(int rows) 
+
+  getT(int columnIndex)
+  getRow() 
+
+  deleteRow() 
+  insertRow()   
+  refreshRow() 
+  updateRow()
+  updateT(int columnIndex, T x)
+  
+ResultSet Type Values 
+-------------------
+  TYPE_FORWARD_ONLY			The result set is not scrollable.
+  TYPE_SCROLL_INSENSITIVE	The result set is scrollable but not sensitive to database changes.
+  TYPE_SCROLL_SENSITIVE		The result set is scrollable and sensitive to database changes.
+ 
+
+ResultSet Concurrency Values 
+-------------------
+  CONCUR_READ_ONLY	The result set cannot be used to update the database. 
+  CONCUR_UPDATABLE	The result set can be used to update the database.
+ 
+scrollable result
+-------------------
+  absolute(int row) 
+  afterLast() 
+  beforeFirst() 
+  first() 
+  last() 
+  next() 
+  previous() 
+  relative(int rows) 
+
+Update Result Sets
+-------------------
+  updateRow()
+  updateT(int columnIndex, T x)
+  cancelRowUpdates()
+
+  If your query is a join that involves multiple tables, the result may not be updatable. 
+  If your query involves only a single table or if it joins multiple tables by their primary keys, you should expect the result set to be updatable. 
+
+    ========================================================
+    ResultSet rs = stat.executeQuery("SELECT * FROM Books");
+    rs.updateDouble("Price", 100);
+    rs.updateRow();
+    ========================================================
+
+
+
+  The updateXxx() method changes only the row values, not the database. 
+  When you are done with the field updates in a row, you must call the updateRow() method. That method sends all updates in the current row to the database. 
+  If you move the cursor to another row without calling updateRow(), all updates are discarded from the row set and they are never communicated to the database. 
+  You can also call the cancelRowUpdates() method to cancel the updates to the current row.
+
+    ========================================================
+    rs.moveToInsertRow();
+    rs.updateString("Title", title);
+    rs.updateString("ISBN", isbn);
+    rs.updateString("Publisher_Id", pubid);
+    rs.updateDouble("Price", price);
+    rs.insertRow();
+    rs.moveToCurrentRow();
+    ========================================================
+  If you want to add a new row to the database, you first use the moveToInsertRow() method to move the cursor to a special position, called the insert row. 
+  You build up a new row in the insert row position by issuing updateXxx() instructions. 
+  Finally, when you are done, call the insertRow() method to deliver the new row to the database. 
+  When you are done inserting, call moveToCurrentRow() to move the cursor back to the position before the call to moveToInsertRow().
+
+
+
+
+MetaData
+----------------------------------------
+You can get three kinds of metadata: 
+  about a database, 
+  about a result set, 
+  about parameters of prepared statements
+
+DataBase MetaData
+  DatabaseMetaData meta = conn.getMetaData();
+  ResultSet 	getTables(String catalog, String schemaPattern, String tableNamePattern, String[] types)
+
+ResultSetMetaData 
+  ResultSetMetaData meta = resultSet.getMetaData();
+
+Row Sets
+-------------------------------------------
+  The RowSet interface extends the ResultSet interface, but row sets don't have to be tied to a database connection.
+  Row sets are also suitable if you need to move a query result to a different VM.
+
+  CachedRowSet
+    allows disconnected operation.
+    You can populate a CachedRowSet from a result set:
+
+      ============================================================
+      ResultSet result = stat.executeQuery(queryString);
+      CachedRowSet rowset = new com.sun.rowset.CachedRowSetImpl();
+      rowset.populate(result);
+      conn.close();
+      ============================================================
+    Alternatively, you can let the CachedRowSet object establish a connection automatically.
+      ============================================================
+      rowset.setURL("jdbc:mckoi://localhost/");
+      rowset.setUsername("dbuser");
+      rowset.setPassword("secret");
+      rowset.setCommand("SELECT * FROM Books");
+      rowset.execute();
+      ============================================================
+    If you modified the row set contents, you must write it back to the database by calling
+      rowset.acceptChanges(conn);
+    or
+      rowset.acceptChanges();
+
+
+  
+  WebRowSet
+    a cached row set that can be saved to an XML file. The XML file can be moved to another tier of a web application, where it is opened by another WebRowSet object.
+  
+  FilteredRowSet and JoinRowSet 
+    support lightweight operations on row sets that are equivalent to SQL SELECT and JOIN operations. These operations are carried out on the data stored in row sets, without having to make a database connection.
+  
+  JdbcRowSet 
+    adds useful getters and setters from the RowSet interface, turning a result set into a "bean." 
+
+
+DataSource
+---------------------------------
+A data source is an interface that allows for advanced services
+  executing distributed transactions.
+  connection pool.
+
+
+Introduction to LDAP
+---------------------------------
+LDAP is preferred over relational databases when the application data naturally follows a tree structure and when read operations greatly outnumber write operations. 
+
+LDAP is most commonly used for the storage of directories that contain data such as user names, passwords, and permissions.
+
+Commonly Used LDAP Attributes
+  dc	Domain component
+  cn	Common name
+  sn	Surname
+  dn	Distinguished name
+  o		Organization
+  ou	Organizational unit
+  uid	Unique identifier
+ 
+
+
+Each entry in the tree has the following:
+  Zero or more attributes. 
+    An attribute has an ID and a value.
+    An example attribute is cn=John Q. Public
+  
+  One or more object classes. 
+    An object class defines the set of required and optional attributes for this element. 
+    For example, the object class person defines a required attribute cn and an optional attribute telephoneNumber. 
+    The object classes are different from Java classes, but they also support a notion of inheritance. 
+    For example, organizationalPerson is a subclass of person with additional attributes.
+  
+  A distinguished name 
+    for example, uid=jqpublic,ou=people,dc=mycompany,dc=com. 
+    The distinguished name is a sequence of attributes that trace a path joining the entry with the root of the tree. 
+    There may be alternate paths, but one of them must be specified as distinguished.
 
 
 
