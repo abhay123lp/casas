@@ -5,4 +5,12 @@ http://java.sun.com/javase/6/docs/technotes/guides/javaws/developersguide/conten
 Open Party in Beijing
 http://www.beijing-open-party.org/
 
+明日歌
+http://baike.baidu.com/view/302159.htm
 
+浪淘沙·北戴河
+http://baike.baidu.com/view/328704.htm?fr=ala0_1_1
+
+
+Java Performance
+http://java.sun.com/javase/technologies/performance.jsp

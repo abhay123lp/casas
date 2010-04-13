@@ -18,5 +18,11 @@ For SCEA Part I:
   Java EE Connector Architecture 1.6
   Java Persistence 2.0
 
-
-
+JNDI expertise
+JMX
+Java Attach API / HotSpot VM
+XML / JAXB / JAXWS
+RMI / CORBA
+Annotation Processing
+JavaBeans
+JavaHelp
