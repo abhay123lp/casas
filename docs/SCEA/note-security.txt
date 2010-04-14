@@ -1,0 +1,18 @@
+Cryptographic(JCA)
+    * Message digest algorithms
+    * Digital signature algorithms
+    * Symmetric bulk encryption
+    * Symmetric stream encryption
+    * Asymmetric encryption
+    * Password-based encryption (PBE)
+    * Elliptic Curve Cryptography (ECC)
+    * Key agreement algorithms
+    * Key generators
+    * Message Authentication Codes (MACs)
+    * (Pseudo-)random number generators 
+
+
+Public Key Infrastructure (PKI)
+
+authentication and access control
+secure communication
