@@ -13,6 +13,51 @@ Cryptographic(JCA)
 
 
 Public Key Infrastructure (PKI)
+  used for a framework that enables secure exchange of information based on public key cryptography.
+  PKI encompasses keys, certificates, public key encryption, and trusted Certification Authorities (CAs) who generate and digitally sign certificates
+  PKI Tools
+    keytool is used to create and manage key stores.
+    jarsigner is used to sign JAR files, or to verify signatures on signed JAR files
 
-authentication and access control
-secure communication
+
+
+
+Authentication 
+  The Java platform provides APIs that enable an application to perform user authentication via pluggable login modules. Applications call into the javax.security.auth.login.LoginContext class, which in turn references a configuration
+  The configuration specifies which login module (an implementation of the javax.security.auth.spi.LoginModule interface) is to be used to perform the actual authentication.
+  The Java platform provides the following built-in LoginModules in the com.sun.security.auth.module package:
+    *Krb5LoginModule for authentication using Kerberos protocols
+    *JndiLoginModule for username/password authentication using LDAP or NIS databases
+    *KeyStoreLoginModule for logging into any type of key store, including a PKCS#11 token key store   
+
+Access control
+  All access control decisions are mediated by a security manager, represented by the java.lang.SecurityManager class.
+  Java applets and Java? Web Start applications are automatically run with a SecurityManager installed. 
+  However, local applications executed via the java command are by default not run with a SecurityManager installed.
+  Permissions
+    When Java code is loaded, the class loader automatically associates the following information with that code:
+    * Where the code was loaded from
+    * Who signed the code (if anyone)
+    * Default permissions granted to the code 
+    Once the user has been authenticated, the application can associate user with executing code by invoking the javax.security.auth.Subject.doAs() method.
+  Policy
+    
+  Access Control Enforcement
+    The SecurityManager delegates its decision to the java.security.AccessController based on where it was loaded from, who signed it, and who is executing it.
+  
+
+
+
+
+Secure communication
+  The Java platform provides API support and provider implementations for standard secure communication protocols
+  SSL/TLS
+    Applications can use SSL/TLS to provide for the secure passage of data over any application protocol, such as HTTP.
+    The javax.net.ssl.SSLSocket class represents a SSL/TLS network socket on top of java.net.Socket. 
+    The javax.net.ssl.SSLEngine class is available to produce and consume SSL/TLS packets when use NEW I/O.
+    Key manager is encapsulated by the javax.net.ssl.KeyManager class, and manages the keys used to perform authentication. 
+    A trust manager is encapsulated by the TrustManager class (in the same package), and makes decisions about who to trust based on certificates in the key store it manages
+  SASL
+    Simple Authentication and Security Layer (SASL) is an Internet standard that specifies a protocol for authentication and optional establishment of a security layer.
+  GSS-API and Kerberos
+    Generic Security Service Application Programming Interface (GSS-API)
