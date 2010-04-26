@@ -1,0 +1,79 @@
+=============================================================
+行内式
+  <tagname style="color=; font-size=;"></tagname>
+
+内嵌式
+  <style type="text/css">
+      color:
+      font-size:
+  </style>
+
+连接式
+  <link href="" type="text/css" rel="stylesheet"/>
+
+导入式
+  <style>
+  @import url();
+  @import url();
+  </style>
+
+=============================================================
+选择器
+
+1  by标记
+     h1{
+         
+     }
+
+2  by类别class
+     <p class="A">
+     <h class="B">
+     
+     .A{
+     }
+     h.A{
+     }
+
+3  byID
+     <p id="A">
+     #A{
+     }
+
+多项选择
+   h1, h2, h3, p{
+   }
+   
+   h1.classname, .classname, #some{
+   }
+
+子选择
+   <parent>
+     <child>
+       <grandchild>
+       </grandchild>
+     </child>
+   </parent>
+
+   parent > child{
+   }
+
+嵌套选择
+   parent grandchild{
+   }
+
+=============================================================
+for text
+  font-size:
+  font-weight
+  font-familiy
+  color:
+  test-align:
+
+container:
+  background-color:
+  width:
+  height:
+
+
+
+
