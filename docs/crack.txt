@@ -1,0 +1,23 @@
+CS5 激活方法：
+
+1、安装软件，输入下面的序列号：（注意，该序列号在PR版上测试通过，正式版尚未测试，有测试过的朋友请在回复中告知）
+1325-1558-5864-4422-1094-1126
+1325-1958-5864-4422-1094-1178
+
+2、用记事本编辑“C:\Windows\System32\Drivers\etc\”目录下的 hosts 文件, 在末尾加上:
+127.0.0.1 activate.adobe.com
+127.0.0.1 practivate.adobe.com
+127.0.0.1 ereg.adobe.com
+127.0.0.1 activate.wip3.adobe.com
+127.0.0.1 wip3.adobe.com
+127.0.0.1 3dns-3.adobe.com
+127.0.0.1 3dns-2.adobe.com
+127.0.0.1 adobe-dns.adobe.com
+127.0.0.1 adobe-dns-2.adobe.com
+127.0.0.1 adobe-dns-3.adobe.com
+127.0.0.1 ereg.wip3.adobe.com
+127.0.0.1 activate-sea.adobe.com
+127.0.0.1 wwis-dubc1-vip60.adobe.com
+127.0.0.1 activate-sjc0.adobe.com
+
+以防止其连接 Adobe 的激活验证服务器。这样产品就一直是激活成功的状态了。
